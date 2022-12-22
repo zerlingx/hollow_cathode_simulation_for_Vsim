@@ -1,0 +1,3767 @@
+Working directory: D:\001_zerlingx\literature\HC\006_models\01_test
+Running input file: vsim_test_ptc.pre
+Command is "C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\mpiexec.exe" -np 4 -env PYTHONPATH "C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\share\scripts;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\lib\site-packages;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\lib;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin\lib\site-packages;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin\lib\python\lib;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin\lib\python\DLLs;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin;." "C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\\vorpal.exe" -dt 1e-12 -sd -d 10 -n 100 -i "vsim_test_ptc.pre"  -o "vsim_test_ptc" 
+ 
+--------------------- START ENGINE OUTPUT ----------------
+Licensing Scheme file not found.
+Using Tech-X Licensing Scheme.
+LICENSE MANAGER: Using license file 'C:\ProgramData\Tech-X\VSim9\license.txt'
+LICENSE MANAGER: License valid for package(s)/module(s): VSimBase VSimEM VSimMD VSimPA VSimPD VSimSD 
+LICENSE MANAGER: License valid for macro(s): DrudeDebyeLorentzDielectric absorbingBox antennas antennasGPU deymittra dielectric dielectricGPU esGridBoundary farFields farFieldsGPU geometry geometryGPU gpuPml mal malGPU mirror originRadiatorPort perfectDispersion pml port scatteringBox scatteringBoxGPU secondOrderDiel specularBox statics yee yeeGPU 
+EULA not found. Skipping user agreement.
+No expand symbols file.  Will not limit expansion.
+Processing import: vsim_test_ptc from 'D:\001_zerlingx\literature\HC\006_models\01_test'.
+Processing import: verbosity from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: mathphys from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: VSim from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: listUtilities from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: logicals from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: units from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: utilities from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: vputilities from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: VSimEs from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: esmatrix from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: solvers from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: matrices from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: grids from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: timing from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: shapes from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: multifields from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: histories from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: stfuncs from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: emfilters from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: particles from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: beamemitters from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: secondemits from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: fluids from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: collisions from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Start-dumps enabled (if dumps active).
+
+TxsDevices::TxsDevices(): MPI found.
+Thread support is funneled.
+  commWorldSize = 4
+  commWorldRank = 0
+1 threads requested.
+
+SSE2 not found.
+AVX not found.
+AVX2 not found.
+16 hardware threads found.
+TxsDevices::TxsDevices(): 16 openmp processes and 16 openmp threads.
+
+TxsDevices::TxsDevices(): compiled with cuda toolkit.
+TxsDevices::TxsDevices(): opened cuda driver.
+getFuncPtr(): resolved cuLaunchKernel.
+getFuncPtr(): resolved cuModuleLoadData.
+getFuncPtr(): resolved cuModuleUnload.
+getFuncPtr(): resolved cuModuleGetFunction.
+TxsDevices::TxsDevices(): found all function pointers.
+TxsDevices::TxsDevices(): 1 CUDA devices detected.
+TxsDevices::deviceProperties for device 0 are:
+  name = NVIDIA GeForce RTX 3060 Laptop GPU
+  compute capability = 8.6
+  clockRate = 1425000
+  memoryClockRate = 7001000
+  multiProcessorCount = 30
+  maxThreadsPerMultiProcessor = 1536
+  warpSize = 32
+  totalGlobalMem = 5.99951 GB
+  sharedMemPerBlock = 49152
+  maxThreadsPerBlock = 1024
+  maxThreadsDim = 1024 1024 64
+  maxGridSize = 2147483647 65535 65535
+  unifiedAddressing = 1
+  concurrentKernels = 1
+  asyncEngineCount = 5
+TxsDevices::setDeviceNum(): setting device number to 0.
+
+VORPAL version 9.0.1 started at 2018-12-09-14:15:49.222.
+VORPAL Subversion revision = 32654
+CMake Subversion revision = 1392
+Built on host type = CYGWIN_NT-6.1-x86_64
+Built on host name = qawin7
+Built with compiler = C:/Program Files (x86)/Microsoft Visual Studio 12.0/VC/BIN/amd64/cl.exe  /DWIN32 /D_WINDOWS /W3 /GR /EHsc, version = 18.00.40629
+Run with command line = C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\\vorpal.exe -dt 1e-12 -sd -d 10 -n 100 -i vsim_test_ptc.pre -o vsim_test_ptc
+Using MPI
+
+Domain of kind, Domain2D, created at clock time 2018-12-09-14:15:52.073
+
+Domain: verbosity = 127.
+Domain: Dump mode is combo.
+Domain: Particle sorting is on.
+Time step is 1e-012.
+Grid(s): globalGrid.
+Decomp(s): decomp.
+No STRgn(s) present.
+GridBoundary(s): vsim_test_ptcPecShapes Anode Cathode GrateArray-GrateGeomSolid.
+No GridCurve(s) present.
+MultiField(s): esMultiField.
+No EmField(s) present.
+No ComboEmField(s) present.
+ScalarDepositor(s): ChargeDensityDep.
+No VectorDepositor(s) present.
+Species(s): electrons0.
+No Fluid(s) present.
+No Collision(s) present.
+No UpdateStep(s) present.
+No MonteCarloInteractions(s) present.
+No Ionizer(s) present.
+No ImpactCollider(s) present.
+No Semiconductor(s) present.
+Domain: No SumRhoJ present.
+
+RNGs will be seeded using randomSeed = 1 in a way that depends deterministially on randomSeed and the RNG name and mpi rank.
+decomp: Periodic directions: none.
+Grid kind = uniCartGrid
+Domain: VpGridInfo name = globalGrid with kind = uniCartGrid.
+Global simulation grid size: [400 480]
+Decomposition:
+ decomp0 = [200 400]
+ decomp1 = [240 480 240 480]
+
+Grid is globalGrid.
+Global grid:
+   start      length      dx         dxi     numCells
+-0.002500   0.005000 1.250e-005 8.000e+004      400
+-0.0005000   0.006000 1.250e-005 8.000e+004      480
+Local grid for rank 0:
+   start      length      dx         dxi     numCells
+-0.002500   0.002500 1.250e-005 8.000e+004      200
+-0.0005000   0.003000 1.250e-005 8.000e+004      240
+
+Domain: begin setup of fld/ptcl messaging... in the domain
+Domain: messaging set up... in the domain
+Domain: Creating grid boundaries at clock time 2018-12-09-14:15:52.084.
+Domain: Setting up grid boundary, vsim_test_ptcPecShapes, at clock time 2018-12-09-14:15:52.084.
+Domain: grid boundary, vsim_test_ptcPecShapes, data built at clock time 2018-12-09-14:15:52.086.
+Domain: Setting up grid boundary, Anode, at clock time 2018-12-09-14:15:52.086.
+Domain: grid boundary, Anode, data built at clock time 2018-12-09-14:15:52.088.
+Domain: Setting up grid boundary, Cathode, at clock time 2018-12-09-14:15:52.088.
+Domain: grid boundary, Cathode, data built at clock time 2018-12-09-14:15:52.089.
+Domain: Setting up grid boundary, GrateArray-GrateGeomSolid, at clock time 2018-12-09-14:15:52.089.
+Domain: grid boundary, GrateArray-GrateGeomSolid, data built at clock time 2018-12-09-14:15:52.092.
+Calculating in/out function for grid boundary, vsim_test_ptcPecShapes.
+vsim_test_ptcPecShapes: Collecting stair-step data.
+vsim_test_ptcPecShapes: Collecting cut-cell face data.
+vsim_test_ptcPecShapes: Collecting cut-cell volume data.
+VpGridBndry::calculateTriangleData(): calculating triangle data for vsim_test_ptcPecShapes
+Grid boundary, vsim_test_ptcPecShapes, initialized in 0 seconds.
+Calculating in/out function for grid boundary, Anode.
+Anode: Collecting stair-step data.
+Anode: Collecting cut-cell face data.
+Anode: Collecting cut-cell volume data.
+Grid boundary, Anode, initialized in 0 seconds.
+Calculating in/out function for grid boundary, Cathode.
+Cathode: Collecting stair-step data.
+Cathode: Collecting cut-cell face data.
+Cathode: Collecting cut-cell volume data.
+VpGridBndry::calculateTriangleData(): calculating triangle data for Cathode
+Grid boundary, Cathode, initialized in 0 seconds.
+Calculating in/out function for grid boundary, GrateArray-GrateGeomSolid.
+GrateArray-GrateGeomSolid: Collecting stair-step data.
+GrateArray-GrateGeomSolid: Collecting cut-cell face data.
+GrateArray-GrateGeomSolid: Collecting cut-cell volume data.
+VpGridBndry::calculateTriangleData(): calculating triangle data for GrateArray-GrateGeomSolid
+Grid boundary, GrateArray-GrateGeomSolid, initialized in 0 seconds.
+Domain: Grid boundaries created at clock time 2018-12-09-14:15:52.240.
+Domain: txsim reaction process holder built.
+Domain: txsim reaction physics holder built.
+Domain: History holder built.
+Domain: Multifields created.
+Domain: Multifields built.
+Domain: Non-combo EMfields built.
+Domain: Combo EMfields built.
+Setting custom mass of 9.10938e-031 kg for species electrons0
+Setting custom charge of -1.60218e-019 C for species electrons0
+No ionizationEnergy specified for species electrons0 though it is species=custom, so setting ionizationEnergy to 0eV. If this species will be used in ionization or recombination reactions, you will want to specify the ionization energy in the species block.
+Domain:  attributes set.
+Domain: Species named electrons0 added.
+Species electrons0 has velocity limits = [1.25e+007, 1.25e+007].
+Sinks are: lower0Absorber upper0Absorber lower1Absorber upper1Absorber GrateAbs
+Sources are:
+ myemit
+
+ Position generator named posGen set.
+ Velocity generator named velGen set.
+NOTICE: NOTE: For position generator, posGen, ptclsPerCell not specified.  Taking from owning species.
+NOTICE: No gridBndryMask or STFunc mask specified, emitting from entire grid boundary specified in position generator 
+currentDensityFunc not found in xvLoaderEmitter myemit, assuming a constant value of currentDensity =5.0068
+relMacroDenFunc not found in xvLoaderEmitter myemit, assuming constant value of 1.
+relMacroFluxFunc found and set in xvLoaderEmitter myemit
+------------------------------------------------------------------------------
+Using `power-method' for eigen-computations
+*** 
+*** ML_Epetra::MultiLevelPreconditioner
+***
+Matrix has 192881 rows and 828119 nonzeros, distributed over 4 process(es)
+The linear system matrix is an Epetra_CrsMatrix
+** Leaving column map of Main linear system matrix unchanged
+Default values for `DD'
+Maximum number of levels = 10
+Using increasing levels. Finest level  = 0, coarsest level = 9
+Number of applications of the ML cycle = 1
+Number of PDE equations = 1
+Aggregation threshold = 0
+Max coarse size = 128
+R and P smoothing : P = (I-\omega A) P_t, R = P^T
+R and P smoothing : \omega = 1.333/lambda_max
+Null space type      = default (constants)
+Null space dimension = 1
+-----------------------------------------------------------------------
+ML_Gen_MultiLevelHierarchy (level 0) : Gen Restriction and Prolongator
+-----------------------------------------------------------------------
+ML_Aggregate_Coarsen (level 0) begins
+ML_Aggregate_CoarsenUncoupled : current level = 0
+ML_Aggregate_CoarsenUncoupled : current eps = 0.000000e+000
+Aggregation(UVB) : Total nonzeros = 828119 (Nrows=192881)
+Aggregation(UC) : Phase 0 - no. of bdry pts  = 33350 
+Aggregation(UC) : Phase 1 - nodes aggregated = 133463 (192881)
+Aggregation(UC) : Phase 1 - total aggregates = 27198 
+Aggregation(UC_Phase2_3) : Phase 1 - nodes aggregated = 133463 
+Aggregation(UC_Phase2_3) : Phase 1 - total aggregates = 27198
+Aggregation(UC_Phase2_3) : Phase 2a- additional aggregates = 0
+Aggregation(UC_Phase2_3) : Phase 2 - total aggregates = 27362
+Aggregation(UC_Phase2_3) : Phase 2 - boundary nodes   = 33350
+Aggregation(UC_Phase2_3) : Phase 3 - leftovers = 164 and singletons = 0
+Aggregation(UC) : QR factorization - too small aggregates = 0
+Calculating eigenvalue estimate using power method
+Gen_Prolongator (level 0) : Max eigenvalue = 1.9517e+000
+
+Prolongator/Restriction smoother (level 0) : damping factor #1 = 6.8300e-001
+Prolongator/Restriction smoother (level 0) : ( = 1.3330e+000 / 1.9517e+000)
+
+-----------------------------------------------------------------------
+ML_Gen_MultiLevelHierarchy (level 1) : Gen Restriction and Prolongator
+-----------------------------------------------------------------------
+ML_Aggregate_Coarsen (level 1) begins
+ML_Aggregate_CoarsenUncoupled : current level = 1
+ML_Aggregate_CoarsenUncoupled : current eps = 0.000000e+000
+Aggregation(UVB) : Total nonzeros = 248714 (Nrows=27362)
+Aggregation(UC) : Phase 0 - no. of bdry pts  = 160 
+Aggregation(UC) : Phase 1 - nodes aggregated = 26173 (27362)
+Aggregation(UC) : Phase 1 - total aggregates = 2952 
+Aggregation(UC_Phase2_3) : Phase 1 - nodes aggregated = 26173 
+Aggregation(UC_Phase2_3) : Phase 1 - total aggregates = 2952
+Aggregation(UC_Phase2_3) : Phase 2a- additional aggregates = 0
+Aggregation(UC_Phase2_3) : Phase 2 - total aggregates = 2952
+Aggregation(UC_Phase2_3) : Phase 2 - boundary nodes   = 160
+Aggregation(UC_Phase2_3) : Phase 3 - leftovers = 0 and singletons = 0
+Aggregation(UC) : QR factorization - too small aggregates = 0
+Calculating eigenvalue estimate using power method
+Gen_Prolongator (level 1) : Max eigenvalue = 1.8780e+000
+
+Prolongator/Restriction smoother (level 1) : damping factor #1 = 7.0980e-001
+Prolongator/Restriction smoother (level 1) : ( = 1.3330e+000 / 1.8780e+000)
+
+-----------------------------------------------------------------------
+ML_Gen_MultiLevelHierarchy (level 2) : Gen Restriction and Prolongator
+-----------------------------------------------------------------------
+ML_Aggregate_Coarsen (level 2) begins
+ML_Aggregate_CoarsenUncoupled : current level = 2
+ML_Aggregate_CoarsenUncoupled : current eps = 0.000000e+000
+Aggregation(UVB) : Total nonzeros = 33132 (Nrows=2952)
+Aggregation(UC) : Phase 0 - no. of bdry pts  = 0 
+Aggregation(UC) : Phase 1 - nodes aggregated = 2542 (2952)
+Aggregation(UC) : Phase 1 - total aggregates = 269 
+Aggregation(UC_Phase2_3) : Phase 1 - nodes aggregated = 2542 
+Aggregation(UC_Phase2_3) : Phase 1 - total aggregates = 269
+Aggregation(UC_Phase2_3) : Phase 2a- additional aggregates = 0
+Aggregation(UC_Phase2_3) : Phase 2 - total aggregates = 269
+Aggregation(UC_Phase2_3) : Phase 2 - boundary nodes   = 0
+Aggregation(UC_Phase2_3) : Phase 3 - leftovers = 0 and singletons = 0
+Aggregation(UC) : QR factorization - too small aggregates = 0
+Calculating eigenvalue estimate using power method
+Gen_Prolongator (level 2) : Max eigenvalue = 1.5038e+000
+
+Prolongator/Restriction smoother (level 2) : damping factor #1 = 8.8644e-001
+Prolongator/Restriction smoother (level 2) : ( = 1.3330e+000 / 1.5038e+000)
+
+-----------------------------------------------------------------------
+ML_Gen_MultiLevelHierarchy (level 3) : Gen Restriction and Prolongator
+-----------------------------------------------------------------------
+ML_Aggregate_Coarsen (level 3) begins
+ML_Aggregate_CoarsenUncoupled : current level = 3
+ML_Aggregate_CoarsenUncoupled : current eps = 0.000000e+000
+Aggregation(UVB) : Total nonzeros = 4119 (Nrows=269)
+Aggregation(UC) : Phase 0 - no. of bdry pts  = 0 
+Aggregation(UC) : Phase 1 - nodes aggregated = 219 (269)
+Aggregation(UC) : Phase 1 - total aggregates = 22 
+Aggregation(UC_Phase2_3) : Phase 1 - nodes aggregated = 219 
+Aggregation(UC_Phase2_3) : Phase 1 - total aggregates = 22
+Aggregation(UC_Phase2_3) : Phase 2a- additional aggregates = 0
+Aggregation(UC_Phase2_3) : Phase 2 - total aggregates = 22
+Aggregation(UC_Phase2_3) : Phase 2 - boundary nodes   = 0
+Aggregation(UC_Phase2_3) : Phase 3 - leftovers = 0 and singletons = 0
+Aggregation(UC) : QR factorization - too small aggregates = 0
+Calculating eigenvalue estimate using power method
+Gen_Prolongator (level 3) : Max eigenvalue = 1.4514e+000
+
+Prolongator/Restriction smoother (level 3) : damping factor #1 = 9.1842e-001
+Prolongator/Restriction smoother (level 3) : ( = 1.3330e+000 / 1.4514e+000)
+
+Smoothed Aggregation : operator complexity = 1.345669e+000.
+Time to build the hierarchy = 0.0592532 (s)
+Number of actual levels : 5
+
+Smoother (level 0) : # global rows = 192881, # estim. global nnz = 828119, # nnz per row = 4.29
+Smoother (level 0) : Gauss-Seidel (sweeps=3,omega=1,both)
+Smoother (level 0) : Epetra_CrsMatrix detected, using Ifpack implementation
+Smoother (level 0) : Setup time : 0.0012341 (s)
+
+Smoother (level 1) : # global rows = 27362, # estim. global nnz = 248714, # nnz per row = 9.09
+Smoother (level 1) : ML Gauss-Seidel (sweeps=3,omega=1,both)
+Smoother (level 1) : Setup time : 4.21999e-005 (s)
+
+Smoother (level 2) : # global rows = 2952, # estim. global nnz = 33132, # nnz per row = 11.22
+Smoother (level 2) : ML Gauss-Seidel (sweeps=3,omega=1,both)
+Smoother (level 2) : Setup time : 0.0001148 (s)
+
+Smoother (level 3) : # global rows = 269, # estim. global nnz = 4119, # nnz per row = 15.31
+Smoother (level 3) : ML Gauss-Seidel (sweeps=3,omega=1,both)
+Smoother (level 3) : Setup time : 3.29001e-005 (s)
+
+Coarse solve (level 4) : Jacobi (sweeps=1,omega=1,post)
+
+------------------------------------------------------------------------------
+MultiFields built.
+Building species electrons0 with NDIM = 2.
+Added sink, lower0Absorber, to global region:
+[-1, 0) x [-1, 481)Region for sink, upper0Absorber, is empty on rank 0
+Added sink, lower1Absorber, to global region:
+[0, 400) x [-1, 0)Region for sink, upper1Absorber, is empty on rank 0
+Added sink, GrateAbs, to grid boundary GrateArray-GrateGeomSolid.
+Sources (for buildSolvers) are:
+ myemit
+
+Source named myemit added to Species electrons0.
+Source, myemit, loaded 0 particles on this processor (rank 0)
+Domain: electrons0 initialized.
+Domain: All species initialized.
+Domain: All emfluids initialized.
+Domain: All collisions initialized.
+Domain: All ionization processes initialized.
+Domain: All impactCollision processes initialized.
+All semiconductor materials initialized.
+All monteCarloHandlers initialized.
+Initializing 'E' with 0 setters.
+Initializing 'nodalE' with 0 setters.
+Initializing 'nodalB' with 0 setters.
+Initializing 'Phi' with 0 setters.
+Initializing 'ChargeDensity' with 0 setters.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 1.255145e-003
+                iter:    2           residual = 1.506664e-004
+                iter:    3           residual = 4.894760e-005
+                iter:    4           residual = 3.030037e-005
+                iter:    5           residual = 1.397168e-005
+                iter:    6           residual = 6.218081e-006
+                iter:    7           residual = 3.250062e-006
+                iter:    8           residual = 1.884735e-006
+                iter:    9           residual = 1.018430e-006
+                iter:   10           residual = 3.463591e-007
+                iter:   11           residual = 1.329516e-007
+                iter:   12           residual = 6.533412e-008
+                iter:   13           residual = 3.188212e-008
+                iter:   14           residual = 1.429097e-008
+                iter:   15           residual = 6.309951e-009
+
+
+		Solution time: 0.125614 (sec.)
+		total iterations: 15
+Domain: All MultiFields initialized at clock tim 2018-12-09-14:15:52.648.
+Domain: All emfields initialized at clock time 2018-12-09-14:15:52.648.
+Domain: Histories initialized at clock time 2018-12-09-14:15:52.648.
+Domain: Initialization complete at clock time 2018-12-09-14:15:52.648.
+
+Domain: Dumping all at clock time 2018-12-09-14:15:52.648.
+Globals dumped at 2018-12-09-14:15:52.651.
+Dumping grid boundaries at 2018-12-09-14:15:52.651.
+Dumping vsim_test_ptcPecShapes at clock time 2018-12-09-14:15:52.651.
+vsim_test_ptcPecShapes dumped  at clock time 2018-12-09-14:15:52.659.
+Dumping Anode at clock time 2018-12-09-14:15:52.659.
+Anode dumped  at clock time 2018-12-09-14:15:52.666.
+Dumping Cathode at clock time 2018-12-09-14:15:52.666.
+Cathode dumped  at clock time 2018-12-09-14:15:52.673.
+Dumping GrateArray-GrateGeomSolid at clock time 2018-12-09-14:15:52.673.
+GrateArray-GrateGeomSolid dumped  at clock time 2018-12-09-14:15:52.679.
+Dumped grid boundaries at 2018-12-09-14:15:52.679.
+Domain: Sorting electrons0.
+Domain: electrons0 sorted.
+Dumping species data electrons0.
+No fluids to dump.
+Domain: Dumping histories at 2018-12-09-14:15:52.715.
+Domain: Histories dumped at 2018-12-09-14:15:52.715.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-09-14:15:52.715.
+Dumping E at 2018-12-09-14:15:52.715.
+Dumped E at 2018-12-09-14:15:52.721.
+Dumping nodalE at 2018-12-09-14:15:52.721.
+Dumped nodalE at 2018-12-09-14:15:52.728.
+Dumping nodalB at 2018-12-09-14:15:52.728.
+Dumped nodalB at 2018-12-09-14:15:52.734.
+Dumping Phi at 2018-12-09-14:15:52.734.
+Dumped Phi at 2018-12-09-14:15:52.736.
+Dumping ChargeDensity at 2018-12-09-14:15:52.736.
+Dumped ChargeDensity at 2018-12-09-14:15:52.739.
+All multiFields dumped at 2018-12-09-14:15:52.740.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-09-14:15:52.741.
+
+Main loop started    at clock time 2018-12-09-14:15:52.741.
+Taking step        1 at clock time 2018-12-09-14:15:52.741.
+Rank 0 processed a total of 0 electrons0 at an average of 0 seconds per particle push.
+Rank 0 just processed 0 electrons0 at an average of 0 seconds per particle push.
+Sorting particles
+Sorting time: 0 per particle, 0 total
+Rank 0 processed a total of 0 electrons0 at an average of 0 seconds per particle push.
+Rank 0 just processed 0 electrons0 at an average of 0 seconds per particle push.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.537061e-003
+                iter:    2           residual = 4.077597e-004
+                iter:    3           residual = 1.511690e-004
+                iter:    4           residual = 8.175286e-005
+                iter:    5           residual = 3.614270e-005
+                iter:    6           residual = 1.901991e-005
+                iter:    7           residual = 1.036145e-005
+                iter:    8           residual = 4.812280e-006
+                iter:    9           residual = 1.898891e-006
+                iter:   10           residual = 7.059742e-007
+                iter:   11           residual = 3.027830e-007
+                iter:   12           residual = 1.468270e-007
+                iter:   13           residual = 5.836626e-008
+                iter:   14           residual = 2.283994e-008
+                iter:   15           residual = 1.030454e-008
+                iter:   16           residual = 5.150215e-009
+
+
+		Solution time: 0.129969 (sec.)
+		total iterations: 16
+Taking step        2 at clock time 2018-12-09-14:15:52.922.
+Rank 0 processed a total of 0 electrons0 at an average of 0 seconds per particle push.
+Rank 0 just processed 0 electrons0 at an average of 0 seconds per particle push.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530421e-003
+                iter:    2           residual = 3.750515e-004
+                iter:    3           residual = 1.013398e-004
+                iter:    4           residual = 5.754410e-005
+                iter:    5           residual = 2.954449e-005
+                iter:    6           residual = 1.558944e-005
+                iter:    7           residual = 8.443638e-006
+                iter:    8           residual = 4.330814e-006
+                iter:    9           residual = 1.809811e-006
+                iter:   10           residual = 6.393999e-007
+                iter:   11           residual = 2.599370e-007
+                iter:   12           residual = 1.274582e-007
+                iter:   13           residual = 6.045147e-008
+                iter:   14           residual = 2.932964e-008
+                iter:   15           residual = 1.125541e-008
+                iter:   16           residual = 4.518175e-009
+
+
+		Solution time: 0.135745 (sec.)
+		total iterations: 16
+Taking step        3 at clock time 2018-12-09-14:15:53.076.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530421e-003
+                iter:    2           residual = 3.750517e-004
+                iter:    3           residual = 1.013398e-004
+                iter:    4           residual = 5.754417e-005
+                iter:    5           residual = 2.954460e-005
+                iter:    6           residual = 1.558951e-005
+                iter:    7           residual = 8.443654e-006
+                iter:    8           residual = 4.330813e-006
+                iter:    9           residual = 1.809809e-006
+                iter:   10           residual = 6.394000e-007
+                iter:   11           residual = 2.599375e-007
+                iter:   12           residual = 1.274590e-007
+                iter:   13           residual = 6.045177e-008
+                iter:   14           residual = 2.932953e-008
+                iter:   15           residual = 1.125535e-008
+                iter:   16           residual = 4.518192e-009
+
+
+		Solution time: 0.148745 (sec.)
+		total iterations: 16
+Taking step        4 at clock time 2018-12-09-14:15:53.242.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530422e-003
+                iter:    2           residual = 3.750515e-004
+                iter:    3           residual = 1.013397e-004
+                iter:    4           residual = 5.754414e-005
+                iter:    5           residual = 2.954458e-005
+                iter:    6           residual = 1.558950e-005
+                iter:    7           residual = 8.443650e-006
+                iter:    8           residual = 4.330811e-006
+                iter:    9           residual = 1.809809e-006
+                iter:   10           residual = 6.393996e-007
+                iter:   11           residual = 2.599374e-007
+                iter:   12           residual = 1.274590e-007
+                iter:   13           residual = 6.045173e-008
+                iter:   14           residual = 2.932953e-008
+                iter:   15           residual = 1.125534e-008
+                iter:   16           residual = 4.518189e-009
+
+
+		Solution time: 0.127006 (sec.)
+		total iterations: 16
+Taking step        5 at clock time 2018-12-09-14:15:53.382.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530422e-003
+                iter:    2           residual = 3.750516e-004
+                iter:    3           residual = 1.013397e-004
+                iter:    4           residual = 5.754413e-005
+                iter:    5           residual = 2.954457e-005
+                iter:    6           residual = 1.558950e-005
+                iter:    7           residual = 8.443647e-006
+                iter:    8           residual = 4.330809e-006
+                iter:    9           residual = 1.809808e-006
+                iter:   10           residual = 6.393994e-007
+                iter:   11           residual = 2.599373e-007
+                iter:   12           residual = 1.274589e-007
+                iter:   13           residual = 6.045172e-008
+                iter:   14           residual = 2.932952e-008
+                iter:   15           residual = 1.125534e-008
+                iter:   16           residual = 4.518187e-009
+
+
+		Solution time: 0.132399 (sec.)
+		total iterations: 16
+Taking step        6 at clock time 2018-12-09-14:15:53.529.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530422e-003
+                iter:    2           residual = 3.750513e-004
+                iter:    3           residual = 1.013397e-004
+                iter:    4           residual = 5.754410e-005
+                iter:    5           residual = 2.954456e-005
+                iter:    6           residual = 1.558949e-005
+                iter:    7           residual = 8.443643e-006
+                iter:    8           residual = 4.330808e-006
+                iter:    9           residual = 1.809808e-006
+                iter:   10           residual = 6.393993e-007
+                iter:   11           residual = 2.599372e-007
+                iter:   12           residual = 1.274589e-007
+                iter:   13           residual = 6.045170e-008
+                iter:   14           residual = 2.932951e-008
+                iter:   15           residual = 1.125534e-008
+                iter:   16           residual = 4.518186e-009
+
+
+		Solution time: 0.137922 (sec.)
+		total iterations: 16
+Taking step        7 at clock time 2018-12-09-14:15:53.683.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530422e-003
+                iter:    2           residual = 3.750515e-004
+                iter:    3           residual = 1.013397e-004
+                iter:    4           residual = 5.754414e-005
+                iter:    5           residual = 2.954458e-005
+                iter:    6           residual = 1.558950e-005
+                iter:    7           residual = 8.443648e-006
+                iter:    8           residual = 4.330811e-006
+                iter:    9           residual = 1.809809e-006
+                iter:   10           residual = 6.393996e-007
+                iter:   11           residual = 2.599374e-007
+                iter:   12           residual = 1.274590e-007
+                iter:   13           residual = 6.045173e-008
+                iter:   14           residual = 2.932953e-008
+                iter:   15           residual = 1.125535e-008
+                iter:   16           residual = 4.518188e-009
+
+
+		Solution time: 0.137278 (sec.)
+		total iterations: 16
+Taking step        8 at clock time 2018-12-09-14:15:53.832.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530422e-003
+                iter:    2           residual = 3.750515e-004
+                iter:    3           residual = 1.013397e-004
+                iter:    4           residual = 5.754414e-005
+                iter:    5           residual = 2.954458e-005
+                iter:    6           residual = 1.558950e-005
+                iter:    7           residual = 8.443649e-006
+                iter:    8           residual = 4.330811e-006
+                iter:    9           residual = 1.809809e-006
+                iter:   10           residual = 6.393996e-007
+                iter:   11           residual = 2.599374e-007
+                iter:   12           residual = 1.274589e-007
+                iter:   13           residual = 6.045173e-008
+                iter:   14           residual = 2.932952e-008
+                iter:   15           residual = 1.125534e-008
+                iter:   16           residual = 4.518189e-009
+
+
+		Solution time: 0.124417 (sec.)
+		total iterations: 16
+Taking step        9 at clock time 2018-12-09-14:15:53.970.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530422e-003
+                iter:    2           residual = 3.750513e-004
+                iter:    3           residual = 1.013396e-004
+                iter:    4           residual = 5.754406e-005
+                iter:    5           residual = 2.954455e-005
+                iter:    6           residual = 1.558948e-005
+                iter:    7           residual = 8.443637e-006
+                iter:    8           residual = 4.330804e-006
+                iter:    9           residual = 1.809807e-006
+                iter:   10           residual = 6.393988e-007
+                iter:   11           residual = 2.599371e-007
+                iter:   12           residual = 1.274588e-007
+                iter:   13           residual = 6.045165e-008
+                iter:   14           residual = 2.932950e-008
+                iter:   15           residual = 1.125533e-008
+                iter:   16           residual = 4.518182e-009
+
+
+		Solution time: 0.126665 (sec.)
+		total iterations: 16
+Taking step       10 at clock time 2018-12-09-14:15:54.110.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530422e-003
+                iter:    2           residual = 3.750512e-004
+                iter:    3           residual = 1.013396e-004
+                iter:    4           residual = 5.754408e-005
+                iter:    5           residual = 2.954456e-005
+                iter:    6           residual = 1.558949e-005
+                iter:    7           residual = 8.443641e-006
+                iter:    8           residual = 4.330806e-006
+                iter:    9           residual = 1.809807e-006
+                iter:   10           residual = 6.393991e-007
+                iter:   11           residual = 2.599372e-007
+                iter:   12           residual = 1.274589e-007
+                iter:   13           residual = 6.045168e-008
+                iter:   14           residual = 2.932950e-008
+                iter:   15           residual = 1.125534e-008
+                iter:   16           residual = 4.518186e-009
+
+
+		Solution time: 0.123716 (sec.)
+		total iterations: 16
+
+Domain: Dumping all at clock time 2018-12-09-14:15:54.248.
+Globals dumped at 2018-12-09-14:15:54.251.
+Dumping grid boundaries at 2018-12-09-14:15:54.251.
+Dumped grid boundaries at 2018-12-09-14:15:54.251.
+Domain: Sorting electrons0.
+Domain: electrons0 sorted.
+Dumping species data electrons0.
+Dumped electrons0.
+No fluids to dump.
+Domain: Dumping histories at 2018-12-09-14:15:54.291.
+Domain: Histories dumped at 2018-12-09-14:15:54.301.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-09-14:15:54.301.
+Dumping E at 2018-12-09-14:15:54.301.
+Dumped E at 2018-12-09-14:15:54.306.
+Dumping nodalE at 2018-12-09-14:15:54.306.
+Dumped nodalE at 2018-12-09-14:15:54.311.
+Dumping nodalB at 2018-12-09-14:15:54.311.
+Dumped nodalB at 2018-12-09-14:15:54.317.
+Dumping Phi at 2018-12-09-14:15:54.317.
+Dumped Phi at 2018-12-09-14:15:54.320.
+Dumping ChargeDensity at 2018-12-09-14:15:54.320.
+Dumped ChargeDensity at 2018-12-09-14:15:54.323.
+All multiFields dumped at 2018-12-09-14:15:54.324.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-09-14:15:54.325.
+
+Taking step       11 at clock time 2018-12-09-14:15:54.325.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530422e-003
+                iter:    2           residual = 3.750513e-004
+                iter:    3           residual = 1.013396e-004
+                iter:    4           residual = 5.754407e-005
+                iter:    5           residual = 2.954455e-005
+                iter:    6           residual = 1.558948e-005
+                iter:    7           residual = 8.443637e-006
+                iter:    8           residual = 4.330805e-006
+                iter:    9           residual = 1.809807e-006
+                iter:   10           residual = 6.393988e-007
+                iter:   11           residual = 2.599371e-007
+                iter:   12           residual = 1.274588e-007
+                iter:   13           residual = 6.045166e-008
+                iter:   14           residual = 2.932950e-008
+                iter:   15           residual = 1.125533e-008
+                iter:   16           residual = 4.518182e-009
+
+
+		Solution time: 0.128605 (sec.)
+		total iterations: 16
+Taking step       12 at clock time 2018-12-09-14:15:54.468.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530422e-003
+                iter:    2           residual = 3.750512e-004
+                iter:    3           residual = 1.013396e-004
+                iter:    4           residual = 5.754407e-005
+                iter:    5           residual = 2.954455e-005
+                iter:    6           residual = 1.558948e-005
+                iter:    7           residual = 8.443638e-006
+                iter:    8           residual = 4.330806e-006
+                iter:    9           residual = 1.809807e-006
+                iter:   10           residual = 6.393991e-007
+                iter:   11           residual = 2.599371e-007
+                iter:   12           residual = 1.274588e-007
+                iter:   13           residual = 6.045166e-008
+                iter:   14           residual = 2.932949e-008
+                iter:   15           residual = 1.125534e-008
+                iter:   16           residual = 4.518186e-009
+
+
+		Solution time: 0.139373 (sec.)
+		total iterations: 16
+Taking step       13 at clock time 2018-12-09-14:15:54.624.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530422e-003
+                iter:    2           residual = 3.750511e-004
+                iter:    3           residual = 1.013396e-004
+                iter:    4           residual = 5.754407e-005
+                iter:    5           residual = 2.954455e-005
+                iter:    6           residual = 1.558948e-005
+                iter:    7           residual = 8.443638e-006
+                iter:    8           residual = 4.330806e-006
+                iter:    9           residual = 1.809807e-006
+                iter:   10           residual = 6.393991e-007
+                iter:   11           residual = 2.599371e-007
+                iter:   12           residual = 1.274588e-007
+                iter:   13           residual = 6.045166e-008
+                iter:   14           residual = 2.932949e-008
+                iter:   15           residual = 1.125534e-008
+                iter:   16           residual = 4.518185e-009
+
+
+		Solution time: 0.135712 (sec.)
+		total iterations: 16
+Taking step       14 at clock time 2018-12-09-14:15:54.775.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530422e-003
+                iter:    2           residual = 3.750509e-004
+                iter:    3           residual = 1.013396e-004
+                iter:    4           residual = 5.754403e-005
+                iter:    5           residual = 2.954453e-005
+                iter:    6           residual = 1.558947e-005
+                iter:    7           residual = 8.443633e-006
+                iter:    8           residual = 4.330803e-006
+                iter:    9           residual = 1.809806e-006
+                iter:   10           residual = 6.393987e-007
+                iter:   11           residual = 2.599369e-007
+                iter:   12           residual = 1.274587e-007
+                iter:   13           residual = 6.045163e-008
+                iter:   14           residual = 2.932948e-008
+                iter:   15           residual = 1.125533e-008
+                iter:   16           residual = 4.518183e-009
+
+
+		Solution time: 0.128695 (sec.)
+		total iterations: 16
+Taking step       15 at clock time 2018-12-09-14:15:54.919.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530422e-003
+                iter:    2           residual = 3.750508e-004
+                iter:    3           residual = 1.013395e-004
+                iter:    4           residual = 5.754400e-005
+                iter:    5           residual = 2.954452e-005
+                iter:    6           residual = 1.558947e-005
+                iter:    7           residual = 8.443628e-006
+                iter:    8           residual = 4.330801e-006
+                iter:    9           residual = 1.809806e-006
+                iter:   10           residual = 6.393984e-007
+                iter:   11           residual = 2.599368e-007
+                iter:   12           residual = 1.274587e-007
+                iter:   13           residual = 6.045159e-008
+                iter:   14           residual = 2.932947e-008
+                iter:   15           residual = 1.125533e-008
+                iter:   16           residual = 4.518181e-009
+
+
+		Solution time: 0.132688 (sec.)
+		total iterations: 16
+Taking step       16 at clock time 2018-12-09-14:15:55.066.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530422e-003
+                iter:    2           residual = 3.750505e-004
+                iter:    3           residual = 1.013394e-004
+                iter:    4           residual = 5.754393e-005
+                iter:    5           residual = 2.954449e-005
+                iter:    6           residual = 1.558945e-005
+                iter:    7           residual = 8.443617e-006
+                iter:    8           residual = 4.330795e-006
+                iter:    9           residual = 1.809804e-006
+                iter:   10           residual = 6.393977e-007
+                iter:   11           residual = 2.599365e-007
+                iter:   12           residual = 1.274585e-007
+                iter:   13           residual = 6.045152e-008
+                iter:   14           residual = 2.932944e-008
+                iter:   15           residual = 1.125532e-008
+                iter:   16           residual = 4.518176e-009
+
+
+		Solution time: 0.131031 (sec.)
+		total iterations: 16
+Taking step       17 at clock time 2018-12-09-14:15:55.212.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530423e-003
+                iter:    2           residual = 3.750504e-004
+                iter:    3           residual = 1.013394e-004
+                iter:    4           residual = 5.754392e-005
+                iter:    5           residual = 2.954448e-005
+                iter:    6           residual = 1.558945e-005
+                iter:    7           residual = 8.443614e-006
+                iter:    8           residual = 4.330794e-006
+                iter:    9           residual = 1.809803e-006
+                iter:   10           residual = 6.393978e-007
+                iter:   11           residual = 2.599364e-007
+                iter:   12           residual = 1.274585e-007
+                iter:   13           residual = 6.045151e-008
+                iter:   14           residual = 2.932943e-008
+                iter:   15           residual = 1.125532e-008
+                iter:   16           residual = 4.518177e-009
+
+
+		Solution time: 0.128887 (sec.)
+		total iterations: 16
+Taking step       18 at clock time 2018-12-09-14:15:55.354.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530423e-003
+                iter:    2           residual = 3.750502e-004
+                iter:    3           residual = 1.013393e-004
+                iter:    4           residual = 5.754389e-005
+                iter:    5           residual = 2.954447e-005
+                iter:    6           residual = 1.558944e-005
+                iter:    7           residual = 8.443611e-006
+                iter:    8           residual = 4.330793e-006
+                iter:    9           residual = 1.809803e-006
+                iter:   10           residual = 6.393975e-007
+                iter:   11           residual = 2.599363e-007
+                iter:   12           residual = 1.274584e-007
+                iter:   13           residual = 6.045148e-008
+                iter:   14           residual = 2.932942e-008
+                iter:   15           residual = 1.125531e-008
+                iter:   16           residual = 4.518175e-009
+
+
+		Solution time: 0.123873 (sec.)
+		total iterations: 16
+Taking step       19 at clock time 2018-12-09-14:15:55.493.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530423e-003
+                iter:    2           residual = 3.750500e-004
+                iter:    3           residual = 1.013393e-004
+                iter:    4           residual = 5.754386e-005
+                iter:    5           residual = 2.954445e-005
+                iter:    6           residual = 1.558943e-005
+                iter:    7           residual = 8.443605e-006
+                iter:    8           residual = 4.330790e-006
+                iter:    9           residual = 1.809802e-006
+                iter:   10           residual = 6.393972e-007
+                iter:   11           residual = 2.599362e-007
+                iter:   12           residual = 1.274584e-007
+                iter:   13           residual = 6.045144e-008
+                iter:   14           residual = 2.932940e-008
+                iter:   15           residual = 1.125531e-008
+                iter:   16           residual = 4.518173e-009
+
+
+		Solution time: 0.140870 (sec.)
+		total iterations: 16
+Taking step       20 at clock time 2018-12-09-14:15:55.650.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530423e-003
+                iter:    2           residual = 3.750501e-004
+                iter:    3           residual = 1.013393e-004
+                iter:    4           residual = 5.754387e-005
+                iter:    5           residual = 2.954446e-005
+                iter:    6           residual = 1.558943e-005
+                iter:    7           residual = 8.443606e-006
+                iter:    8           residual = 4.330790e-006
+                iter:    9           residual = 1.809802e-006
+                iter:   10           residual = 6.393972e-007
+                iter:   11           residual = 2.599362e-007
+                iter:   12           residual = 1.274584e-007
+                iter:   13           residual = 6.045146e-008
+                iter:   14           residual = 2.932941e-008
+                iter:   15           residual = 1.125531e-008
+                iter:   16           residual = 4.518173e-009
+
+
+		Solution time: 0.134129 (sec.)
+		total iterations: 16
+
+Domain: Dumping all at clock time 2018-12-09-14:15:55.798.
+Globals dumped at 2018-12-09-14:15:55.801.
+Dumping grid boundaries at 2018-12-09-14:15:55.801.
+Dumped grid boundaries at 2018-12-09-14:15:55.801.
+Domain: Sorting electrons0.
+Domain: electrons0 sorted.
+Dumping species data electrons0.
+Dumped electrons0.
+No fluids to dump.
+Domain: Dumping histories at 2018-12-09-14:15:55.843.
+Domain: Histories dumped at 2018-12-09-14:15:55.853.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-09-14:15:55.853.
+Dumping E at 2018-12-09-14:15:55.853.
+Dumped E at 2018-12-09-14:15:55.858.
+Dumping nodalE at 2018-12-09-14:15:55.858.
+Dumped nodalE at 2018-12-09-14:15:55.863.
+Dumping nodalB at 2018-12-09-14:15:55.864.
+Dumped nodalB at 2018-12-09-14:15:55.869.
+Dumping Phi at 2018-12-09-14:15:55.869.
+Dumped Phi at 2018-12-09-14:15:55.871.
+Dumping ChargeDensity at 2018-12-09-14:15:55.871.
+Dumped ChargeDensity at 2018-12-09-14:15:55.874.
+All multiFields dumped at 2018-12-09-14:15:55.875.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-09-14:15:55.875.
+
+Taking step       21 at clock time 2018-12-09-14:15:55.875.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530423e-003
+                iter:    2           residual = 3.750499e-004
+                iter:    3           residual = 1.013392e-004
+                iter:    4           residual = 5.754383e-005
+                iter:    5           residual = 2.954444e-005
+                iter:    6           residual = 1.558942e-005
+                iter:    7           residual = 8.443599e-006
+                iter:    8           residual = 4.330788e-006
+                iter:    9           residual = 1.809801e-006
+                iter:   10           residual = 6.393969e-007
+                iter:   11           residual = 2.599360e-007
+                iter:   12           residual = 1.274583e-007
+                iter:   13           residual = 6.045142e-008
+                iter:   14           residual = 2.932939e-008
+                iter:   15           residual = 1.125531e-008
+                iter:   16           residual = 4.518170e-009
+
+
+		Solution time: 0.131979 (sec.)
+		total iterations: 16
+Taking step       22 at clock time 2018-12-09-14:15:56.028.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530424e-003
+                iter:    2           residual = 3.750500e-004
+                iter:    3           residual = 1.013392e-004
+                iter:    4           residual = 5.754383e-005
+                iter:    5           residual = 2.954444e-005
+                iter:    6           residual = 1.558942e-005
+                iter:    7           residual = 8.443601e-006
+                iter:    8           residual = 4.330788e-006
+                iter:    9           residual = 1.809801e-006
+                iter:   10           residual = 6.393970e-007
+                iter:   11           residual = 2.599361e-007
+                iter:   12           residual = 1.274583e-007
+                iter:   13           residual = 6.045142e-008
+                iter:   14           residual = 2.932939e-008
+                iter:   15           residual = 1.125531e-008
+                iter:   16           residual = 4.518171e-009
+
+
+		Solution time: 0.133501 (sec.)
+		total iterations: 16
+Taking step       23 at clock time 2018-12-09-14:15:56.176.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530424e-003
+                iter:    2           residual = 3.750494e-004
+                iter:    3           residual = 1.013391e-004
+                iter:    4           residual = 5.754375e-005
+                iter:    5           residual = 2.954441e-005
+                iter:    6           residual = 1.558941e-005
+                iter:    7           residual = 8.443589e-006
+                iter:    8           residual = 4.330782e-006
+                iter:    9           residual = 1.809800e-006
+                iter:   10           residual = 6.393964e-007
+                iter:   11           residual = 2.599357e-007
+                iter:   12           residual = 1.274581e-007
+                iter:   13           residual = 6.045133e-008
+                iter:   14           residual = 2.932935e-008
+                iter:   15           residual = 1.125530e-008
+                iter:   16           residual = 4.518169e-009
+
+
+		Solution time: 0.127047 (sec.)
+		total iterations: 16
+Taking step       24 at clock time 2018-12-09-14:15:56.317.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530424e-003
+                iter:    2           residual = 3.750493e-004
+                iter:    3           residual = 1.013391e-004
+                iter:    4           residual = 5.754372e-005
+                iter:    5           residual = 2.954439e-005
+                iter:    6           residual = 1.558940e-005
+                iter:    7           residual = 8.443583e-006
+                iter:    8           residual = 4.330780e-006
+                iter:    9           residual = 1.809799e-006
+                iter:   10           residual = 6.393961e-007
+                iter:   11           residual = 2.599356e-007
+                iter:   12           residual = 1.274581e-007
+                iter:   13           residual = 6.045131e-008
+                iter:   14           residual = 2.932934e-008
+                iter:   15           residual = 1.125529e-008
+                iter:   16           residual = 4.518166e-009
+
+
+		Solution time: 0.131835 (sec.)
+		total iterations: 16
+Taking step       25 at clock time 2018-12-09-14:15:56.464.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530424e-003
+                iter:    2           residual = 3.750489e-004
+                iter:    3           residual = 1.013389e-004
+                iter:    4           residual = 5.754365e-005
+                iter:    5           residual = 2.954436e-005
+                iter:    6           residual = 1.558938e-005
+                iter:    7           residual = 8.443572e-006
+                iter:    8           residual = 4.330774e-006
+                iter:    9           residual = 1.809797e-006
+                iter:   10           residual = 6.393953e-007
+                iter:   11           residual = 2.599353e-007
+                iter:   12           residual = 1.274579e-007
+                iter:   13           residual = 6.045123e-008
+                iter:   14           residual = 2.932931e-008
+                iter:   15           residual = 1.125528e-008
+                iter:   16           residual = 4.518162e-009
+
+
+		Solution time: 0.133040 (sec.)
+		total iterations: 16
+Taking step       26 at clock time 2018-12-09-14:15:56.615.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530425e-003
+                iter:    2           residual = 3.750487e-004
+                iter:    3           residual = 1.013389e-004
+                iter:    4           residual = 5.754361e-005
+                iter:    5           residual = 2.954434e-005
+                iter:    6           residual = 1.558937e-005
+                iter:    7           residual = 8.443566e-006
+                iter:    8           residual = 4.330772e-006
+                iter:    9           residual = 1.809796e-006
+                iter:   10           residual = 6.393952e-007
+                iter:   11           residual = 2.599351e-007
+                iter:   12           residual = 1.274578e-007
+                iter:   13           residual = 6.045120e-008
+                iter:   14           residual = 2.932929e-008
+                iter:   15           residual = 1.125528e-008
+                iter:   16           residual = 4.518160e-009
+
+
+		Solution time: 0.148340 (sec.)
+		total iterations: 16
+Taking step       27 at clock time 2018-12-09-14:15:56.781.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530425e-003
+                iter:    2           residual = 3.750486e-004
+                iter:    3           residual = 1.013389e-004
+                iter:    4           residual = 5.754362e-005
+                iter:    5           residual = 2.954435e-005
+                iter:    6           residual = 1.558937e-005
+                iter:    7           residual = 8.443569e-006
+                iter:    8           residual = 4.330773e-006
+                iter:    9           residual = 1.809797e-006
+                iter:   10           residual = 6.393952e-007
+                iter:   11           residual = 2.599352e-007
+                iter:   12           residual = 1.274579e-007
+                iter:   13           residual = 6.045121e-008
+                iter:   14           residual = 2.932930e-008
+                iter:   15           residual = 1.125528e-008
+                iter:   16           residual = 4.518161e-009
+
+
+		Solution time: 0.195239 (sec.)
+		total iterations: 16
+Taking step       28 at clock time 2018-12-09-14:15:57.000.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530425e-003
+                iter:    2           residual = 3.750481e-004
+                iter:    3           residual = 1.013387e-004
+                iter:    4           residual = 5.754352e-005
+                iter:    5           residual = 2.954430e-005
+                iter:    6           residual = 1.558935e-005
+                iter:    7           residual = 8.443552e-006
+                iter:    8           residual = 4.330765e-006
+                iter:    9           residual = 1.809795e-006
+                iter:   10           residual = 6.393943e-007
+                iter:   11           residual = 2.599347e-007
+                iter:   12           residual = 1.274576e-007
+                iter:   13           residual = 6.045109e-008
+                iter:   14           residual = 2.932925e-008
+                iter:   15           residual = 1.125527e-008
+                iter:   16           residual = 4.518157e-009
+
+
+		Solution time: 0.130357 (sec.)
+		total iterations: 16
+Taking step       29 at clock time 2018-12-09-14:15:57.148.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530425e-003
+                iter:    2           residual = 3.750479e-004
+                iter:    3           residual = 1.013387e-004
+                iter:    4           residual = 5.754348e-005
+                iter:    5           residual = 2.954428e-005
+                iter:    6           residual = 1.558934e-005
+                iter:    7           residual = 8.443547e-006
+                iter:    8           residual = 4.330762e-006
+                iter:    9           residual = 1.809793e-006
+                iter:   10           residual = 6.393940e-007
+                iter:   11           residual = 2.599346e-007
+                iter:   12           residual = 1.274576e-007
+                iter:   13           residual = 6.045106e-008
+                iter:   14           residual = 2.932924e-008
+                iter:   15           residual = 1.125527e-008
+                iter:   16           residual = 4.518154e-009
+
+
+		Solution time: 0.129759 (sec.)
+		total iterations: 16
+Taking step       30 at clock time 2018-12-09-14:15:57.293.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530425e-003
+                iter:    2           residual = 3.750478e-004
+                iter:    3           residual = 1.013387e-004
+                iter:    4           residual = 5.754346e-005
+                iter:    5           residual = 2.954428e-005
+                iter:    6           residual = 1.558933e-005
+                iter:    7           residual = 8.443544e-006
+                iter:    8           residual = 4.330761e-006
+                iter:    9           residual = 1.809793e-006
+                iter:   10           residual = 6.393938e-007
+                iter:   11           residual = 2.599345e-007
+                iter:   12           residual = 1.274575e-007
+                iter:   13           residual = 6.045105e-008
+                iter:   14           residual = 2.932923e-008
+                iter:   15           residual = 1.125526e-008
+                iter:   16           residual = 4.518152e-009
+
+
+		Solution time: 0.145859 (sec.)
+		total iterations: 16
+
+Domain: Dumping all at clock time 2018-12-09-14:15:57.458.
+Globals dumped at 2018-12-09-14:15:57.461.
+Dumping grid boundaries at 2018-12-09-14:15:57.461.
+Dumped grid boundaries at 2018-12-09-14:15:57.461.
+Domain: Sorting electrons0.
+Domain: electrons0 sorted.
+Dumping species data electrons0.
+Dumped electrons0.
+No fluids to dump.
+Domain: Dumping histories at 2018-12-09-14:15:57.505.
+Domain: Histories dumped at 2018-12-09-14:15:57.515.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-09-14:15:57.515.
+Dumping E at 2018-12-09-14:15:57.515.
+Dumped E at 2018-12-09-14:15:57.521.
+Dumping nodalE at 2018-12-09-14:15:57.521.
+Dumped nodalE at 2018-12-09-14:15:57.526.
+Dumping nodalB at 2018-12-09-14:15:57.526.
+Dumped nodalB at 2018-12-09-14:15:57.531.
+Dumping Phi at 2018-12-09-14:15:57.531.
+Dumped Phi at 2018-12-09-14:15:57.534.
+Dumping ChargeDensity at 2018-12-09-14:15:57.534.
+Dumped ChargeDensity at 2018-12-09-14:15:57.537.
+All multiFields dumped at 2018-12-09-14:15:57.539.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-09-14:15:57.539.
+
+Taking step       31 at clock time 2018-12-09-14:15:57.539.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530426e-003
+                iter:    2           residual = 3.750475e-004
+                iter:    3           residual = 1.013386e-004
+                iter:    4           residual = 5.754340e-005
+                iter:    5           residual = 2.954425e-005
+                iter:    6           residual = 1.558932e-005
+                iter:    7           residual = 8.443534e-006
+                iter:    8           residual = 4.330756e-006
+                iter:    9           residual = 1.809791e-006
+                iter:   10           residual = 6.393934e-007
+                iter:   11           residual = 2.599342e-007
+                iter:   12           residual = 1.274574e-007
+                iter:   13           residual = 6.045098e-008
+                iter:   14           residual = 2.932920e-008
+                iter:   15           residual = 1.125525e-008
+                iter:   16           residual = 4.518150e-009
+
+
+		Solution time: 0.143867 (sec.)
+		total iterations: 16
+Taking step       32 at clock time 2018-12-09-14:15:57.704.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530426e-003
+                iter:    2           residual = 3.750471e-004
+                iter:    3           residual = 1.013385e-004
+                iter:    4           residual = 5.754334e-005
+                iter:    5           residual = 2.954422e-005
+                iter:    6           residual = 1.558930e-005
+                iter:    7           residual = 8.443524e-006
+                iter:    8           residual = 4.330752e-006
+                iter:    9           residual = 1.809790e-006
+                iter:   10           residual = 6.393929e-007
+                iter:   11           residual = 2.599339e-007
+                iter:   12           residual = 1.274573e-007
+                iter:   13           residual = 6.045092e-008
+                iter:   14           residual = 2.932917e-008
+                iter:   15           residual = 1.125524e-008
+                iter:   16           residual = 4.518147e-009
+
+
+		Solution time: 0.147830 (sec.)
+		total iterations: 16
+Taking step       33 at clock time 2018-12-09-14:15:57.868.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530426e-003
+                iter:    2           residual = 3.750467e-004
+                iter:    3           residual = 1.013383e-004
+                iter:    4           residual = 5.754326e-005
+                iter:    5           residual = 2.954418e-005
+                iter:    6           residual = 1.558928e-005
+                iter:    7           residual = 8.443511e-006
+                iter:    8           residual = 4.330746e-006
+                iter:    9           residual = 1.809788e-006
+                iter:   10           residual = 6.393921e-007
+                iter:   11           residual = 2.599336e-007
+                iter:   12           residual = 1.274571e-007
+                iter:   13           residual = 6.045084e-008
+                iter:   14           residual = 2.932914e-008
+                iter:   15           residual = 1.125524e-008
+                iter:   16           residual = 4.518142e-009
+
+
+		Solution time: 0.134696 (sec.)
+		total iterations: 16
+Taking step       34 at clock time 2018-12-09-14:15:58.023.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530427e-003
+                iter:    2           residual = 3.750464e-004
+                iter:    3           residual = 1.013382e-004
+                iter:    4           residual = 5.754321e-005
+                iter:    5           residual = 2.954416e-005
+                iter:    6           residual = 1.558927e-005
+                iter:    7           residual = 8.443504e-006
+                iter:    8           residual = 4.330742e-006
+                iter:    9           residual = 1.809787e-006
+                iter:   10           residual = 6.393917e-007
+                iter:   11           residual = 2.599334e-007
+                iter:   12           residual = 1.274570e-007
+                iter:   13           residual = 6.045078e-008
+                iter:   14           residual = 2.932912e-008
+                iter:   15           residual = 1.125523e-008
+                iter:   16           residual = 4.518140e-009
+
+
+		Solution time: 0.129446 (sec.)
+		total iterations: 16
+Taking step       35 at clock time 2018-12-09-14:15:58.170.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530427e-003
+                iter:    2           residual = 3.750459e-004
+                iter:    3           residual = 1.013381e-004
+                iter:    4           residual = 5.754311e-005
+                iter:    5           residual = 2.954411e-005
+                iter:    6           residual = 1.558924e-005
+                iter:    7           residual = 8.443487e-006
+                iter:    8           residual = 4.330734e-006
+                iter:    9           residual = 1.809785e-006
+                iter:   10           residual = 6.393907e-007
+                iter:   11           residual = 2.599330e-007
+                iter:   12           residual = 1.274568e-007
+                iter:   13           residual = 6.045068e-008
+                iter:   14           residual = 2.932908e-008
+                iter:   15           residual = 1.125522e-008
+                iter:   16           residual = 4.518133e-009
+
+
+		Solution time: 0.129153 (sec.)
+		total iterations: 16
+Taking step       36 at clock time 2018-12-09-14:15:58.317.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530427e-003
+                iter:    2           residual = 3.750458e-004
+                iter:    3           residual = 1.013380e-004
+                iter:    4           residual = 5.754308e-005
+                iter:    5           residual = 2.954410e-005
+                iter:    6           residual = 1.558924e-005
+                iter:    7           residual = 8.443483e-006
+                iter:    8           residual = 4.330733e-006
+                iter:    9           residual = 1.809784e-006
+                iter:   10           residual = 6.393905e-007
+                iter:   11           residual = 2.599328e-007
+                iter:   12           residual = 1.274567e-007
+                iter:   13           residual = 6.045065e-008
+                iter:   14           residual = 2.932906e-008
+                iter:   15           residual = 1.125522e-008
+                iter:   16           residual = 4.518131e-009
+
+
+		Solution time: 0.133951 (sec.)
+		total iterations: 16
+Taking step       37 at clock time 2018-12-09-14:15:58.468.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530428e-003
+                iter:    2           residual = 3.750454e-004
+                iter:    3           residual = 1.013379e-004
+                iter:    4           residual = 5.754301e-005
+                iter:    5           residual = 2.954407e-005
+                iter:    6           residual = 1.558922e-005
+                iter:    7           residual = 8.443471e-006
+                iter:    8           residual = 4.330727e-006
+                iter:    9           residual = 1.809782e-006
+                iter:   10           residual = 6.393899e-007
+                iter:   11           residual = 2.599325e-007
+                iter:   12           residual = 1.274566e-007
+                iter:   13           residual = 6.045057e-008
+                iter:   14           residual = 2.932903e-008
+                iter:   15           residual = 1.125521e-008
+                iter:   16           residual = 4.518128e-009
+
+
+		Solution time: 0.134204 (sec.)
+		total iterations: 16
+Taking step       38 at clock time 2018-12-09-14:15:58.626.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530428e-003
+                iter:    2           residual = 3.750451e-004
+                iter:    3           residual = 1.013378e-004
+                iter:    4           residual = 5.754296e-005
+                iter:    5           residual = 2.954405e-005
+                iter:    6           residual = 1.558921e-005
+                iter:    7           residual = 8.443464e-006
+                iter:    8           residual = 4.330723e-006
+                iter:    9           residual = 1.809781e-006
+                iter:   10           residual = 6.393894e-007
+                iter:   11           residual = 2.599323e-007
+                iter:   12           residual = 1.274565e-007
+                iter:   13           residual = 6.045053e-008
+                iter:   14           residual = 2.932901e-008
+                iter:   15           residual = 1.125520e-008
+                iter:   16           residual = 4.518126e-009
+
+
+		Solution time: 0.132539 (sec.)
+		total iterations: 16
+Taking step       39 at clock time 2018-12-09-14:15:58.779.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530429e-003
+                iter:    2           residual = 3.750447e-004
+                iter:    3           residual = 1.013378e-004
+                iter:    4           residual = 5.754291e-005
+                iter:    5           residual = 2.954402e-005
+                iter:    6           residual = 1.558920e-005
+                iter:    7           residual = 8.443456e-006
+                iter:    8           residual = 4.330720e-006
+                iter:    9           residual = 1.809780e-006
+                iter:   10           residual = 6.393893e-007
+                iter:   11           residual = 2.599321e-007
+                iter:   12           residual = 1.274563e-007
+                iter:   13           residual = 6.045047e-008
+                iter:   14           residual = 2.932898e-008
+                iter:   15           residual = 1.125519e-008
+                iter:   16           residual = 4.518125e-009
+
+
+		Solution time: 0.137182 (sec.)
+		total iterations: 16
+Taking step       40 at clock time 2018-12-09-14:15:58.936.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530429e-003
+                iter:    2           residual = 3.750442e-004
+                iter:    3           residual = 1.013376e-004
+                iter:    4           residual = 5.754280e-005
+                iter:    5           residual = 2.954397e-005
+                iter:    6           residual = 1.558917e-005
+                iter:    7           residual = 8.443439e-006
+                iter:    8           residual = 4.330712e-006
+                iter:    9           residual = 1.809778e-006
+                iter:   10           residual = 6.393882e-007
+                iter:   11           residual = 2.599316e-007
+                iter:   12           residual = 1.274561e-007
+                iter:   13           residual = 6.045037e-008
+                iter:   14           residual = 2.932894e-008
+                iter:   15           residual = 1.125518e-008
+                iter:   16           residual = 4.518118e-009
+
+
+		Solution time: 0.135778 (sec.)
+		total iterations: 16
+
+Domain: Dumping all at clock time 2018-12-09-14:15:59.090.
+Globals dumped at 2018-12-09-14:15:59.093.
+Dumping grid boundaries at 2018-12-09-14:15:59.093.
+Dumped grid boundaries at 2018-12-09-14:15:59.093.
+Domain: Sorting electrons0.
+Domain: electrons0 sorted.
+Dumping species data electrons0.
+Dumped electrons0.
+No fluids to dump.
+Domain: Dumping histories at 2018-12-09-14:15:59.142.
+Domain: Histories dumped at 2018-12-09-14:15:59.152.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-09-14:15:59.152.
+Dumping E at 2018-12-09-14:15:59.152.
+Dumped E at 2018-12-09-14:15:59.157.
+Dumping nodalE at 2018-12-09-14:15:59.157.
+Dumped nodalE at 2018-12-09-14:15:59.163.
+Dumping nodalB at 2018-12-09-14:15:59.163.
+Dumped nodalB at 2018-12-09-14:15:59.168.
+Dumping Phi at 2018-12-09-14:15:59.168.
+Dumped Phi at 2018-12-09-14:15:59.171.
+Dumping ChargeDensity at 2018-12-09-14:15:59.171.
+Dumped ChargeDensity at 2018-12-09-14:15:59.174.
+All multiFields dumped at 2018-12-09-14:15:59.175.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-09-14:15:59.175.
+
+Taking step       41 at clock time 2018-12-09-14:15:59.175.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530429e-003
+                iter:    2           residual = 3.750440e-004
+                iter:    3           residual = 1.013375e-004
+                iter:    4           residual = 5.754275e-005
+                iter:    5           residual = 2.954395e-005
+                iter:    6           residual = 1.558916e-005
+                iter:    7           residual = 8.443431e-006
+                iter:    8           residual = 4.330708e-006
+                iter:    9           residual = 1.809776e-006
+                iter:   10           residual = 6.393878e-007
+                iter:   11           residual = 2.599314e-007
+                iter:   12           residual = 1.274560e-007
+                iter:   13           residual = 6.045031e-008
+                iter:   14           residual = 2.932891e-008
+                iter:   15           residual = 1.125517e-008
+                iter:   16           residual = 4.518115e-009
+
+
+		Solution time: 0.145135 (sec.)
+		total iterations: 16
+Taking step       42 at clock time 2018-12-09-14:15:59.340.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530430e-003
+                iter:    2           residual = 3.750434e-004
+                iter:    3           residual = 1.013374e-004
+                iter:    4           residual = 5.754266e-005
+                iter:    5           residual = 2.954391e-005
+                iter:    6           residual = 1.558914e-005
+                iter:    7           residual = 8.443418e-006
+                iter:    8           residual = 4.330702e-006
+                iter:    9           residual = 1.809774e-006
+                iter:   10           residual = 6.393870e-007
+                iter:   11           residual = 2.599310e-007
+                iter:   12           residual = 1.274558e-007
+                iter:   13           residual = 6.045022e-008
+                iter:   14           residual = 2.932888e-008
+                iter:   15           residual = 1.125516e-008
+                iter:   16           residual = 4.518111e-009
+
+
+		Solution time: 0.141575 (sec.)
+		total iterations: 16
+Taking step       43 at clock time 2018-12-09-14:15:59.505.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530430e-003
+                iter:    2           residual = 3.750431e-004
+                iter:    3           residual = 1.013372e-004
+                iter:    4           residual = 5.754258e-005
+                iter:    5           residual = 2.954388e-005
+                iter:    6           residual = 1.558912e-005
+                iter:    7           residual = 8.443405e-006
+                iter:    8           residual = 4.330696e-006
+                iter:    9           residual = 1.809772e-006
+                iter:   10           residual = 6.393863e-007
+                iter:   11           residual = 2.599307e-007
+                iter:   12           residual = 1.274557e-007
+                iter:   13           residual = 6.045015e-008
+                iter:   14           residual = 2.932884e-008
+                iter:   15           residual = 1.125515e-008
+                iter:   16           residual = 4.518106e-009
+
+
+		Solution time: 0.153937 (sec.)
+		total iterations: 16
+Taking step       44 at clock time 2018-12-09-14:15:59.678.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530431e-003
+                iter:    2           residual = 3.750425e-004
+                iter:    3           residual = 1.013371e-004
+                iter:    4           residual = 5.754247e-005
+                iter:    5           residual = 2.954382e-005
+                iter:    6           residual = 1.558909e-005
+                iter:    7           residual = 8.443388e-006
+                iter:    8           residual = 4.330687e-006
+                iter:    9           residual = 1.809770e-006
+                iter:   10           residual = 6.393854e-007
+                iter:   11           residual = 2.599302e-007
+                iter:   12           residual = 1.274554e-007
+                iter:   13           residual = 6.045004e-008
+                iter:   14           residual = 2.932879e-008
+                iter:   15           residual = 1.125514e-008
+                iter:   16           residual = 4.518101e-009
+
+
+		Solution time: 0.137684 (sec.)
+		total iterations: 16
+Taking step       45 at clock time 2018-12-09-14:15:59.834.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530431e-003
+                iter:    2           residual = 3.750421e-004
+                iter:    3           residual = 1.013370e-004
+                iter:    4           residual = 5.754241e-005
+                iter:    5           residual = 2.954380e-005
+                iter:    6           residual = 1.558908e-005
+                iter:    7           residual = 8.443379e-006
+                iter:    8           residual = 4.330683e-006
+                iter:    9           residual = 1.809768e-006
+                iter:   10           residual = 6.393850e-007
+                iter:   11           residual = 2.599300e-007
+                iter:   12           residual = 1.274553e-007
+                iter:   13           residual = 6.044998e-008
+                iter:   14           residual = 2.932877e-008
+                iter:   15           residual = 1.125513e-008
+                iter:   16           residual = 4.518098e-009
+
+
+		Solution time: 0.138125 (sec.)
+		total iterations: 16
+Taking step       46 at clock time 2018-12-09-14:15:59.990.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530432e-003
+                iter:    2           residual = 3.750415e-004
+                iter:    3           residual = 1.013368e-004
+                iter:    4           residual = 5.754230e-005
+                iter:    5           residual = 2.954375e-005
+                iter:    6           residual = 1.558905e-005
+                iter:    7           residual = 8.443360e-006
+                iter:    8           residual = 4.330675e-006
+                iter:    9           residual = 1.809766e-006
+                iter:   10           residual = 6.393838e-007
+                iter:   11           residual = 2.599295e-007
+                iter:   12           residual = 1.274551e-007
+                iter:   13           residual = 6.044985e-008
+                iter:   14           residual = 2.932872e-008
+                iter:   15           residual = 1.125512e-008
+                iter:   16           residual = 4.518090e-009
+
+
+		Solution time: 0.155548 (sec.)
+		total iterations: 16
+Taking step       47 at clock time 2018-12-09-14:16:00.168.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530433e-003
+                iter:    2           residual = 3.750408e-004
+                iter:    3           residual = 1.013366e-004
+                iter:    4           residual = 5.754217e-005
+                iter:    5           residual = 2.954369e-005
+                iter:    6           residual = 1.558902e-005
+                iter:    7           residual = 8.443340e-006
+                iter:    8           residual = 4.330665e-006
+                iter:    9           residual = 1.809763e-006
+                iter:   10           residual = 6.393828e-007
+                iter:   11           residual = 2.599290e-007
+                iter:   12           residual = 1.274548e-007
+                iter:   13           residual = 6.044973e-008
+                iter:   14           residual = 2.932866e-008
+                iter:   15           residual = 1.125510e-008
+                iter:   16           residual = 4.518085e-009
+
+
+		Solution time: 0.125711 (sec.)
+		total iterations: 16
+Taking step       48 at clock time 2018-12-09-14:16:00.312.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530433e-003
+                iter:    2           residual = 3.750405e-004
+                iter:    3           residual = 1.013365e-004
+                iter:    4           residual = 5.754212e-005
+                iter:    5           residual = 2.954367e-005
+                iter:    6           residual = 1.558900e-005
+                iter:    7           residual = 8.443332e-006
+                iter:    8           residual = 4.330661e-006
+                iter:    9           residual = 1.809761e-006
+                iter:   10           residual = 6.393824e-007
+                iter:   11           residual = 2.599287e-007
+                iter:   12           residual = 1.274547e-007
+                iter:   13           residual = 6.044967e-008
+                iter:   14           residual = 2.932864e-008
+                iter:   15           residual = 1.125510e-008
+                iter:   16           residual = 4.518082e-009
+
+
+		Solution time: 0.140743 (sec.)
+		total iterations: 16
+Taking step       49 at clock time 2018-12-09-14:16:00.472.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530433e-003
+                iter:    2           residual = 3.750400e-004
+                iter:    3           residual = 1.013364e-004
+                iter:    4           residual = 5.754204e-005
+                iter:    5           residual = 2.954363e-005
+                iter:    6           residual = 1.558899e-005
+                iter:    7           residual = 8.443321e-006
+                iter:    8           residual = 4.330656e-006
+                iter:    9           residual = 1.809760e-006
+                iter:   10           residual = 6.393818e-007
+                iter:   11           residual = 2.599284e-007
+                iter:   12           residual = 1.274545e-007
+                iter:   13           residual = 6.044960e-008
+                iter:   14           residual = 2.932860e-008
+                iter:   15           residual = 1.125509e-008
+                iter:   16           residual = 4.518079e-009
+
+
+		Solution time: 0.142260 (sec.)
+		total iterations: 16
+Taking step       50 at clock time 2018-12-09-14:16:00.634.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530434e-003
+                iter:    2           residual = 3.750396e-004
+                iter:    3           residual = 1.013362e-004
+                iter:    4           residual = 5.754194e-005
+                iter:    5           residual = 2.954358e-005
+                iter:    6           residual = 1.558896e-005
+                iter:    7           residual = 8.443303e-006
+                iter:    8           residual = 4.330648e-006
+                iter:    9           residual = 1.809757e-006
+                iter:   10           residual = 6.393808e-007
+                iter:   11           residual = 2.599279e-007
+                iter:   12           residual = 1.274543e-007
+                iter:   13           residual = 6.044949e-008
+                iter:   14           residual = 2.932855e-008
+                iter:   15           residual = 1.125507e-008
+                iter:   16           residual = 4.518072e-009
+
+
+		Solution time: 0.143649 (sec.)
+		total iterations: 16
+
+Domain: Dumping all at clock time 2018-12-09-14:16:00.799.
+Globals dumped at 2018-12-09-14:16:00.802.
+Dumping grid boundaries at 2018-12-09-14:16:00.802.
+Dumped grid boundaries at 2018-12-09-14:16:00.802.
+Domain: Sorting electrons0.
+Domain: electrons0 sorted.
+Dumping species data electrons0.
+Dumped electrons0.
+No fluids to dump.
+Domain: Dumping histories at 2018-12-09-14:16:00.842.
+Domain: Histories dumped at 2018-12-09-14:16:00.852.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-09-14:16:00.852.
+Dumping E at 2018-12-09-14:16:00.852.
+Dumped E at 2018-12-09-14:16:00.857.
+Dumping nodalE at 2018-12-09-14:16:00.857.
+Dumped nodalE at 2018-12-09-14:16:00.864.
+Dumping nodalB at 2018-12-09-14:16:00.865.
+Dumped nodalB at 2018-12-09-14:16:00.870.
+Dumping Phi at 2018-12-09-14:16:00.870.
+Dumped Phi at 2018-12-09-14:16:00.873.
+Dumping ChargeDensity at 2018-12-09-14:16:00.873.
+Dumped ChargeDensity at 2018-12-09-14:16:00.876.
+All multiFields dumped at 2018-12-09-14:16:00.878.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-09-14:16:00.878.
+
+Taking step       51 at clock time 2018-12-09-14:16:00.878.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530435e-003
+                iter:    2           residual = 3.750388e-004
+                iter:    3           residual = 1.013360e-004
+                iter:    4           residual = 5.754180e-005
+                iter:    5           residual = 2.954352e-005
+                iter:    6           residual = 1.558892e-005
+                iter:    7           residual = 8.443282e-006
+                iter:    8           residual = 4.330638e-006
+                iter:    9           residual = 1.809754e-006
+                iter:   10           residual = 6.393794e-007
+                iter:   11           residual = 2.599273e-007
+                iter:   12           residual = 1.274540e-007
+                iter:   13           residual = 6.044934e-008
+                iter:   14           residual = 2.932851e-008
+                iter:   15           residual = 1.125506e-008
+                iter:   16           residual = 4.518063e-009
+
+
+		Solution time: 0.136135 (sec.)
+		total iterations: 16
+Taking step       52 at clock time 2018-12-09-14:16:01.038.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530435e-003
+                iter:    2           residual = 3.750384e-004
+                iter:    3           residual = 1.013358e-004
+                iter:    4           residual = 5.754171e-005
+                iter:    5           residual = 2.954348e-005
+                iter:    6           residual = 1.558890e-005
+                iter:    7           residual = 8.443268e-006
+                iter:    8           residual = 4.330631e-006
+                iter:    9           residual = 1.809752e-006
+                iter:   10           residual = 6.393787e-007
+                iter:   11           residual = 2.599270e-007
+                iter:   12           residual = 1.274538e-007
+                iter:   13           residual = 6.044926e-008
+                iter:   14           residual = 2.932846e-008
+                iter:   15           residual = 1.125505e-008
+                iter:   16           residual = 4.518059e-009
+
+
+		Solution time: 0.132006 (sec.)
+		total iterations: 16
+Taking step       53 at clock time 2018-12-09-14:16:01.191.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530436e-003
+                iter:    2           residual = 3.750378e-004
+                iter:    3           residual = 1.013357e-004
+                iter:    4           residual = 5.754162e-005
+                iter:    5           residual = 2.954344e-005
+                iter:    6           residual = 1.558888e-005
+                iter:    7           residual = 8.443253e-006
+                iter:    8           residual = 4.330625e-006
+                iter:    9           residual = 1.809750e-006
+                iter:   10           residual = 6.393780e-007
+                iter:   11           residual = 2.599266e-007
+                iter:   12           residual = 1.274536e-007
+                iter:   13           residual = 6.044916e-008
+                iter:   14           residual = 2.932842e-008
+                iter:   15           residual = 1.125504e-008
+                iter:   16           residual = 4.518054e-009
+
+
+		Solution time: 0.130002 (sec.)
+		total iterations: 16
+Taking step       54 at clock time 2018-12-09-14:16:01.338.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530436e-003
+                iter:    2           residual = 3.750373e-004
+                iter:    3           residual = 1.013356e-004
+                iter:    4           residual = 5.754154e-005
+                iter:    5           residual = 2.954340e-005
+                iter:    6           residual = 1.558886e-005
+                iter:    7           residual = 8.443242e-006
+                iter:    8           residual = 4.330619e-006
+                iter:    9           residual = 1.809748e-006
+                iter:   10           residual = 6.393773e-007
+                iter:   11           residual = 2.599262e-007
+                iter:   12           residual = 1.274535e-007
+                iter:   13           residual = 6.044908e-008
+                iter:   14           residual = 2.932839e-008
+                iter:   15           residual = 1.125503e-008
+                iter:   16           residual = 4.518051e-009
+
+
+		Solution time: 0.135437 (sec.)
+		total iterations: 16
+Taking step       55 at clock time 2018-12-09-14:16:01.494.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530437e-003
+                iter:    2           residual = 3.750365e-004
+                iter:    3           residual = 1.013353e-004
+                iter:    4           residual = 5.754139e-005
+                iter:    5           residual = 2.954333e-005
+                iter:    6           residual = 1.558882e-005
+                iter:    7           residual = 8.443217e-006
+                iter:    8           residual = 4.330607e-006
+                iter:    9           residual = 1.809744e-006
+                iter:   10           residual = 6.393761e-007
+                iter:   11           residual = 2.599256e-007
+                iter:   12           residual = 1.274532e-007
+                iter:   13           residual = 6.044892e-008
+                iter:   14           residual = 2.932832e-008
+                iter:   15           residual = 1.125501e-008
+                iter:   16           residual = 4.518043e-009
+
+
+		Solution time: 0.131978 (sec.)
+		total iterations: 16
+Taking step       56 at clock time 2018-12-09-14:16:01.652.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530438e-003
+                iter:    2           residual = 3.750359e-004
+                iter:    3           residual = 1.013351e-004
+                iter:    4           residual = 5.754125e-005
+                iter:    5           residual = 2.954327e-005
+                iter:    6           residual = 1.558879e-005
+                iter:    7           residual = 8.443195e-006
+                iter:    8           residual = 4.330597e-006
+                iter:    9           residual = 1.809741e-006
+                iter:   10           residual = 6.393748e-007
+                iter:   11           residual = 2.599250e-007
+                iter:   12           residual = 1.274528e-007
+                iter:   13           residual = 6.044878e-008
+                iter:   14           residual = 2.932826e-008
+                iter:   15           residual = 1.125499e-008
+                iter:   16           residual = 4.518035e-009
+
+
+		Solution time: 0.132425 (sec.)
+		total iterations: 16
+Taking step       57 at clock time 2018-12-09-14:16:01.806.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530439e-003
+                iter:    2           residual = 3.750353e-004
+                iter:    3           residual = 1.013349e-004
+                iter:    4           residual = 5.754114e-005
+                iter:    5           residual = 2.954322e-005
+                iter:    6           residual = 1.558876e-005
+                iter:    7           residual = 8.443179e-006
+                iter:    8           residual = 4.330589e-006
+                iter:    9           residual = 1.809738e-006
+                iter:   10           residual = 6.393738e-007
+                iter:   11           residual = 2.599246e-007
+                iter:   12           residual = 1.274526e-007
+                iter:   13           residual = 6.044868e-008
+                iter:   14           residual = 2.932821e-008
+                iter:   15           residual = 1.125498e-008
+                iter:   16           residual = 4.518029e-009
+
+
+		Solution time: 0.139508 (sec.)
+		total iterations: 16
+Taking step       58 at clock time 2018-12-09-14:16:01.965.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530439e-003
+                iter:    2           residual = 3.750346e-004
+                iter:    3           residual = 1.013348e-004
+                iter:    4           residual = 5.754103e-005
+                iter:    5           residual = 2.954317e-005
+                iter:    6           residual = 1.558874e-005
+                iter:    7           residual = 8.443162e-006
+                iter:    8           residual = 4.330582e-006
+                iter:    9           residual = 1.809736e-006
+                iter:   10           residual = 6.393731e-007
+                iter:   11           residual = 2.599241e-007
+                iter:   12           residual = 1.274524e-007
+                iter:   13           residual = 6.044856e-008
+                iter:   14           residual = 2.932816e-008
+                iter:   15           residual = 1.125497e-008
+                iter:   16           residual = 4.518025e-009
+
+
+		Solution time: 0.132929 (sec.)
+		total iterations: 16
+Taking step       59 at clock time 2018-12-09-14:16:02.118.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530440e-003
+                iter:    2           residual = 3.750336e-004
+                iter:    3           residual = 1.013345e-004
+                iter:    4           residual = 5.754085e-005
+                iter:    5           residual = 2.954309e-005
+                iter:    6           residual = 1.558869e-005
+                iter:    7           residual = 8.443133e-006
+                iter:    8           residual = 4.330567e-006
+                iter:    9           residual = 1.809732e-006
+                iter:   10           residual = 6.393714e-007
+                iter:   11           residual = 2.599233e-007
+                iter:   12           residual = 1.274520e-007
+                iter:   13           residual = 6.044837e-008
+                iter:   14           residual = 2.932809e-008
+                iter:   15           residual = 1.125494e-008
+                iter:   16           residual = 4.518014e-009
+
+
+		Solution time: 0.135997 (sec.)
+		total iterations: 16
+Taking step       60 at clock time 2018-12-09-14:16:02.276.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530441e-003
+                iter:    2           residual = 3.750330e-004
+                iter:    3           residual = 1.013343e-004
+                iter:    4           residual = 5.754072e-005
+                iter:    5           residual = 2.954304e-005
+                iter:    6           residual = 1.558866e-005
+                iter:    7           residual = 8.443114e-006
+                iter:    8           residual = 4.330558e-006
+                iter:    9           residual = 1.809729e-006
+                iter:   10           residual = 6.393703e-007
+                iter:   11           residual = 2.599228e-007
+                iter:   12           residual = 1.274518e-007
+                iter:   13           residual = 6.044825e-008
+                iter:   14           residual = 2.932803e-008
+                iter:   15           residual = 1.125493e-008
+                iter:   16           residual = 4.518007e-009
+
+
+		Solution time: 0.124268 (sec.)
+		total iterations: 16
+
+Domain: Dumping all at clock time 2018-12-09-14:16:02.419.
+Globals dumped at 2018-12-09-14:16:02.423.
+Dumping grid boundaries at 2018-12-09-14:16:02.423.
+Dumped grid boundaries at 2018-12-09-14:16:02.423.
+Domain: Sorting electrons0.
+Domain: electrons0 sorted.
+Dumping species data electrons0.
+Dumped electrons0.
+No fluids to dump.
+Domain: Dumping histories at 2018-12-09-14:16:02.463.
+Domain: Histories dumped at 2018-12-09-14:16:02.473.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-09-14:16:02.473.
+Dumping E at 2018-12-09-14:16:02.474.
+Dumped E at 2018-12-09-14:16:02.479.
+Dumping nodalE at 2018-12-09-14:16:02.479.
+Dumped nodalE at 2018-12-09-14:16:02.484.
+Dumping nodalB at 2018-12-09-14:16:02.484.
+Dumped nodalB at 2018-12-09-14:16:02.491.
+Dumping Phi at 2018-12-09-14:16:02.491.
+Dumped Phi at 2018-12-09-14:16:02.493.
+Dumping ChargeDensity at 2018-12-09-14:16:02.494.
+Dumped ChargeDensity at 2018-12-09-14:16:02.496.
+All multiFields dumped at 2018-12-09-14:16:02.497.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-09-14:16:02.498.
+
+Taking step       61 at clock time 2018-12-09-14:16:02.498.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530442e-003
+                iter:    2           residual = 3.750322e-004
+                iter:    3           residual = 1.013341e-004
+                iter:    4           residual = 5.754060e-005
+                iter:    5           residual = 2.954298e-005
+                iter:    6           residual = 1.558863e-005
+                iter:    7           residual = 8.443095e-006
+                iter:    8           residual = 4.330550e-006
+                iter:    9           residual = 1.809726e-006
+                iter:   10           residual = 6.393694e-007
+                iter:   11           residual = 2.599222e-007
+                iter:   12           residual = 1.274515e-007
+                iter:   13           residual = 6.044813e-008
+                iter:   14           residual = 2.932798e-008
+                iter:   15           residual = 1.125492e-008
+                iter:   16           residual = 4.518003e-009
+
+
+		Solution time: 0.140466 (sec.)
+		total iterations: 16
+Taking step       62 at clock time 2018-12-09-14:16:02.657.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530443e-003
+                iter:    2           residual = 3.750315e-004
+                iter:    3           residual = 1.013338e-004
+                iter:    4           residual = 5.754044e-005
+                iter:    5           residual = 2.954290e-005
+                iter:    6           residual = 1.558859e-005
+                iter:    7           residual = 8.443069e-006
+                iter:    8           residual = 4.330537e-006
+                iter:    9           residual = 1.809722e-006
+                iter:   10           residual = 6.393679e-007
+                iter:   11           residual = 2.599216e-007
+                iter:   12           residual = 1.274512e-007
+                iter:   13           residual = 6.044796e-008
+                iter:   14           residual = 2.932791e-008
+                iter:   15           residual = 1.125489e-008
+                iter:   16           residual = 4.517992e-009
+
+
+		Solution time: 0.136433 (sec.)
+		total iterations: 16
+Taking step       63 at clock time 2018-12-09-14:16:02.814.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530443e-003
+                iter:    2           residual = 3.750310e-004
+                iter:    3           residual = 1.013337e-004
+                iter:    4           residual = 5.754034e-005
+                iter:    5           residual = 2.954286e-005
+                iter:    6           residual = 1.558857e-005
+                iter:    7           residual = 8.443054e-006
+                iter:    8           residual = 4.330530e-006
+                iter:    9           residual = 1.809720e-006
+                iter:   10           residual = 6.393670e-007
+                iter:   11           residual = 2.599211e-007
+                iter:   12           residual = 1.274510e-007
+                iter:   13           residual = 6.044787e-008
+                iter:   14           residual = 2.932787e-008
+                iter:   15           residual = 1.125488e-008
+                iter:   16           residual = 4.517986e-009
+
+
+		Solution time: 0.129374 (sec.)
+		total iterations: 16
+Taking step       64 at clock time 2018-12-09-14:16:02.962.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530444e-003
+                iter:    2           residual = 3.750302e-004
+                iter:    3           residual = 1.013334e-004
+                iter:    4           residual = 5.754021e-005
+                iter:    5           residual = 2.954281e-005
+                iter:    6           residual = 1.558854e-005
+                iter:    7           residual = 8.443034e-006
+                iter:    8           residual = 4.330520e-006
+                iter:    9           residual = 1.809717e-006
+                iter:   10           residual = 6.393660e-007
+                iter:   11           residual = 2.599206e-007
+                iter:   12           residual = 1.274507e-007
+                iter:   13           residual = 6.044773e-008
+                iter:   14           residual = 2.932781e-008
+                iter:   15           residual = 1.125486e-008
+                iter:   16           residual = 4.517981e-009
+
+
+		Solution time: 0.136591 (sec.)
+		total iterations: 16
+Taking step       65 at clock time 2018-12-09-14:16:03.120.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530445e-003
+                iter:    2           residual = 3.750290e-004
+                iter:    3           residual = 1.013331e-004
+                iter:    4           residual = 5.754000e-005
+                iter:    5           residual = 2.954270e-005
+                iter:    6           residual = 1.558849e-005
+                iter:    7           residual = 8.442999e-006
+                iter:    8           residual = 4.330504e-006
+                iter:    9           residual = 1.809712e-006
+                iter:   10           residual = 6.393642e-007
+                iter:   11           residual = 2.599196e-007
+                iter:   12           residual = 1.274502e-007
+                iter:   13           residual = 6.044751e-008
+                iter:   14           residual = 2.932771e-008
+                iter:   15           residual = 1.125484e-008
+                iter:   16           residual = 4.517970e-009
+
+
+		Solution time: 0.132905 (sec.)
+		total iterations: 16
+Taking step       66 at clock time 2018-12-09-14:16:03.274.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530446e-003
+                iter:    2           residual = 3.750282e-004
+                iter:    3           residual = 1.013329e-004
+                iter:    4           residual = 5.753986e-005
+                iter:    5           residual = 2.954265e-005
+                iter:    6           residual = 1.558845e-005
+                iter:    7           residual = 8.442979e-006
+                iter:    8           residual = 4.330495e-006
+                iter:    9           residual = 1.809709e-006
+                iter:   10           residual = 6.393630e-007
+                iter:   11           residual = 2.599191e-007
+                iter:   12           residual = 1.274499e-007
+                iter:   13           residual = 6.044737e-008
+                iter:   14           residual = 2.932766e-008
+                iter:   15           residual = 1.125482e-008
+                iter:   16           residual = 4.517963e-009
+
+
+		Solution time: 0.128184 (sec.)
+		total iterations: 16
+Taking step       67 at clock time 2018-12-09-14:16:03.423.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530447e-003
+                iter:    2           residual = 3.750275e-004
+                iter:    3           residual = 1.013327e-004
+                iter:    4           residual = 5.753973e-005
+                iter:    5           residual = 2.954259e-005
+                iter:    6           residual = 1.558842e-005
+                iter:    7           residual = 8.442959e-006
+                iter:    8           residual = 4.330485e-006
+                iter:    9           residual = 1.809706e-006
+                iter:   10           residual = 6.393619e-007
+                iter:   11           residual = 2.599185e-007
+                iter:   12           residual = 1.274497e-007
+                iter:   13           residual = 6.044724e-008
+                iter:   14           residual = 2.932760e-008
+                iter:   15           residual = 1.125481e-008
+                iter:   16           residual = 4.517957e-009
+
+
+		Solution time: 0.222206 (sec.)
+		total iterations: 16
+Taking step       68 at clock time 2018-12-09-14:16:03.665.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530448e-003
+                iter:    2           residual = 3.750265e-004
+                iter:    3           residual = 1.013324e-004
+                iter:    4           residual = 5.753956e-005
+                iter:    5           residual = 2.954251e-005
+                iter:    6           residual = 1.558838e-005
+                iter:    7           residual = 8.442931e-006
+                iter:    8           residual = 4.330472e-006
+                iter:    9           residual = 1.809702e-006
+                iter:   10           residual = 6.393605e-007
+                iter:   11           residual = 2.599177e-007
+                iter:   12           residual = 1.274493e-007
+                iter:   13           residual = 6.044706e-008
+                iter:   14           residual = 2.932751e-008
+                iter:   15           residual = 1.125479e-008
+                iter:   16           residual = 4.517948e-009
+
+
+		Solution time: 0.132610 (sec.)
+		total iterations: 16
+Taking step       69 at clock time 2018-12-09-14:16:03.818.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530448e-003
+                iter:    2           residual = 3.750258e-004
+                iter:    3           residual = 1.013322e-004
+                iter:    4           residual = 5.753943e-005
+                iter:    5           residual = 2.954245e-005
+                iter:    6           residual = 1.558834e-005
+                iter:    7           residual = 8.442910e-006
+                iter:    8           residual = 4.330463e-006
+                iter:    9           residual = 1.809699e-006
+                iter:   10           residual = 6.393593e-007
+                iter:   11           residual = 2.599172e-007
+                iter:   12           residual = 1.274490e-007
+                iter:   13           residual = 6.044693e-008
+                iter:   14           residual = 2.932747e-008
+                iter:   15           residual = 1.125477e-008
+                iter:   16           residual = 4.517938e-009
+
+
+		Solution time: 0.130767 (sec.)
+		total iterations: 16
+Taking step       70 at clock time 2018-12-09-14:16:03.968.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530450e-003
+                iter:    2           residual = 3.750248e-004
+                iter:    3           residual = 1.013319e-004
+                iter:    4           residual = 5.753923e-005
+                iter:    5           residual = 2.954236e-005
+                iter:    6           residual = 1.558830e-005
+                iter:    7           residual = 8.442879e-006
+                iter:    8           residual = 4.330448e-006
+                iter:    9           residual = 1.809694e-006
+                iter:   10           residual = 6.393576e-007
+                iter:   11           residual = 2.599163e-007
+                iter:   12           residual = 1.274486e-007
+                iter:   13           residual = 6.044672e-008
+                iter:   14           residual = 2.932737e-008
+                iter:   15           residual = 1.125474e-008
+                iter:   16           residual = 4.517929e-009
+
+
+		Solution time: 0.128592 (sec.)
+		total iterations: 16
+
+Domain: Dumping all at clock time 2018-12-09-14:16:04.119.
+Globals dumped at 2018-12-09-14:16:04.123.
+Dumping grid boundaries at 2018-12-09-14:16:04.123.
+Dumped grid boundaries at 2018-12-09-14:16:04.123.
+Domain: Sorting electrons0.
+Domain: electrons0 sorted.
+Dumping species data electrons0.
+Dumped electrons0.
+No fluids to dump.
+Domain: Dumping histories at 2018-12-09-14:16:04.167.
+Domain: Histories dumped at 2018-12-09-14:16:04.178.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-09-14:16:04.178.
+Dumping E at 2018-12-09-14:16:04.178.
+Dumped E at 2018-12-09-14:16:04.183.
+Dumping nodalE at 2018-12-09-14:16:04.183.
+Dumped nodalE at 2018-12-09-14:16:04.190.
+Dumping nodalB at 2018-12-09-14:16:04.190.
+Dumped nodalB at 2018-12-09-14:16:04.197.
+Dumping Phi at 2018-12-09-14:16:04.197.
+Dumped Phi at 2018-12-09-14:16:04.200.
+Dumping ChargeDensity at 2018-12-09-14:16:04.200.
+Dumped ChargeDensity at 2018-12-09-14:16:04.203.
+All multiFields dumped at 2018-12-09-14:16:04.204.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-09-14:16:04.205.
+
+Taking step       71 at clock time 2018-12-09-14:16:04.205.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530451e-003
+                iter:    2           residual = 3.750237e-004
+                iter:    3           residual = 1.013315e-004
+                iter:    4           residual = 5.753902e-005
+                iter:    5           residual = 2.954226e-005
+                iter:    6           residual = 1.558825e-005
+                iter:    7           residual = 8.442846e-006
+                iter:    8           residual = 4.330433e-006
+                iter:    9           residual = 1.809689e-006
+                iter:   10           residual = 6.393559e-007
+                iter:   11           residual = 2.599155e-007
+                iter:   12           residual = 1.274482e-007
+                iter:   13           residual = 6.044652e-008
+                iter:   14           residual = 2.932728e-008
+                iter:   15           residual = 1.125472e-008
+                iter:   16           residual = 4.517917e-009
+
+
+		Solution time: 0.150508 (sec.)
+		total iterations: 16
+Taking step       72 at clock time 2018-12-09-14:16:04.377.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530452e-003
+                iter:    2           residual = 3.750229e-004
+                iter:    3           residual = 1.013313e-004
+                iter:    4           residual = 5.753889e-005
+                iter:    5           residual = 2.954221e-005
+                iter:    6           residual = 1.558821e-005
+                iter:    7           residual = 8.442827e-006
+                iter:    8           residual = 4.330423e-006
+                iter:    9           residual = 1.809686e-006
+                iter:   10           residual = 6.393548e-007
+                iter:   11           residual = 2.599149e-007
+                iter:   12           residual = 1.274479e-007
+                iter:   13           residual = 6.044638e-008
+                iter:   14           residual = 2.932723e-008
+                iter:   15           residual = 1.125471e-008
+                iter:   16           residual = 4.517912e-009
+
+
+		Solution time: 0.147193 (sec.)
+		total iterations: 16
+Taking step       73 at clock time 2018-12-09-14:16:04.546.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530453e-003
+                iter:    2           residual = 3.750220e-004
+                iter:    3           residual = 1.013310e-004
+                iter:    4           residual = 5.753870e-005
+                iter:    5           residual = 2.954212e-005
+                iter:    6           residual = 1.558817e-005
+                iter:    7           residual = 8.442796e-006
+                iter:    8           residual = 4.330409e-006
+                iter:    9           residual = 1.809681e-006
+                iter:   10           residual = 6.393532e-007
+                iter:   11           residual = 2.599141e-007
+                iter:   12           residual = 1.274475e-007
+                iter:   13           residual = 6.044619e-008
+                iter:   14           residual = 2.932714e-008
+                iter:   15           residual = 1.125468e-008
+                iter:   16           residual = 4.517901e-009
+
+
+		Solution time: 0.144923 (sec.)
+		total iterations: 16
+Taking step       74 at clock time 2018-12-09-14:16:04.715.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530454e-003
+                iter:    2           residual = 3.750208e-004
+                iter:    3           residual = 1.013307e-004
+                iter:    4           residual = 5.753851e-005
+                iter:    5           residual = 2.954203e-005
+                iter:    6           residual = 1.558812e-005
+                iter:    7           residual = 8.442767e-006
+                iter:    8           residual = 4.330395e-006
+                iter:    9           residual = 1.809677e-006
+                iter:   10           residual = 6.393514e-007
+                iter:   11           residual = 2.599133e-007
+                iter:   12           residual = 1.274471e-007
+                iter:   13           residual = 6.044599e-008
+                iter:   14           residual = 2.932707e-008
+                iter:   15           residual = 1.125466e-008
+                iter:   16           residual = 4.517890e-009
+
+
+		Solution time: 0.144724 (sec.)
+		total iterations: 16
+Taking step       75 at clock time 2018-12-09-14:16:04.884.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530455e-003
+                iter:    2           residual = 3.750198e-004
+                iter:    3           residual = 1.013304e-004
+                iter:    4           residual = 5.753833e-005
+                iter:    5           residual = 2.954195e-005
+                iter:    6           residual = 1.558808e-005
+                iter:    7           residual = 8.442738e-006
+                iter:    8           residual = 4.330382e-006
+                iter:    9           residual = 1.809673e-006
+                iter:   10           residual = 6.393500e-007
+                iter:   11           residual = 2.599125e-007
+                iter:   12           residual = 1.274467e-007
+                iter:   13           residual = 6.044581e-008
+                iter:   14           residual = 2.932697e-008
+                iter:   15           residual = 1.125464e-008
+                iter:   16           residual = 4.517883e-009
+
+
+		Solution time: 0.147957 (sec.)
+		total iterations: 16
+Taking step       76 at clock time 2018-12-09-14:16:05.056.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530456e-003
+                iter:    2           residual = 3.750188e-004
+                iter:    3           residual = 1.013301e-004
+                iter:    4           residual = 5.753813e-005
+                iter:    5           residual = 2.954186e-005
+                iter:    6           residual = 1.558803e-005
+                iter:    7           residual = 8.442707e-006
+                iter:    8           residual = 4.330366e-006
+                iter:    9           residual = 1.809668e-006
+                iter:   10           residual = 6.393481e-007
+                iter:   11           residual = 2.599116e-007
+                iter:   12           residual = 1.274462e-007
+                iter:   13           residual = 6.044560e-008
+                iter:   14           residual = 2.932689e-008
+                iter:   15           residual = 1.125461e-008
+                iter:   16           residual = 4.517872e-009
+
+
+		Solution time: 0.138284 (sec.)
+		total iterations: 16
+Taking step       77 at clock time 2018-12-09-14:16:05.229.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530457e-003
+                iter:    2           residual = 3.750175e-004
+                iter:    3           residual = 1.013297e-004
+                iter:    4           residual = 5.753789e-005
+                iter:    5           residual = 2.954175e-005
+                iter:    6           residual = 1.558797e-005
+                iter:    7           residual = 8.442669e-006
+                iter:    8           residual = 4.330349e-006
+                iter:    9           residual = 1.809663e-006
+                iter:   10           residual = 6.393462e-007
+                iter:   11           residual = 2.599106e-007
+                iter:   12           residual = 1.274457e-007
+                iter:   13           residual = 6.044536e-008
+                iter:   14           residual = 2.932678e-008
+                iter:   15           residual = 1.125458e-008
+                iter:   16           residual = 4.517860e-009
+
+
+		Solution time: 0.140303 (sec.)
+		total iterations: 16
+Taking step       78 at clock time 2018-12-09-14:16:05.392.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530459e-003
+                iter:    2           residual = 3.750165e-004
+                iter:    3           residual = 1.013294e-004
+                iter:    4           residual = 5.753769e-005
+                iter:    5           residual = 2.954166e-005
+                iter:    6           residual = 1.558792e-005
+                iter:    7           residual = 8.442638e-006
+                iter:    8           residual = 4.330334e-006
+                iter:    9           residual = 1.809658e-006
+                iter:   10           residual = 6.393443e-007
+                iter:   11           residual = 2.599098e-007
+                iter:   12           residual = 1.274453e-007
+                iter:   13           residual = 6.044516e-008
+                iter:   14           residual = 2.932670e-008
+                iter:   15           residual = 1.125456e-008
+                iter:   16           residual = 4.517847e-009
+
+
+		Solution time: 0.134096 (sec.)
+		total iterations: 16
+Taking step       79 at clock time 2018-12-09-14:16:05.551.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530460e-003
+                iter:    2           residual = 3.750152e-004
+                iter:    3           residual = 1.013290e-004
+                iter:    4           residual = 5.753746e-005
+                iter:    5           residual = 2.954156e-005
+                iter:    6           residual = 1.558786e-005
+                iter:    7           residual = 8.442602e-006
+                iter:    8           residual = 4.330317e-006
+                iter:    9           residual = 1.809652e-006
+                iter:   10           residual = 6.393424e-007
+                iter:   11           residual = 2.599088e-007
+                iter:   12           residual = 1.274449e-007
+                iter:   13           residual = 6.044492e-008
+                iter:   14           residual = 2.932660e-008
+                iter:   15           residual = 1.125453e-008
+                iter:   16           residual = 4.517834e-009
+
+
+		Solution time: 0.141731 (sec.)
+		total iterations: 16
+Taking step       80 at clock time 2018-12-09-14:16:05.724.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530461e-003
+                iter:    2           residual = 3.750145e-004
+                iter:    3           residual = 1.013288e-004
+                iter:    4           residual = 5.753732e-005
+                iter:    5           residual = 2.954149e-005
+                iter:    6           residual = 1.558783e-005
+                iter:    7           residual = 8.442581e-006
+                iter:    8           residual = 4.330307e-006
+                iter:    9           residual = 1.809649e-006
+                iter:   10           residual = 6.393413e-007
+                iter:   11           residual = 2.599082e-007
+                iter:   12           residual = 1.274446e-007
+                iter:   13           residual = 6.044478e-008
+                iter:   14           residual = 2.932654e-008
+                iter:   15           residual = 1.125451e-008
+                iter:   16           residual = 4.517828e-009
+
+
+		Solution time: 0.137815 (sec.)
+		total iterations: 16
+
+Domain: Dumping all at clock time 2018-12-09-14:16:05.891.
+Globals dumped at 2018-12-09-14:16:05.894.
+Dumping grid boundaries at 2018-12-09-14:16:05.894.
+Dumped grid boundaries at 2018-12-09-14:16:05.894.
+Domain: Sorting electrons0.
+Domain: electrons0 sorted.
+Dumping species data electrons0.
+Dumped electrons0.
+No fluids to dump.
+Domain: Dumping histories at 2018-12-09-14:16:05.943.
+Domain: Histories dumped at 2018-12-09-14:16:05.954.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-09-14:16:05.954.
+Dumping E at 2018-12-09-14:16:05.955.
+Dumped E at 2018-12-09-14:16:05.960.
+Dumping nodalE at 2018-12-09-14:16:05.960.
+Dumped nodalE at 2018-12-09-14:16:05.966.
+Dumping nodalB at 2018-12-09-14:16:05.966.
+Dumped nodalB at 2018-12-09-14:16:05.972.
+Dumping Phi at 2018-12-09-14:16:05.972.
+Dumped Phi at 2018-12-09-14:16:05.974.
+Dumping ChargeDensity at 2018-12-09-14:16:05.974.
+Dumped ChargeDensity at 2018-12-09-14:16:05.977.
+All multiFields dumped at 2018-12-09-14:16:05.978.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-09-14:16:05.979.
+
+Taking step       81 at clock time 2018-12-09-14:16:05.979.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530463e-003
+                iter:    2           residual = 3.750128e-004
+                iter:    3           residual = 1.013283e-004
+                iter:    4           residual = 5.753703e-005
+                iter:    5           residual = 2.954136e-005
+                iter:    6           residual = 1.558776e-005
+                iter:    7           residual = 8.442534e-006
+                iter:    8           residual = 4.330286e-006
+                iter:    9           residual = 1.809643e-006
+                iter:   10           residual = 6.393389e-007
+                iter:   11           residual = 2.599069e-007
+                iter:   12           residual = 1.274439e-007
+                iter:   13           residual = 6.044449e-008
+                iter:   14           residual = 2.932641e-008
+                iter:   15           residual = 1.125448e-008
+                iter:   16           residual = 4.517814e-009
+
+
+		Solution time: 0.143842 (sec.)
+		total iterations: 16
+Taking step       82 at clock time 2018-12-09-14:16:06.145.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530464e-003
+                iter:    2           residual = 3.750121e-004
+                iter:    3           residual = 1.013281e-004
+                iter:    4           residual = 5.753687e-005
+                iter:    5           residual = 2.954129e-005
+                iter:    6           residual = 1.558772e-005
+                iter:    7           residual = 8.442508e-006
+                iter:    8           residual = 4.330273e-006
+                iter:    9           residual = 1.809638e-006
+                iter:   10           residual = 6.393373e-007
+                iter:   11           residual = 2.599062e-007
+                iter:   12           residual = 1.274436e-007
+                iter:   13           residual = 6.044432e-008
+                iter:   14           residual = 2.932634e-008
+                iter:   15           residual = 1.125445e-008
+                iter:   16           residual = 4.517804e-009
+
+
+		Solution time: 0.156833 (sec.)
+		total iterations: 16
+Taking step       83 at clock time 2018-12-09-14:16:06.323.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530465e-003
+                iter:    2           residual = 3.750104e-004
+                iter:    3           residual = 1.013276e-004
+                iter:    4           residual = 5.753657e-005
+                iter:    5           residual = 2.954116e-005
+                iter:    6           residual = 1.558764e-005
+                iter:    7           residual = 8.442463e-006
+                iter:    8           residual = 4.330251e-006
+                iter:    9           residual = 1.809632e-006
+                iter:   10           residual = 6.393347e-007
+                iter:   11           residual = 2.599050e-007
+                iter:   12           residual = 1.274430e-007
+                iter:   13           residual = 6.044402e-008
+                iter:   14           residual = 2.932622e-008
+                iter:   15           residual = 1.125442e-008
+                iter:   16           residual = 4.517788e-009
+
+
+		Solution time: 0.146434 (sec.)
+		total iterations: 16
+Taking step       84 at clock time 2018-12-09-14:16:06.495.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530467e-003
+                iter:    2           residual = 3.750091e-004
+                iter:    3           residual = 1.013272e-004
+                iter:    4           residual = 5.753632e-005
+                iter:    5           residual = 2.954104e-005
+                iter:    6           residual = 1.558758e-005
+                iter:    7           residual = 8.442422e-006
+                iter:    8           residual = 4.330233e-006
+                iter:    9           residual = 1.809626e-006
+                iter:   10           residual = 6.393326e-007
+                iter:   11           residual = 2.599039e-007
+                iter:   12           residual = 1.274424e-007
+                iter:   13           residual = 6.044375e-008
+                iter:   14           residual = 2.932610e-008
+                iter:   15           residual = 1.125439e-008
+                iter:   16           residual = 4.517775e-009
+
+
+		Solution time: 0.161938 (sec.)
+		total iterations: 16
+Taking step       85 at clock time 2018-12-09-14:16:06.688.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530468e-003
+                iter:    2           residual = 3.750078e-004
+                iter:    3           residual = 1.013269e-004
+                iter:    4           residual = 5.753610e-005
+                iter:    5           residual = 2.954094e-005
+                iter:    6           residual = 1.558753e-005
+                iter:    7           residual = 8.442389e-006
+                iter:    8           residual = 4.330217e-006
+                iter:    9           residual = 1.809621e-006
+                iter:   10           residual = 6.393307e-007
+                iter:   11           residual = 2.599030e-007
+                iter:   12           residual = 1.274420e-007
+                iter:   13           residual = 6.044353e-008
+                iter:   14           residual = 2.932601e-008
+                iter:   15           residual = 1.125437e-008
+                iter:   16           residual = 4.517763e-009
+
+
+		Solution time: 0.160156 (sec.)
+		total iterations: 16
+Taking step       86 at clock time 2018-12-09-14:16:06.869.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530470e-003
+                iter:    2           residual = 3.750063e-004
+                iter:    3           residual = 1.013264e-004
+                iter:    4           residual = 5.753581e-005
+                iter:    5           residual = 2.954081e-005
+                iter:    6           residual = 1.558746e-005
+                iter:    7           residual = 8.442343e-006
+                iter:    8           residual = 4.330195e-006
+                iter:    9           residual = 1.809614e-006
+                iter:   10           residual = 6.393283e-007
+                iter:   11           residual = 2.599017e-007
+                iter:   12           residual = 1.274414e-007
+                iter:   13           residual = 6.044324e-008
+                iter:   14           residual = 2.932588e-008
+                iter:   15           residual = 1.125433e-008
+                iter:   16           residual = 4.517748e-009
+
+
+		Solution time: 0.144338 (sec.)
+		total iterations: 16
+Taking step       87 at clock time 2018-12-09-14:16:07.040.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530471e-003
+                iter:    2           residual = 3.750049e-004
+                iter:    3           residual = 1.013260e-004
+                iter:    4           residual = 5.753557e-005
+                iter:    5           residual = 2.954071e-005
+                iter:    6           residual = 1.558740e-005
+                iter:    7           residual = 8.442307e-006
+                iter:    8           residual = 4.330178e-006
+                iter:    9           residual = 1.809609e-006
+                iter:   10           residual = 6.393264e-007
+                iter:   11           residual = 2.599007e-007
+                iter:   12           residual = 1.274409e-007
+                iter:   13           residual = 6.044300e-008
+                iter:   14           residual = 2.932577e-008
+                iter:   15           residual = 1.125430e-008
+                iter:   16           residual = 4.517738e-009
+
+
+		Solution time: 0.148878 (sec.)
+		total iterations: 16
+Taking step       88 at clock time 2018-12-09-14:16:07.210.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530473e-003
+                iter:    2           residual = 3.750035e-004
+                iter:    3           residual = 1.013256e-004
+                iter:    4           residual = 5.753531e-005
+                iter:    5           residual = 2.954058e-005
+                iter:    6           residual = 1.558734e-005
+                iter:    7           residual = 8.442265e-006
+                iter:    8           residual = 4.330159e-006
+                iter:    9           residual = 1.809603e-006
+                iter:   10           residual = 6.393241e-007
+                iter:   11           residual = 2.598996e-007
+                iter:   12           residual = 1.274403e-007
+                iter:   13           residual = 6.044273e-008
+                iter:   14           residual = 2.932566e-008
+                iter:   15           residual = 1.125427e-008
+                iter:   16           residual = 4.517723e-009
+
+
+		Solution time: 0.146592 (sec.)
+		total iterations: 16
+Taking step       89 at clock time 2018-12-09-14:16:07.386.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530474e-003
+                iter:    2           residual = 3.750020e-004
+                iter:    3           residual = 1.013252e-004
+                iter:    4           residual = 5.753505e-005
+                iter:    5           residual = 2.954046e-005
+                iter:    6           residual = 1.558727e-005
+                iter:    7           residual = 8.442224e-006
+                iter:    8           residual = 4.330139e-006
+                iter:    9           residual = 1.809597e-006
+                iter:   10           residual = 6.393219e-007
+                iter:   11           residual = 2.598984e-007
+                iter:   12           residual = 1.274397e-007
+                iter:   13           residual = 6.044246e-008
+                iter:   14           residual = 2.932554e-008
+                iter:   15           residual = 1.125424e-008
+                iter:   16           residual = 4.517710e-009
+
+
+		Solution time: 0.153309 (sec.)
+		total iterations: 16
+Taking step       90 at clock time 2018-12-09-14:16:07.561.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530476e-003
+                iter:    2           residual = 3.750004e-004
+                iter:    3           residual = 1.013247e-004
+                iter:    4           residual = 5.753476e-005
+                iter:    5           residual = 2.954034e-005
+                iter:    6           residual = 1.558720e-005
+                iter:    7           residual = 8.442180e-006
+                iter:    8           residual = 4.330119e-006
+                iter:    9           residual = 1.809590e-006
+                iter:   10           residual = 6.393193e-007
+                iter:   11           residual = 2.598972e-007
+                iter:   12           residual = 1.274392e-007
+                iter:   13           residual = 6.044216e-008
+                iter:   14           residual = 2.932542e-008
+                iter:   15           residual = 1.125420e-008
+                iter:   16           residual = 4.517693e-009
+
+
+		Solution time: 0.159059 (sec.)
+		total iterations: 16
+
+Domain: Dumping all at clock time 2018-12-09-14:16:07.744.
+Globals dumped at 2018-12-09-14:16:07.749.
+Dumping grid boundaries at 2018-12-09-14:16:07.749.
+Dumped grid boundaries at 2018-12-09-14:16:07.749.
+Domain: Sorting electrons0.
+Domain: electrons0 sorted.
+Dumping species data electrons0.
+Dumped electrons0.
+No fluids to dump.
+Domain: Dumping histories at 2018-12-09-14:16:07.798.
+Domain: Histories dumped at 2018-12-09-14:16:07.808.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-09-14:16:07.808.
+Dumping E at 2018-12-09-14:16:07.808.
+Dumped E at 2018-12-09-14:16:07.814.
+Dumping nodalE at 2018-12-09-14:16:07.814.
+Dumped nodalE at 2018-12-09-14:16:07.819.
+Dumping nodalB at 2018-12-09-14:16:07.819.
+Dumped nodalB at 2018-12-09-14:16:07.827.
+Dumping Phi at 2018-12-09-14:16:07.827.
+Dumped Phi at 2018-12-09-14:16:07.830.
+Dumping ChargeDensity at 2018-12-09-14:16:07.830.
+Dumped ChargeDensity at 2018-12-09-14:16:07.832.
+All multiFields dumped at 2018-12-09-14:16:07.836.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-09-14:16:07.836.
+
+Taking step       91 at clock time 2018-12-09-14:16:07.836.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530477e-003
+                iter:    2           residual = 3.749991e-004
+                iter:    3           residual = 1.013243e-004
+                iter:    4           residual = 5.753452e-005
+                iter:    5           residual = 2.954023e-005
+                iter:    6           residual = 1.558715e-005
+                iter:    7           residual = 8.442143e-006
+                iter:    8           residual = 4.330101e-006
+                iter:    9           residual = 1.809584e-006
+                iter:   10           residual = 6.393173e-007
+                iter:   11           residual = 2.598961e-007
+                iter:   12           residual = 1.274386e-007
+                iter:   13           residual = 6.044192e-008
+                iter:   14           residual = 2.932531e-008
+                iter:   15           residual = 1.125417e-008
+                iter:   16           residual = 4.517683e-009
+
+
+		Solution time: 0.139284 (sec.)
+		total iterations: 16
+Taking step       92 at clock time 2018-12-09-14:16:07.999.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530478e-003
+                iter:    2           residual = 3.749974e-004
+                iter:    3           residual = 1.013238e-004
+                iter:    4           residual = 5.753422e-005
+                iter:    5           residual = 2.954010e-005
+                iter:    6           residual = 1.558707e-005
+                iter:    7           residual = 8.442097e-006
+                iter:    8           residual = 4.330079e-006
+                iter:    9           residual = 1.809578e-006
+                iter:   10           residual = 6.393147e-007
+                iter:   11           residual = 2.598949e-007
+                iter:   12           residual = 1.274380e-007
+                iter:   13           residual = 6.044161e-008
+                iter:   14           residual = 2.932518e-008
+                iter:   15           residual = 1.125414e-008
+                iter:   16           residual = 4.517667e-009
+
+
+		Solution time: 0.141388 (sec.)
+		total iterations: 16
+Taking step       93 at clock time 2018-12-09-14:16:08.180.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530480e-003
+                iter:    2           residual = 3.749956e-004
+                iter:    3           residual = 1.013233e-004
+                iter:    4           residual = 5.753388e-005
+                iter:    5           residual = 2.953994e-005
+                iter:    6           residual = 1.558699e-005
+                iter:    7           residual = 8.442043e-006
+                iter:    8           residual = 4.330054e-006
+                iter:    9           residual = 1.809569e-006
+                iter:   10           residual = 6.393118e-007
+                iter:   11           residual = 2.598934e-007
+                iter:   12           residual = 1.274373e-007
+                iter:   13           residual = 6.044127e-008
+                iter:   14           residual = 2.932503e-008
+                iter:   15           residual = 1.125409e-008
+                iter:   16           residual = 4.517649e-009
+
+
+		Solution time: 0.139309 (sec.)
+		total iterations: 16
+Taking step       94 at clock time 2018-12-09-14:16:08.342.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530481e-003
+                iter:    2           residual = 3.749941e-004
+                iter:    3           residual = 1.013228e-004
+                iter:    4           residual = 5.753360e-005
+                iter:    5           residual = 2.953981e-005
+                iter:    6           residual = 1.558693e-005
+                iter:    7           residual = 8.442000e-006
+                iter:    8           residual = 4.330034e-006
+                iter:    9           residual = 1.809563e-006
+                iter:   10           residual = 6.393096e-007
+                iter:   11           residual = 2.598922e-007
+                iter:   12           residual = 1.274367e-007
+                iter:   13           residual = 6.044099e-008
+                iter:   14           residual = 2.932490e-008
+                iter:   15           residual = 1.125406e-008
+                iter:   16           residual = 4.517636e-009
+
+
+		Solution time: 0.142023 (sec.)
+		total iterations: 16
+Taking step       95 at clock time 2018-12-09-14:16:08.505.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530483e-003
+                iter:    2           residual = 3.749923e-004
+                iter:    3           residual = 1.013222e-004
+                iter:    4           residual = 5.753324e-005
+                iter:    5           residual = 2.953965e-005
+                iter:    6           residual = 1.558684e-005
+                iter:    7           residual = 8.441945e-006
+                iter:    8           residual = 4.330008e-006
+                iter:    9           residual = 1.809554e-006
+                iter:   10           residual = 6.393064e-007
+                iter:   11           residual = 2.598907e-007
+                iter:   12           residual = 1.274360e-007
+                iter:   13           residual = 6.044063e-008
+                iter:   14           residual = 2.932475e-008
+                iter:   15           residual = 1.125402e-008
+                iter:   16           residual = 4.517614e-009
+
+
+		Solution time: 0.134636 (sec.)
+		total iterations: 16
+Taking step       96 at clock time 2018-12-09-14:16:08.664.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530485e-003
+                iter:    2           residual = 3.749906e-004
+                iter:    3           residual = 1.013217e-004
+                iter:    4           residual = 5.753291e-005
+                iter:    5           residual = 2.953950e-005
+                iter:    6           residual = 1.558675e-005
+                iter:    7           residual = 8.441893e-006
+                iter:    8           residual = 4.329983e-006
+                iter:    9           residual = 1.809546e-006
+                iter:   10           residual = 6.393033e-007
+                iter:   11           residual = 2.598893e-007
+                iter:   12           residual = 1.274353e-007
+                iter:   13           residual = 6.044029e-008
+                iter:   14           residual = 2.932461e-008
+                iter:   15           residual = 1.125397e-008
+                iter:   16           residual = 4.517595e-009
+
+
+		Solution time: 0.133049 (sec.)
+		total iterations: 16
+Taking step       97 at clock time 2018-12-09-14:16:08.818.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530486e-003
+                iter:    2           residual = 3.749889e-004
+                iter:    3           residual = 1.013212e-004
+                iter:    4           residual = 5.753261e-005
+                iter:    5           residual = 2.953936e-005
+                iter:    6           residual = 1.558668e-005
+                iter:    7           residual = 8.441846e-006
+                iter:    8           residual = 4.329962e-006
+                iter:    9           residual = 1.809539e-006
+                iter:   10           residual = 6.393008e-007
+                iter:   11           residual = 2.598880e-007
+                iter:   12           residual = 1.274346e-007
+                iter:   13           residual = 6.043999e-008
+                iter:   14           residual = 2.932448e-008
+                iter:   15           residual = 1.125394e-008
+                iter:   16           residual = 4.517580e-009
+
+
+		Solution time: 0.130554 (sec.)
+		total iterations: 16
+Taking step       98 at clock time 2018-12-09-14:16:08.975.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530488e-003
+                iter:    2           residual = 3.749871e-004
+                iter:    3           residual = 1.013207e-004
+                iter:    4           residual = 5.753228e-005
+                iter:    5           residual = 2.953921e-005
+                iter:    6           residual = 1.558660e-005
+                iter:    7           residual = 8.441794e-006
+                iter:    8           residual = 4.329938e-006
+                iter:    9           residual = 1.809532e-006
+                iter:   10           residual = 6.392980e-007
+                iter:   11           residual = 2.598866e-007
+                iter:   12           residual = 1.274339e-007
+                iter:   13           residual = 6.043965e-008
+                iter:   14           residual = 2.932433e-008
+                iter:   15           residual = 1.125390e-008
+                iter:   16           residual = 4.517563e-009
+
+
+		Solution time: 0.136238 (sec.)
+		total iterations: 16
+Taking step       99 at clock time 2018-12-09-14:16:09.134.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530489e-003
+                iter:    2           residual = 3.749854e-004
+                iter:    3           residual = 1.013202e-004
+                iter:    4           residual = 5.753196e-005
+                iter:    5           residual = 2.953907e-005
+                iter:    6           residual = 1.558652e-005
+                iter:    7           residual = 8.441745e-006
+                iter:    8           residual = 4.329915e-006
+                iter:    9           residual = 1.809524e-006
+                iter:   10           residual = 6.392953e-007
+                iter:   11           residual = 2.598852e-007
+                iter:   12           residual = 1.274332e-007
+                iter:   13           residual = 6.043932e-008
+                iter:   14           residual = 2.932419e-008
+                iter:   15           residual = 1.125386e-008
+                iter:   16           residual = 4.517546e-009
+
+
+		Solution time: 0.128692 (sec.)
+		total iterations: 16
+Taking step      100 at clock time 2018-12-09-14:16:09.286.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.530491e-003
+                iter:    2           residual = 3.749831e-004
+                iter:    3           residual = 1.013195e-004
+                iter:    4           residual = 5.753155e-005
+                iter:    5           residual = 2.953889e-005
+                iter:    6           residual = 1.558642e-005
+                iter:    7           residual = 8.441682e-006
+                iter:    8           residual = 4.329884e-006
+                iter:    9           residual = 1.809515e-006
+                iter:   10           residual = 6.392918e-007
+                iter:   11           residual = 2.598834e-007
+                iter:   12           residual = 1.274324e-007
+                iter:   13           residual = 6.043891e-008
+                iter:   14           residual = 2.932401e-008
+                iter:   15           residual = 1.125381e-008
+                iter:   16           residual = 4.517527e-009
+
+
+		Solution time: 0.131037 (sec.)
+		total iterations: 16
+
+Domain: Dumping all at clock time 2018-12-09-14:16:09.441.
+Globals dumped at 2018-12-09-14:16:09.443.
+Dumping grid boundaries at 2018-12-09-14:16:09.443.
+Dumped grid boundaries at 2018-12-09-14:16:09.443.
+Domain: Sorting electrons0.
+Domain: electrons0 sorted.
+Dumping species data electrons0.
+Dumped electrons0.
+No fluids to dump.
+Domain: Dumping histories at 2018-12-09-14:16:09.485.
+Domain: Histories dumped at 2018-12-09-14:16:09.495.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-09-14:16:09.495.
+Dumping E at 2018-12-09-14:16:09.495.
+Dumped E at 2018-12-09-14:16:09.500.
+Dumping nodalE at 2018-12-09-14:16:09.500.
+Dumped nodalE at 2018-12-09-14:16:09.505.
+Dumping nodalB at 2018-12-09-14:16:09.505.
+Dumped nodalB at 2018-12-09-14:16:09.510.
+Dumping Phi at 2018-12-09-14:16:09.510.
+Dumped Phi at 2018-12-09-14:16:09.513.
+Dumping ChargeDensity at 2018-12-09-14:16:09.513.
+Dumped ChargeDensity at 2018-12-09-14:16:09.515.
+All multiFields dumped at 2018-12-09-14:16:09.516.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-09-14:16:09.517.
+
+Main loop ended at clock time 2018-12-09-14:16:09.517
+Rank 0 processed a total of 1.45314e+006 electrons0 at an average of 0 seconds per particle push.
+Rank 0 just processed 29419 electrons0 at an average of 0 seconds per particle push.
+For all ranks, total average particle process time = 0 seconds.
+For all ranks, last average particle process time = 0 seconds.
+Deleting domain
+
+Deleting domain.
+OUTPUT SUMMARY:
+  There were 2 Notices encountered in this run.
+  There were 0 Warnings encountered in this run.
+  See above for more information.
+------------------------------------------------------------------------------
+   ML time information (seconds)          total          avg
+
+   1- Construction                  =  0.0611503   0.0611503
+   2- Preconditioner apply          =     10.051
+     a- first application(s) only   =    0.00563     0.00563
+     b- remaining applications      =    10.0454  0.00585395
+
+   3- Total time required by ML so far is 10.1122 seconds
+      (constr + all applications)
+------------------------------------------------------------------------------
+VORPAL completed at clock time    2018-12-09-14:16:09.537.
+NOTE: A VSimMD license was needed to run this simulation.
+Settings in the Z axis will be ignored
+Lines from 'vsim_test_ptc.pre' processed.
+Finished with 'vsim_test_ptc.pre'.
+--------------------- END ENGINE OUTPUT ----------------
+ 
+Notices:
+
+NOTICE: NOTE: For position generator, posGen, ptclsPerCell not specified.  Taking from owning species.
+
+NOTICE: No gridBndryMask or STFunc mask specified, emitting from entire grid boundary specified in position generator 
+
+
+Engine completed successfully.
+To see results, click on the "Visualize" icon in the icon panel.

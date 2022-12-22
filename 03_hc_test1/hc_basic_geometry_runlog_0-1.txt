@@ -1,0 +1,1126 @@
+Working directory: D:\001_zerlingx\literature\HC\006_models\03_hc_test1
+Running input file: hc_basic_geometry.pre
+Command is "C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\mpiexec.exe" -np 4 -env PYTHONPATH "C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\share\scripts;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\lib\site-packages;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\lib;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin\lib\site-packages;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin\lib\python\lib;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin\lib\python\DLLs;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin;." "C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\\vorpal.exe" -dt 1e-12 -sd -d 1 -n 1 -i "hc_basic_geometry.pre"  -o "hc_basic_geometry" 
+ 
+--------------------- START ENGINE OUTPUT ----------------
+Licensing Scheme file not found.
+Using Tech-X Licensing Scheme.
+LICENSE MANAGER: Using license file 'C:\ProgramData\Tech-X\VSim9\license.txt'
+LICENSE MANAGER: License valid for package(s)/module(s): VSimBase VSimEM VSimMD VSimPA VSimPD VSimSD 
+LICENSE MANAGER: License valid for macro(s): DrudeDebyeLorentzDielectric absorbingBox antennas antennasGPU deymittra dielectric dielectricGPU esGridBoundary farFields farFieldsGPU geometry geometryGPU gpuPml mal malGPU mirror originRadiatorPort perfectDispersion pml port scatteringBox scatteringBoxGPU secondOrderDiel specularBox statics yee yeeGPU 
+EULA not found. Skipping user agreement.
+No expand symbols file.  Will not limit expansion.
+Processing import: hc_basic_geometry from 'D:\001_zerlingx\literature\HC\006_models\03_hc_test1'.
+Processing import: verbosity from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: mathphys from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: VSim from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: listUtilities from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: logicals from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: units from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: utilities from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: vputilities from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: VSimEs from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: esmatrix from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: solvers from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: matrices from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: grids from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: timing from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: shapes from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: multifields from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: histories from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: stfuncs from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: emfilters from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Start-dumps enabled (if dumps active).
+
+TxsDevices::TxsDevices(): MPI found.
+Thread support is funneled.
+  commWorldSize = 4
+  commWorldRank = 0
+1 threads requested.
+
+SSE2 not found.
+AVX not found.
+AVX2 not found.
+16 hardware threads found.
+TxsDevices::TxsDevices(): 16 openmp processes and 16 openmp threads.
+
+TxsDevices::TxsDevices(): compiled with cuda toolkit.
+TxsDevices::TxsDevices(): opened cuda driver.
+getFuncPtr(): resolved cuLaunchKernel.
+getFuncPtr(): resolved cuModuleLoadData.
+getFuncPtr(): resolved cuModuleUnload.
+getFuncPtr(): resolved cuModuleGetFunction.
+TxsDevices::TxsDevices(): found all function pointers.
+TxsDevices::TxsDevices(): 1 CUDA devices detected.
+TxsDevices::deviceProperties for device 0 are:
+  name = NVIDIA GeForce RTX 3060 Laptop GPU
+  compute capability = 8.6
+  clockRate = 1425000
+  memoryClockRate = 7001000
+  multiProcessorCount = 30
+  maxThreadsPerMultiProcessor = 1536
+  warpSize = 32
+  totalGlobalMem = 5.99951 GB
+  sharedMemPerBlock = 49152
+  maxThreadsPerBlock = 1024
+  maxThreadsDim = 1024 1024 64
+  maxGridSize = 2147483647 65535 65535
+  unifiedAddressing = 1
+  concurrentKernels = 1
+  asyncEngineCount = 5
+TxsDevices::setDeviceNum(): setting device number to 0.
+
+VORPAL version 9.0.1 started at 2018-12-22-20:00:41.896.
+VORPAL Subversion revision = 32654
+CMake Subversion revision = 1392
+Built on host type = CYGWIN_NT-6.1-x86_64
+Built on host name = qawin7
+Built with compiler = C:/Program Files (x86)/Microsoft Visual Studio 12.0/VC/BIN/amd64/cl.exe  /DWIN32 /D_WINDOWS /W3 /GR /EHsc, version = 18.00.40629
+Run with command line = C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\\vorpal.exe -dt 1e-12 -sd -d 1 -n 1 -i hc_basic_geometry.pre -o hc_basic_geometry
+Using MPI
+
+Domain of kind, Domain2D, created at clock time 2018-12-22-20:00:43.135
+
+Domain: verbosity = 127.
+Domain: Dump mode is combo.
+Domain: Particle sorting is on.
+Time step is 1e-012.
+Grid(s): globalGrid.
+Decomp(s): decomp.
+No STRgn(s) present.
+GridBoundary(s): hc_basic_geometryPecShapes cathode_shell cathode_orifice anode.
+No GridCurve(s) present.
+MultiField(s): esMultiField.
+No EmField(s) present.
+No ComboEmField(s) present.
+No ScalarDepositor(s) present.
+No VectorDepositor(s) present.
+No Species(s) present.
+No Fluid(s) present.
+No Collision(s) present.
+No UpdateStep(s) present.
+No MonteCarloInteractions(s) present.
+No Ionizer(s) present.
+No ImpactCollider(s) present.
+No Semiconductor(s) present.
+Domain: No SumRhoJ present.
+
+RNGs will be seeded using randomSeed = 1 in a way that depends deterministially on randomSeed and the RNG name and mpi rank.
+decomp: Periodic directions: none.
+Grid kind = uniCartGrid
+Domain: VpGridInfo name = globalGrid with kind = uniCartGrid.
+Global simulation grid size: [300 100]
+Decomposition:
+ decomp0 = [75 150 225 300]
+ decomp1 = [100 100 100 100]
+
+Grid is globalGrid.
+Global grid:
+   start      length      dx         dxi     numCells
+  0.0000    0.03200  0.0001067      9375.      300
+  0.0000    0.01000  0.0001000 1.000e+004      100
+Local grid for rank 0:
+   start      length      dx         dxi     numCells
+  0.0000   0.008000  0.0001067      9375.       75
+  0.0000    0.01000  0.0001000 1.000e+004      100
+
+Domain: begin setup of fld/ptcl messaging... in the domain
+Domain: messaging set up... in the domain
+Domain: Creating grid boundaries at clock time 2018-12-22-20:00:43.175.
+Domain: Setting up grid boundary, hc_basic_geometryPecShapes, at clock time 2018-12-22-20:00:43.175.
+Domain: grid boundary, hc_basic_geometryPecShapes, data built at clock time 2018-12-22-20:00:43.177.
+Domain: Setting up grid boundary, cathode_shell, at clock time 2018-12-22-20:00:43.177.
+Domain: grid boundary, cathode_shell, data built at clock time 2018-12-22-20:00:43.178.
+Domain: Setting up grid boundary, cathode_orifice, at clock time 2018-12-22-20:00:43.178.
+Domain: grid boundary, cathode_orifice, data built at clock time 2018-12-22-20:00:43.180.
+Domain: Setting up grid boundary, anode, at clock time 2018-12-22-20:00:43.180.
+Domain: grid boundary, anode, data built at clock time 2018-12-22-20:00:43.182.
+Removed 40 out of 254 points
+Calculating in/out function for grid boundary, hc_basic_geometryPecShapes.
+hc_basic_geometryPecShapes: Collecting stair-step data.
+hc_basic_geometryPecShapes: Collecting cut-cell face data.
+hc_basic_geometryPecShapes: Collecting cut-cell volume data.
+VpGridBndry::calculateTriangleData(): calculating triangle data for hc_basic_geometryPecShapes
+Grid boundary, hc_basic_geometryPecShapes, initialized in 0 seconds.
+Calculating in/out function for grid boundary, cathode_shell.
+cathode_shell: Collecting stair-step data.
+cathode_shell: Collecting cut-cell face data.
+cathode_shell: Collecting cut-cell volume data.
+VpGridBndry::calculateTriangleData(): calculating triangle data for cathode_shell
+Grid boundary, cathode_shell, initialized in 0 seconds.
+Calculating in/out function for grid boundary, cathode_orifice.
+cathode_orifice: Collecting stair-step data.
+cathode_orifice: Collecting cut-cell face data.
+cathode_orifice: Collecting cut-cell volume data.
+VpGridBndry::calculateTriangleData(): calculating triangle data for cathode_orifice
+Grid boundary, cathode_orifice, initialized in 0 seconds.
+Calculating in/out function for grid boundary, anode.
+anode: Collecting stair-step data.
+anode: Collecting cut-cell face data.
+anode: Collecting cut-cell volume data.
+Grid boundary, anode, initialized in 0 seconds.
+Domain: Grid boundaries created at clock time 2018-12-22-20:00:43.220.
+Domain: txsim reaction process holder built.
+Domain: txsim reaction physics holder built.
+Domain: History holder built.
+Domain: Multifields created.
+Domain: Multifields built.
+Domain: Non-combo EMfields built.
+Domain: Combo EMfields built.
+------------------------------------------------------------------------------
+Using `power-method' for eigen-computations
+*** 
+*** ML_Epetra::MultiLevelPreconditioner
+***
+Matrix has 30401 rows and 136677 nonzeros, distributed over 4 process(es)
+The linear system matrix is an Epetra_CrsMatrix
+** Leaving column map of Main linear system matrix unchanged
+Default values for `DD'
+Maximum number of levels = 10
+Using increasing levels. Finest level  = 0, coarsest level = 9
+Number of applications of the ML cycle = 1
+Number of PDE equations = 1
+Aggregation threshold = 0
+Max coarse size = 128
+R and P smoothing : P = (I-\omega A) P_t, R = P^T
+R and P smoothing : \omega = 1.333/lambda_max
+Null space type      = default (constants)
+Null space dimension = 1
+-----------------------------------------------------------------------
+ML_Gen_MultiLevelHierarchy (level 0) : Gen Restriction and Prolongator
+-----------------------------------------------------------------------
+ML_Aggregate_Coarsen (level 0) begins
+ML_Aggregate_CoarsenUncoupled : current level = 0
+ML_Aggregate_CoarsenUncoupled : current eps = 0.000000e+000
+Aggregation(UVB) : Total nonzeros = 136677 (Nrows=30401)
+Aggregation(UC) : Phase 0 - no. of bdry pts  = 3232 
+Aggregation(UC) : Phase 1 - nodes aggregated = 22675 (30401)
+Aggregation(UC) : Phase 1 - total aggregates = 4928 
+Aggregation(UC_Phase2_3) : Phase 1 - nodes aggregated = 22675 
+Aggregation(UC_Phase2_3) : Phase 1 - total aggregates = 4928
+Aggregation(UC_Phase2_3) : Phase 2a- additional aggregates = 0
+Aggregation(UC_Phase2_3) : Phase 2 - total aggregates = 5081
+Aggregation(UC_Phase2_3) : Phase 2 - boundary nodes   = 3232
+Aggregation(UC_Phase2_3) : Phase 3 - leftovers = 153 and singletons = 0
+Aggregation(UC) : QR factorization - too small aggregates = 0
+Calculating eigenvalue estimate using power method
+Gen_Prolongator (level 0) : Max eigenvalue = 1.9522e+000
+
+Prolongator/Restriction smoother (level 0) : damping factor #1 = 6.8282e-001
+Prolongator/Restriction smoother (level 0) : ( = 1.3330e+000 / 1.9522e+000)
+
+-----------------------------------------------------------------------
+ML_Gen_MultiLevelHierarchy (level 1) : Gen Restriction and Prolongator
+-----------------------------------------------------------------------
+ML_Aggregate_Coarsen (level 1) begins
+ML_Aggregate_CoarsenUncoupled : current level = 1
+ML_Aggregate_CoarsenUncoupled : current eps = 0.000000e+000
+Aggregation(UVB) : Total nonzeros = 45977 (Nrows=5081)
+Aggregation(UC) : Phase 0 - no. of bdry pts  = 147 
+Aggregation(UC) : Phase 1 - nodes aggregated = 4636 (5081)
+Aggregation(UC) : Phase 1 - total aggregates = 532 
+Aggregation(UC_Phase2_3) : Phase 1 - nodes aggregated = 4636 
+Aggregation(UC_Phase2_3) : Phase 1 - total aggregates = 532
+Aggregation(UC_Phase2_3) : Phase 2a- additional aggregates = 0
+Aggregation(UC_Phase2_3) : Phase 2 - total aggregates = 532
+Aggregation(UC_Phase2_3) : Phase 2 - boundary nodes   = 147
+Aggregation(UC_Phase2_3) : Phase 3 - leftovers = 0 and singletons = 0
+Aggregation(UC) : QR factorization - too small aggregates = 0
+Calculating eigenvalue estimate using power method
+Gen_Prolongator (level 1) : Max eigenvalue = 3.4383e+000
+
+Prolongator/Restriction smoother (level 1) : damping factor #1 = 3.8769e-001
+Prolongator/Restriction smoother (level 1) : ( = 1.3330e+000 / 3.4383e+000)
+
+-----------------------------------------------------------------------
+ML_Gen_MultiLevelHierarchy (level 2) : Gen Restriction and Prolongator
+-----------------------------------------------------------------------
+ML_Aggregate_Coarsen (level 2) begins
+ML_Aggregate_CoarsenUncoupled : current level = 2
+ML_Aggregate_CoarsenUncoupled : current eps = 0.000000e+000
+Aggregation(UVB) : Total nonzeros = 5498 (Nrows=532)
+Aggregation(UC) : Phase 0 - no. of bdry pts  = 2 
+Aggregation(UC) : Phase 1 - nodes aggregated = 451 (532)
+Aggregation(UC) : Phase 1 - total aggregates = 59 
+Aggregation(UC_Phase2_3) : Phase 1 - nodes aggregated = 451 
+Aggregation(UC_Phase2_3) : Phase 1 - total aggregates = 59
+Aggregation(UC_Phase2_3) : Phase 2a- additional aggregates = 0
+Aggregation(UC_Phase2_3) : Phase 2 - total aggregates = 59
+Aggregation(UC_Phase2_3) : Phase 2 - boundary nodes   = 2
+Aggregation(UC_Phase2_3) : Phase 3 - leftovers = 0 and singletons = 0
+Aggregation(UC) : QR factorization - too small aggregates = 0
+Calculating eigenvalue estimate using power method
+Gen_Prolongator (level 2) : Max eigenvalue = 1.5902e+000
+
+Prolongator/Restriction smoother (level 2) : damping factor #1 = 8.3824e-001
+Prolongator/Restriction smoother (level 2) : ( = 1.3330e+000 / 1.5902e+000)
+
+Smoothed Aggregation : operator complexity = 1.382054e+000.
+Time to build the hierarchy = 0.0103135 (s)
+Number of actual levels : 4
+
+Smoother (level 0) : # global rows = 30401, # estim. global nnz = 136677, # nnz per row = 4.50
+Smoother (level 0) : Gauss-Seidel (sweeps=3,omega=1,both)
+Smoother (level 0) : Epetra_CrsMatrix detected, using Ifpack implementation
+Smoother (level 0) : Setup time : 0.0004275 (s)
+
+Smoother (level 1) : # global rows = 5081, # estim. global nnz = 45977, # nnz per row = 9.05
+Smoother (level 1) : ML Gauss-Seidel (sweeps=3,omega=1,both)
+Smoother (level 1) : Setup time : 0.0001493 (s)
+
+Smoother (level 2) : # global rows = 532, # estim. global nnz = 5498, # nnz per row = 10.33
+Smoother (level 2) : ML Gauss-Seidel (sweeps=3,omega=1,both)
+Smoother (level 2) : Setup time : 3.5e-005 (s)
+
+Coarse solve (level 3) : Jacobi (sweeps=1,omega=1,post)
+
+------------------------------------------------------------------------------
+MultiFields built.
+Domain: All species initialized.
+Domain: All emfluids initialized.
+Domain: All collisions initialized.
+Domain: All ionization processes initialized.
+Domain: All impactCollision processes initialized.
+All semiconductor materials initialized.
+All monteCarloHandlers initialized.
+Initializing 'E' with 0 setters.
+Initializing 'Phi' with 0 setters.
+Initializing 'ChargeDensity' with 0 setters.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=4, IFPACK_pre0/IFPACK_post0, ~/Jac_post3)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 2.893289e-002
+                iter:    2           residual = 8.771545e-003
+                iter:    3           residual = 2.796860e-003
+                iter:    4           residual = 1.755282e-003
+                iter:    5           residual = 1.272033e-003
+                iter:    6           residual = 9.933989e-004
+                iter:    7           residual = 9.298175e-004
+                iter:    8           residual = 6.115741e-004
+                iter:    9           residual = 4.690556e-004
+                iter:   10           residual = 3.955768e-004
+                iter:   11           residual = 3.227571e-004
+                iter:   12           residual = 2.863754e-004
+                iter:   13           residual = 2.577110e-004
+                iter:   14           residual = 2.191279e-004
+                iter:   15           residual = 1.889694e-004
+                iter:   16           residual = 1.758891e-004
+                iter:   17           residual = 1.649115e-004
+                iter:   18           residual = 1.477407e-004
+                iter:   19           residual = 1.380153e-004
+                iter:   20           residual = 1.289677e-004
+                iter:   21           residual = 1.164749e-004
+                iter:   22           residual = 1.059955e-004
+                iter:   23           residual = 1.006955e-004
+                iter:   24           residual = 9.621154e-005
+                iter:   25           residual = 8.944629e-005
+                iter:   26           residual = 8.331793e-005
+                iter:   27           residual = 7.654467e-005
+                iter:   28           residual = 7.047481e-005
+                iter:   29           residual = 6.698638e-005
+                iter:   30           residual = 6.283843e-005
+                iter:   31           residual = 6.279041e-005
+                iter:   32           residual = 6.084185e-005
+                iter:   33           residual = 5.972020e-005
+                iter:   34           residual = 5.703950e-005
+                iter:   35           residual = 5.507057e-005
+                iter:   36           residual = 5.432654e-005
+                iter:   37           residual = 5.401997e-005
+                iter:   38           residual = 5.399758e-005
+                iter:   39           residual = 5.380175e-005
+                iter:   40           residual = 5.320076e-005
+                iter:   41           residual = 5.176265e-005
+                iter:   42           residual = 4.920335e-005
+                iter:   43           residual = 4.691438e-005
+                iter:   44           residual = 4.251535e-005
+                iter:   45           residual = 3.878167e-005
+                iter:   46           residual = 3.586294e-005
+                iter:   47           residual = 3.122756e-005
+                iter:   48           residual = 2.871957e-005
+                iter:   49           residual = 2.827466e-005
+                iter:   50           residual = 2.822046e-005
+                iter:   51           residual = 2.820778e-005
+                iter:   52           residual = 2.781955e-005
+                iter:   53           residual = 2.533378e-005
+                iter:   54           residual = 2.160632e-005
+                iter:   55           residual = 1.943980e-005
+                iter:   56           residual = 1.696279e-005
+                iter:   57           residual = 1.483055e-005
+                iter:   58           residual = 1.348343e-005
+                iter:   59           residual = 1.174353e-005
+                iter:   60           residual = 1.005918e-005
+                iter:   61           residual = 1.003790e-005
+                iter:   62           residual = 9.403575e-006
+                iter:   63           residual = 8.609817e-006
+                iter:   64           residual = 7.625223e-006
+                iter:   65           residual = 7.142636e-006
+    
+            iter:   66           residual = 6.492756e-006
+                iter:   67           residual = 5.638489e-006
+                iter:   68           residual = 5.077863e-006
+                iter:   69           residual = 4.709318e-006
+                iter:   70           residual = 4.277054e-006
+                iter:   71           residual = 3.822537e-006
+                iter:   72           residual = 3.536337e-006
+                iter:   73           residual = 3.444702e-006
+                iter:   74           residual = 3.418834e-006
+                iter:   75           residual = 3.410729e-006
+                iter:   76           residual = 3.409496e-006
+                iter:   77           residual = 3.389983e-006
+                iter:   78           residual = 3.351911e-006
+                iter:   79           residual = 3.241925e-006
+                iter:   80           residual = 3.060324e-006
+                iter:   81           residual = 2.950417e-006
+                iter:   82           residual = 2.878450e-006
+                iter:   83           residual = 2.799345e-006
+                iter:   84           residual = 2.753588e-006
+                iter:   85           residual = 2.730343e-006
+                iter:   86           residual = 2.700284e-006
+                iter:   87           residual = 2.700261e-006
+                iter:   88           residual = 2.668555e-006
+                iter:   89           residual = 2.648636e-006
+                iter:   90           residual = 2.601862e-006
+                iter:   91           residual = 2.601577e-006
+                iter:   92           residual = 2.564188e-006
+                iter:   93           residual = 2.540932e-006
+                iter:   94           residual = 2.524905e-006
+                iter:   95           residual = 2.524892e-006
+                iter:   96           residual = 2.509322e-006
+                iter:   97           residual = 2.499657e-006
+                iter:   98           residual = 2.472538e-006
+                iter:   99           residual = 2.362298e-006
+                iter:  100           residual = 2.290576e-006
+                iter:  101           residual = 2.224523e-006
+                iter:  102           residual = 2.134104e-006
+                iter:  103           residual = 2.026023e-006
+                iter:  104           residual = 1.953813e-006
+                iter:  105           residual = 1.846328e-006
+                iter:  106           residual = 1.764523e-006
+                iter:  107           residual = 1.740187e-006
+                iter:  108           residual = 1.739675e-006
+                iter:  109           residual = 1.735537e-006
+                iter:  110           residual = 1.685989e-006
+                iter:  111           residual = 1.610429e-006
+                iter:  112           residual = 1.511727e-006
+                iter:  113           residual = 1.422149e-006
+                iter:  114           residual = 1.238767e-006
+                iter:  115           residual = 1.125722e-006
+                iter:  116           residual = 1.084084e-006
+                iter:  117           residual = 1.020363e-006
+                iter:  118           residual = 9.330958e-007
+                iter:  119           residual = 8.689768e-007
+                iter:  120           residual = 7.851154e-007
+                iter:  121           residual = 7.842207e-007
+                iter:  122           residual = 7.223127e-007
+                iter:  123           residual = 7.009153e-007
+                iter:  124           residual = 6.533204e-007
+                iter:  125           residual = 6.163206e-007
+                iter:  126           residual = 5.989933e-007
+                iter:  127           residual = 5.756604e-007
+                iter:  128           residual = 5.405251e-007
+                iter:  129           residual = 5.036500e-007
+                iter:  130           residual = 4.829399e-007
+                iter:  131           residual = 4.555261e-007
+        
+        iter:  132           residual = 4.330924e-007
+                iter:  133           residual = 4.085918e-007
+                iter:  134           residual = 3.965419e-007
+                iter:  135           residual = 3.785754e-007
+                iter:  136           residual = 3.755660e-007
+                iter:  137           residual = 3.739684e-007
+                iter:  138           residual = 3.721536e-007
+                iter:  139           residual = 3.710787e-007
+                iter:  140           residual = 3.589867e-007
+                iter:  141           residual = 3.438447e-007
+                iter:  142           residual = 3.336788e-007
+                iter:  143           residual = 3.225431e-007
+                iter:  144           residual = 3.036455e-007
+                iter:  145           residual = 2.873383e-007
+                iter:  146           residual = 2.638644e-007
+                iter:  147           residual = 2.493640e-007
+                iter:  148           residual = 2.437132e-007
+                iter:  149           residual = 2.437036e-007
+                iter:  150           residual = 2.429757e-007
+                iter:  151           residual = 2.429292e-007
+                iter:  152           residual = 2.427232e-007
+                iter:  153           residual = 2.427011e-007
+                iter:  154           residual = 2.406397e-007
+                iter:  155           residual = 2.374501e-007
+                iter:  156           residual = 2.285698e-007
+                iter:  157           residual = 2.193678e-007
+                iter:  158           residual = 2.060124e-007
+                iter:  159           residual = 1.879017e-007
+                iter:  160           residual = 1.816312e-007
+                iter:  161           residual = 1.784846e-007
+                iter:  162           residual = 1.759048e-007
+                iter:  163           residual = 1.755734e-007
+                iter:  164           residual = 1.755552e-007
+                iter:  165           residual = 1.735829e-007
+                iter:  166           residual = 1.705356e-007
+                iter:  167           residual = 1.657775e-007
+                iter:  168           residual = 1.611464e-007
+                iter:  169           residual = 1.525917e-007
+                iter:  170           residual = 1.478735e-007
+                iter:  171           residual = 1.393986e-007
+                iter:  172           residual = 1.315063e-007
+                iter:  173           residual = 1.269582e-007
+                iter:  174           residual = 1.196123e-007
+                iter:  175           residual = 1.160739e-007
+                iter:  176           residual = 1.122831e-007
+                iter:  177           residual = 1.077881e-007
+                iter:  178           residual = 9.922813e-008
+                iter:  179           residual = 9.287744e-008
+                iter:  180           residual = 8.470559e-008
+                iter:  181           residual = 8.470238e-008
+                iter:  182           residual = 7.980132e-008
+                iter:  183           residual = 7.499509e-008
+                iter:  184           residual = 7.001319e-008
+                iter:  185           residual = 6.601143e-008
+                iter:  186           residual = 6.379106e-008
+                iter:  187           residual = 6.214379e-008
+                iter:  188           residual = 5.936199e-008
+                iter:  189           residual = 5.696137e-008
+                iter:  190           residual = 5.490588e-008
+                iter:  191           residual = 5.100253e-008
+                iter:  192           residual = 5.055157e-008
+                iter:  193           residual = 4.929959e-008
+                iter:  194           residual = 4.926705e-008
+                iter:  195           residual = 4.923131e-008
+                iter:  196           residual = 4.795033e-008
+                iter:  197           residual = 4.678036e-008
+                iter:  198           residual = 4.491557e-008
+                iter:  199           residual = 4.223263e-008
+                iter:  200           residual = 3.917160e-008
+                iter:  201           residual = 3.747330e-008
+                iter:  202           residual = 3.587953e-008
+                iter:  203           residual = 3.354570e-008
+                iter:  204           residual = 3.283555e-008
+                iter:  205           residual = 3.218838e-008
+                iter:  206           residual = 3.182353e-008
+                iter:  207           residual = 3.176311e-008
+                iter:  208           residual = 3.175842e-008
+                iter:  209           residual = 3.135304e-008
+                iter:  210           residual = 3.001024e-008
+                iter:  211           residual = 2.999346e-008
+                iter:  212           residual = 2.922881e-008
+                iter:  213           residual = 2.867330e-008
+                iter:  214           residual = 2.844446e-008
+                iter:  215           residual = 2.843712e-008
+                iter:  216           residual = 2.803788e-008
+                iter:  217           residual = 2.739547e-008
+                iter:  218           residual = 2.640253e-008
+                iter:  219           residual = 2.504936e-008
+                iter:  220           residual = 2.277341e-008
+                iter:  221           residual = 2.111832e-008
+                iter:  222           residual = 2.034492e-008
+                iter:  223           residual = 1.962519e-008
+                iter:  224           residual = 1.952887e-008
+                iter:  225           residual = 1.946213e-008
+                iter:  226           residual = 1.945759e-008
+                iter:  227           residual = 1.940331e-008
+                iter:  228           residual = 1.902302e-008
+                iter:  229           residual = 1.861572e-008
+                iter:  230           residual = 1.808724e-008
+                iter:  231           residual = 1.760477e-008
+                iter:  232           residual = 1.642153e-008
+                iter:  233           residual = 1.556615e-008
+                iter:  234           residual = 1.454990e-008
+                iter:  235           residual = 1.399040e-008
+                iter:  236           residual = 1.323371e-008
+                iter:  237           residual = 1.223467e-008
+                iter:  238           residual = 1.079716e-008
+                iter:  239           residual = 9.443676e-009
+
+
+		Solution time: 0.282395 (sec.)
+		total iterations: 239
+Domain: All MultiFields initialized at clock tim 2018-12-22-20:00:43.547.
+Domain: All emfields initialized at clock time 2018-12-22-20:00:43.547.
+Domain: Histories initialized at clock time 2018-12-22-20:00:43.547.
+Domain: Initialization complete at clock time 2018-12-22-20:00:43.547.
+
+Domain: Dumping all at clock time 2018-12-22-20:00:43.547.
+Globals dumped at 2018-12-22-20:00:43.551.
+Dumping grid boundaries at 2018-12-22-20:00:43.551.
+Dumping hc_basic_geometryPecShapes at clock time 2018-12-22-20:00:43.551.
+hc_basic_geometryPecShapes dumped  at clock time 2018-12-22-20:00:43.555.
+Dumping cathode_shell at clock time 2018-12-22-20:00:43.555.
+cathode_shell dumped  at clock time 2018-12-22-20:00:43.559.
+Dumping cathode_orifice at clock time 2018-12-22-20:00:43.559.
+cathode_orifice dumped  at clock time 2018-12-22-20:00:43.562.
+Dumping anode at clock time 2018-12-22-20:00:43.562.
+anode dumped  at clock time 2018-12-22-20:00:43.565.
+Dumped grid boundaries at 2018-12-22-20:00:43.565.
+No particles to dump.
+No fluids to dump.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-22-20:00:43.565.
+Dumping E at 2018-12-22-20:00:43.565.
+Dumped E at 2018-12-22-20:00:43.567.
+Dumping Phi at 2018-12-22-20:00:43.567.
+Dumped Phi at 2018-12-22-20:00:43.569.
+Dumping ChargeDensity at 2018-12-22-20:00:43.569.
+Dumped ChargeDensity at 2018-12-22-20:00:43.570.
+All multiFields dumped at 2018-12-22-20:00:43.571.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-22-20:00:43.572.
+
+Main loop started    at clock time 2018-12-22-20:00:43.572.
+Taking step        1 at clock time 2018-12-22-20:00:43.572.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=4, IFPACK_pre0/IFPACK_post0, ~/Jac_post3)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 9.999498e-001
+                iter:    2           residual = 9.453116e-001
+                iter:    3           residual = 8.661103e-001
+                iter:    4           residual = 8.219944e-001
+                iter:    5           residual = 7.958258e-001
+                iter:    6           residual = 7.782891e-001
+                iter:    7           residual = 7.685843e-001
+                iter:    8           residual = 7.453559e-001
+                iter:    9           residual = 7.368106e-001
+                iter:   10           residual = 7.239803e-001
+                iter:   11           residual = 7.232471e-001
+                iter:   12           residual = 7.221706e-001
+                iter:   13           residual = 7.134387e-001
+                iter:   14           residual = 6.913076e-001
+                iter:   15           residual = 6.442239e-001
+                iter:   16           residual = 6.140563e-001
+                iter:   17           residual = 5.635185e-001
+                iter:   18           residual = 5.428493e-001
+                iter:   19           residual = 5.245568e-001
+                iter:   20           residual = 5.061564e-001
+                iter:   21           residual = 4.992753e-001
+                iter:   22           residual = 4.951801e-001
+                iter:   23           residual = 4.950515e-001
+                iter:   24           residual = 4.903872e-001
+                iter:   25           residual = 4.886848e-001
+                iter:   26           residual = 4.834693e-001
+                iter:   27           residual = 4.656483e-001
+                iter:   28           residual = 4.486610e-001
+                iter:   29           residual = 4.149725e-001
+                iter:   30           residual = 3.449499e-001
+                iter:   31           residual = 3.448331e-001
+                iter:   32           residual = 3.248888e-001
+                iter:   33           residual = 3.071237e-001
+                iter:   34           residual = 2.917998e-001
+                iter:   35           residual = 2.860545e-001
+                iter:   36           residual = 2.838037e-001
+                iter:   37           residual = 2.816004e-001
+                iter:   38           residual = 2.815815e-001
+                iter:   39           residual = 2.812319e-001
+                iter:   40           residual = 2.803053e-001
+                iter:   41           residual = 2.771951e-001
+                iter:   42           residual = 2.750333e-001
+                iter:   43           residual = 2.735034e-001
+                iter:   44           residual = 2.549911e-001
+                iter:   45           residual = 2.430409e-001
+                iter:   46           residual = 2.190168e-001
+                iter:   47           residual = 2.029365e-001
+                iter:   48           residual = 1.876898e-001
+                iter:   49           residual = 1.753142e-001
+                iter:   50           residual = 1.614039e-001
+                iter:   51           residual = 1.510981e-001
+                iter:   52           residual = 1.421713e-001
+                iter:   53           residual = 1.369846e-001
+                iter:   54           residual = 1.345545e-001
+                iter:   55           residual = 1.331301e-001
+                iter:   56           residual = 1.326937e-001
+                iter:   57           residual = 1.323271e-001
+                iter:   58           residual = 1.320089e-001
+                iter:   59           residual = 1.304634e-001
+                iter:   60           residual = 1.262409e-001
+                iter:   61           residual = 1.262356e-001
+                iter:   62           residual = 1.242516e-001
+                iter:   63           residual = 1.220978e-001
+                iter:   64           residual = 1.211794e-001
+                iter:   65           residual = 1.207877e-001
+    
+            iter:   66           residual = 1.207538e-001
+                iter:   67           residual = 1.206438e-001
+                iter:   68           residual = 1.195924e-001
+                iter:   69           residual = 1.165698e-001
+                iter:   70           residual = 1.126949e-001
+                iter:   71           residual = 1.059801e-001
+                iter:   72           residual = 1.005413e-001
+                iter:   73           residual = 9.577811e-002
+                iter:   74           residual = 9.120230e-002
+                iter:   75           residual = 8.835512e-002
+                iter:   76           residual = 8.707419e-002
+                iter:   77           residual = 8.703807e-002
+                iter:   78           residual = 8.628622e-002
+                iter:   79           residual = 8.136616e-002
+                iter:   80           residual = 7.621786e-002
+                iter:   81           residual = 7.022655e-002
+                iter:   82           residual = 6.723941e-002
+                iter:   83           residual = 6.368937e-002
+                iter:   84           residual = 6.114408e-002
+                iter:   85           residual = 5.971270e-002
+                iter:   86           residual = 5.808586e-002
+                iter:   87           residual = 5.555649e-002
+                iter:   88           residual = 5.192286e-002
+                iter:   89           residual = 4.640715e-002
+                iter:   90           residual = 3.728530e-002
+                iter:   91           residual = 3.726271e-002
+                iter:   92           residual = 3.313536e-002
+                iter:   93           residual = 3.173399e-002
+                iter:   94           residual = 3.113498e-002
+                iter:   95           residual = 3.016735e-002
+                iter:   96           residual = 2.910263e-002
+                iter:   97           residual = 2.867434e-002
+                iter:   98           residual = 2.614185e-002
+                iter:   99           residual = 2.496547e-002
+                iter:  100           residual = 2.470524e-002
+                iter:  101           residual = 2.469875e-002
+                iter:  102           residual = 2.468920e-002
+                iter:  103           residual = 2.462943e-002
+                iter:  104           residual = 2.407867e-002
+                iter:  105           residual = 2.340124e-002
+                iter:  106           residual = 2.316940e-002
+                iter:  107           residual = 2.251213e-002
+                iter:  108           residual = 2.203091e-002
+                iter:  109           residual = 2.068377e-002
+                iter:  110           residual = 1.878203e-002
+                iter:  111           residual = 1.832331e-002
+                iter:  112           residual = 1.816653e-002
+                iter:  113           residual = 1.810743e-002
+                iter:  114           residual = 1.783436e-002
+                iter:  115           residual = 1.701324e-002
+                iter:  116           residual = 1.631318e-002
+                iter:  117           residual = 1.561248e-002
+                iter:  118           residual = 1.477206e-002
+                iter:  119           residual = 1.426671e-002
+                iter:  120           residual = 1.366373e-002
+                iter:  121           residual = 1.366358e-002
+                iter:  122           residual = 1.346673e-002
+                iter:  123           residual = 1.285486e-002
+                iter:  124           residual = 1.246253e-002
+                iter:  125           residual = 1.206139e-002
+                iter:  126           residual = 1.154343e-002
+                iter:  127           residual = 1.058126e-002
+                iter:  128           residual = 9.920562e-003
+                iter:  129           residual = 9.850513e-003
+                iter:  130           residual = 9.710197e-003
+                iter:  131           residual = 9.438173e-003
+                iter:  132           residual = 9.161196e-003
+                iter:  133           residual = 8.988172e-003
+                iter:  134           residual = 8.761173e-003
+                iter:  135           residual = 8.578663e-003
+                iter:  136           residual = 8.507074e-003
+                iter:  137           residual = 8.465581e-003
+                iter:  138           residual = 7.788541e-003
+                iter:  139           residual = 6.800045e-003
+                iter:  140           residual = 6.155390e-003
+                iter:  141           residual = 5.893156e-003
+                iter:  142           residual = 5.803115e-003
+                iter:  143           residual = 5.787474e-003
+                iter:  144           residual = 5.618879e-003
+                iter:  145           residual = 5.225922e-003
+                iter:  146           residual = 5.038769e-003
+                iter:  147           residual = 4.919008e-003
+                iter:  148           residual = 4.783385e-003
+                iter:  149           residual = 4.439279e-003
+                iter:  150           residual = 3.895788e-003
+                iter:  151           residual = 3.895553e-003
+                iter:  152           residual = 3.612769e-003
+                iter:  153           residual = 3.505508e-003
+                iter:  154           residual = 3.351879e-003
+                iter:  155           residual = 3.195372e-003
+                iter:  156           residual = 3.074381e-003
+                iter:  157           residual = 3.030736e-003
+                iter:  158           residual = 2.969770e-003
+                iter:  159           residual = 2.968257e-003
+                iter:  160           residual = 2.913543e-003
+                iter:  161           residual = 2.726178e-003
+                iter:  162           residual = 2.480349e-003
+                iter:  163           residual = 2.419074e-003
+                iter:  164           residual = 2.328142e-003
+                iter:  165           residual = 2.229954e-003
+                iter:  166           residual = 2.171815e-003
+                iter:  167           residual = 2.150898e-003
+                iter:  168           residual = 2.088031e-003
+                iter:  169           residual = 2.000919e-003
+                iter:  170           residual = 1.937500e-003
+                iter:  171           residual = 1.887852e-003
+                iter:  172           residual = 1.887061e-003
+                iter:  173           residual = 1.770493e-003
+                iter:  174           residual = 1.566927e-003
+                iter:  175           residual = 1.402974e-003
+                iter:  176           residual = 1.282221e-003
+                iter:  177           residual = 1.223312e-003
+                iter:  178           residual = 1.182864e-003
+                iter:  179           residual = 1.175953e-003
+                iter:  180           residual = 1.168966e-003
+                iter:  181           residual = 1.168964e-003
+                iter:  182           residual = 1.167699e-003
+                iter:  183           residual = 1.166650e-003
+                iter:  184           residual = 1.163913e-003
+                iter:  185           residual = 1.159049e-003
+                iter:  186           residual = 1.134252e-003
+                iter:  187           residual = 1.045905e-003
+                iter:  188           residual = 9.706545e-004
+                iter:  189           residual = 9.405301e-004
+                iter:  190           residual = 8.914328e-004
+                iter:  191           residual = 8.651223e-004
+                iter:  192           residual = 8.650741e-004
+                iter:  193           residual = 8.339861e-004
+                iter:  194           residual = 7.793320e-004
+                iter:  195           residual = 7.342327e-004
+                iter:  196           residual = 6.933578e-004
+                iter:  197           residual = 6.594451e-004
+            
+    iter:  198           residual = 6.346889e-004
+                iter:  199           residual = 6.131486e-004
+                iter:  200           residual = 5.770374e-004
+                iter:  201           residual = 5.705811e-004
+                iter:  202           residual = 5.676492e-004
+                iter:  203           residual = 5.667884e-004
+                iter:  204           residual = 5.666076e-004
+                iter:  205           residual = 5.555039e-004
+                iter:  206           residual = 5.342437e-004
+                iter:  207           residual = 4.688202e-004
+                iter:  208           residual = 4.297274e-004
+                iter:  209           residual = 3.710505e-004
+                iter:  210           residual = 2.803515e-004
+                iter:  211           residual = 2.803445e-004
+                iter:  212           residual = 2.512702e-004
+                iter:  213           residual = 2.242040e-004
+                iter:  214           residual = 2.052200e-004
+                iter:  215           residual = 1.907970e-004
+                iter:  216           residual = 1.879017e-004
+                iter:  217           residual = 1.867089e-004
+                iter:  218           residual = 1.866828e-004
+                iter:  219           residual = 1.866815e-004
+                iter:  220           residual = 1.857151e-004
+                iter:  221           residual = 1.857130e-004
+                iter:  222           residual = 1.844901e-004
+                iter:  223           residual = 1.767272e-004
+                iter:  224           residual = 1.631675e-004
+                iter:  225           residual = 1.417472e-004
+                iter:  226           residual = 1.282778e-004
+                iter:  227           residual = 1.184725e-004
+                iter:  228           residual = 1.161532e-004
+                iter:  229           residual = 1.161318e-004
+                iter:  230           residual = 1.147348e-004
+                iter:  231           residual = 1.139395e-004
+                iter:  232           residual = 1.128043e-004
+                iter:  233           residual = 1.116311e-004
+                iter:  234           residual = 1.111579e-004
+                iter:  235           residual = 1.111258e-004
+                iter:  236           residual = 1.091928e-004
+                iter:  237           residual = 1.031629e-004
+                iter:  238           residual = 8.798395e-005
+                iter:  239           residual = 7.826882e-005
+                iter:  240           residual = 7.144768e-005
+                iter:  241           residual = 7.142342e-005
+                iter:  242           residual = 6.965669e-005
+                iter:  243           residual = 6.911785e-005
+                iter:  244           residual = 6.910262e-005
+                iter:  245           residual = 6.910252e-005
+                iter:  246           residual = 6.900227e-005
+                iter:  247           residual = 6.844000e-005
+                iter:  248           residual = 6.696840e-005
+                iter:  249           residual = 6.497340e-005
+                iter:  250           residual = 6.402134e-005
+                iter:  251           residual = 6.399663e-005
+                iter:  252           residual = 6.367200e-005
+                iter:  253           residual = 5.992519e-005
+                iter:  254           residual = 5.342747e-005
+                iter:  255           residual = 5.080365e-005
+                iter:  256           residual = 4.821336e-005
+                iter:  257           residual = 4.608386e-005
+                iter:  258           residual = 4.527401e-005
+                iter:  259           residual = 4.464119e-005
+                iter:  260           residual = 4.453365e-005
+                iter:  261           residual = 4.449758e-005
+                iter:  262           residual = 4.442699e-005
+                iter:  263           residual = 4.380922e-005
+                
+iter:  264           residual = 4.125894e-005
+                iter:  265           residual = 3.909408e-005
+                iter:  266           residual = 3.665035e-005
+                iter:  267           residual = 3.373274e-005
+                iter:  268           residual = 3.057498e-005
+                iter:  269           residual = 2.602263e-005
+                iter:  270           residual = 2.235235e-005
+                iter:  271           residual = 2.235208e-005
+                iter:  272           residual = 2.089283e-005
+                iter:  273           residual = 2.005589e-005
+                iter:  274           residual = 1.907325e-005
+                iter:  275           residual = 1.838746e-005
+                iter:  276           residual = 1.763017e-005
+                iter:  277           residual = 1.717330e-005
+                iter:  278           residual = 1.611555e-005
+                iter:  279           residual = 1.489819e-005
+                iter:  280           residual = 1.252176e-005
+                iter:  281           residual = 1.170549e-005
+                iter:  282           residual = 1.116889e-005
+                iter:  283           residual = 1.099898e-005
+                iter:  284           residual = 1.064172e-005
+                iter:  285           residual = 1.050557e-005
+                iter:  286           residual = 1.047972e-005
+                iter:  287           residual = 1.047770e-005
+                iter:  288           residual = 1.044930e-005
+                iter:  289           residual = 1.026663e-005
+                iter:  290           residual = 1.001236e-005
+                iter:  291           residual = 9.447492e-006
+                iter:  292           residual = 9.321797e-006
+                iter:  293           residual = 8.971179e-006
+                iter:  294           residual = 8.555589e-006
+                iter:  295           residual = 7.869668e-006
+                iter:  296           residual = 7.607761e-006
+                iter:  297           residual = 7.370007e-006
+                iter:  298           residual = 7.366286e-006
+                iter:  299           residual = 7.178401e-006
+                iter:  300           residual = 6.528724e-006
+                iter:  301           residual = 6.514408e-006
+                iter:  302           residual = 6.214393e-006
+                iter:  303           residual = 6.082827e-006
+                iter:  304           residual = 6.067712e-006
+                iter:  305           residual = 6.061780e-006
+                iter:  306           residual = 6.000225e-006
+                iter:  307           residual = 5.872628e-006
+                iter:  308           residual = 5.740732e-006
+                iter:  309           residual = 5.696727e-006
+                iter:  310           residual = 5.676680e-006
+                iter:  311           residual = 5.639472e-006
+                iter:  312           residual = 5.510839e-006
+                iter:  313           residual = 5.285712e-006
+                iter:  314           residual = 5.028839e-006
+                iter:  315           residual = 4.777176e-006
+                iter:  316           residual = 4.622418e-006
+                iter:  317           residual = 4.621243e-006
+                iter:  318           residual = 4.533568e-006
+                iter:  319           residual = 4.331232e-006
+                iter:  320           residual = 4.058228e-006
+                iter:  321           residual = 3.785978e-006
+                iter:  322           residual = 3.526885e-006
+                iter:  323           residual = 3.301135e-006
+                iter:  324           residual = 3.145065e-006
+                iter:  325           residual = 3.033687e-006
+                iter:  326           residual = 2.972676e-006
+                iter:  327           residual = 2.837935e-006
+                iter:  328           residual = 2.448727e-006
+                iter:  329           residual = 2.140738e-006
+                iter:  330           residual = 1.865692e-006
+                iter:  331           residual = 1.865524e-006
+                iter:  332           residual = 1.738834e-006
+                iter:  333           residual = 1.679080e-006
+                iter:  334           residual = 1.650154e-006
+                iter:  335           residual = 1.643165e-006
+                iter:  336           residual = 1.640608e-006
+                iter:  337           residual = 1.602876e-006
+                iter:  338           residual = 1.566149e-006
+                iter:  339           residual = 1.463967e-006
+                iter:  340           residual = 1.411941e-006
+                iter:  341           residual = 1.387260e-006
+                iter:  342           residual = 1.379059e-006
+                iter:  343           residual = 1.369913e-006
+                iter:  344           residual = 1.308520e-006
+                iter:  345           residual = 1.239376e-006
+                iter:  346           residual = 1.184044e-006
+                iter:  347           residual = 1.129856e-006
+                iter:  348           residual = 1.103538e-006
+                iter:  349           residual = 1.074874e-006
+                iter:  350           residual = 1.060832e-006
+                iter:  351           residual = 1.060487e-006
+                iter:  352           residual = 1.050632e-006
+                iter:  353           residual = 1.036042e-006
+                iter:  354           residual = 9.899246e-007
+                iter:  355           residual = 8.984107e-007
+                iter:  356           residual = 8.481858e-007
+                iter:  357           residual = 8.325258e-007
+                iter:  358           residual = 8.132651e-007
+                iter:  359           residual = 7.584153e-007
+                iter:  360           residual = 6.548418e-007
+                iter:  361           residual = 6.547869e-007
+                iter:  362           residual = 6.052944e-007
+                iter:  363           residual = 5.496581e-007
+                iter:  364           residual = 5.172082e-007
+                iter:  365           residual = 4.932803e-007
+                iter:  366           residual = 4.723508e-007
+                iter:  367           residual = 4.580742e-007
+                iter:  368           residual = 4.319067e-007
+                iter:  369           residual = 4.162998e-007
+                iter:  370           residual = 4.112916e-007
+                iter:  371           residual = 3.855987e-007
+                iter:  372           residual = 3.680138e-007
+                iter:  373           residual = 3.538549e-007
+                iter:  374           residual = 3.482196e-007
+                iter:  375           residual = 3.475683e-007
+                iter:  376           residual = 3.432358e-007
+                iter:  377           residual = 3.343606e-007
+                iter:  378           residual = 3.079309e-007
+                iter:  379           residual = 2.801855e-007
+                iter:  380           residual = 2.479607e-007
+                iter:  381           residual = 2.334089e-007
+                iter:  382           residual = 2.282510e-007
+                iter:  383           residual = 2.282196e-007
+                iter:  384           residual = 2.268928e-007
+                iter:  385           residual = 2.268925e-007
+                iter:  386           residual = 2.268904e-007
+                iter:  387           residual = 2.267234e-007
+                iter:  388           residual = 2.255754e-007
+                iter:  389           residual = 2.254268e-007
+                iter:  390           residual = 2.186560e-007
+                iter:  391           residual = 2.146914e-007
+                iter:  392           residual = 2.144874e-007
+                iter:  393           residual = 2.139728e-007
+                iter:  394           residual = 2.138546e-007
+                iter:  395           residual = 2.122033e-007
+                iter:  3
+96           residual = 2.113646e-007
+                iter:  397           residual = 2.113497e-007
+                iter:  398           residual = 2.105110e-007
+                iter:  399           residual = 2.071037e-007
+                iter:  400           residual = 2.067850e-007
+                iter:  401           residual = 2.054611e-007
+                iter:  402           residual = 1.979944e-007
+                iter:  403           residual = 1.842641e-007
+                iter:  404           residual = 1.668639e-007
+                iter:  405           residual = 1.627074e-007
+                iter:  406           residual = 1.621417e-007
+                iter:  407           residual = 1.616382e-007
+                iter:  408           residual = 1.581794e-007
+                iter:  409           residual = 1.448150e-007
+                iter:  410           residual = 1.337436e-007
+                iter:  411           residual = 1.300413e-007
+                iter:  412           residual = 1.266055e-007
+                iter:  413           residual = 1.221249e-007
+                iter:  414           residual = 1.164608e-007
+                iter:  415           residual = 1.114907e-007
+                iter:  416           residual = 1.046144e-007
+                iter:  417           residual = 9.736370e-008
+                iter:  418           residual = 8.571724e-008
+                iter:  419           residual = 5.672509e-008
+                iter:  420           residual = 4.181966e-008
+                iter:  421           residual = 4.174259e-008
+                iter:  422           residual = 3.586068e-008
+                iter:  423           residual = 3.309399e-008
+                iter:  424           residual = 3.233388e-008
+                iter:  425           residual = 3.209381e-008
+                iter:  426           residual = 3.163134e-008
+                iter:  427           residual = 3.116565e-008
+                iter:  428           residual = 3.051434e-008
+                iter:  429           residual = 2.985615e-008
+                iter:  430           residual = 2.984820e-008
+                iter:  431           residual = 2.983536e-008
+                iter:  432           residual = 2.947687e-008
+                iter:  433           residual = 2.893943e-008
+                iter:  434           residual = 2.809238e-008
+                iter:  435           residual = 2.728710e-008
+                iter:  436           residual = 2.685246e-008
+                iter:  437           residual = 2.669822e-008
+                iter:  438           residual = 2.603286e-008
+                iter:  439           residual = 2.437724e-008
+                iter:  440           residual = 2.219209e-008
+                iter:  441           residual = 2.112521e-008
+                iter:  442           residual = 2.111676e-008
+                iter:  443           residual = 2.088039e-008
+                iter:  444           residual = 1.886715e-008
+                iter:  445           residual = 1.657674e-008
+                iter:  446           residual = 1.482216e-008
+                iter:  447           residual = 1.345629e-008
+                iter:  448           residual = 1.201319e-008
+                iter:  449           residual = 1.135669e-008
+                iter:  450           residual = 1.087576e-008
+                iter:  451           residual = 1.087571e-008
+                iter:  452           residual = 1.070777e-008
+                iter:  453           residual = 1.067811e-008
+                iter:  454           residual = 1.061267e-008
+                iter:  455           residual = 1.039903e-008
+                iter:  456           residual = 9.650841e-009
+
+	Solver:			gmres
+	number of iterations:	456
+
+	Actual residual = 2.0231e-014	Recursive residual = 3.8403e-015
+
+	Calculated Norms				Requested Norm
+	--------------------------------------------	--------------
+
+	||r||_2 / ||r0||_2:		5.084229e-008	1.000000e-008
+
+
+		Solution time: 0.552498 (sec.)
+		total iterations: 456
+
+Domain: Dumping all at clock time 2018-12-22-20:00:44.126.
+Globals dumped at 2018-12-22-20:00:44.128.
+Dumping grid boundaries at 2018-12-22-20:00:44.128.
+Dumped grid boundaries at 2018-12-22-20:00:44.128.
+No particles to dump.
+No fluids to dump.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-22-20:00:44.128.
+Dumping E at 2018-12-22-20:00:44.128.
+Dumped E at 2018-12-22-20:00:44.130.
+Dumping Phi at 2018-12-22-20:00:44.130.
+Dumped Phi at 2018-12-22-20:00:44.131.
+Dumping ChargeDensity at 2018-12-22-20:00:44.131.
+Dumped ChargeDensity at 2018-12-22-20:00:44.133.
+All multiFields dumped at 2018-12-22-20:00:44.134.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-22-20:00:44.135.
+
+Main loop ended at clock time 2018-12-22-20:00:44.135
+Deleting domain
+
+Deleting domain.
+OUTPUT SUMMARY:
+  There were 0 Notices encountered in this run.
+  There were 0 Warnings encountered in this run.
+------------------------------------------------------------------------------
+   ML time information (seconds)          total          avg
+
+   1- Construction                  =  0.0112225   0.0112225
+   2- Preconditioner apply          =   0.554586
+     a- first application(s) only   =  0.0010694   0.0010694
+     b- remaining applications      =   0.553516  0.000769842
+
+   3- Total time required by ML so far is 0.565808 seconds
+      (constr + all applications)
+------------------------------------------------------------------------------
+VORPAL completed at clock time    2018-12-22-20:00:44.143.
+NOTE: A VSimEM or VSimMD or VSimPD license was needed to run this simulation.
+Settings in the Z axis will be ignored
+Lines from 'hc_basic_geometry.pre' processed.
+Finished with 'hc_basic_geometry.pre'.
+
+
+	***************************************************************
+
+	Warning: recursive residual indicates convergence
+	though the true residual is too large.
+
+	Sometimes this occurs when storage is overwritten (e.g. the
+	solution vector was not dimensioned large enough to hold
+	external variables). Other times, this is due to roundoff. In
+	this case, the solution has either converged to the accuracy
+	of the machine or intermediate roundoff errors occurred
+	preventing full convergence. In the latter case, try solving
+	again using the new solution as an initial guess.
+
+	***************************************************************
+
+
+--------------------- END ENGINE OUTPUT ----------------
+ 
+Engine completed successfully.
+To see results, click on the "Visualize" icon in the icon panel.

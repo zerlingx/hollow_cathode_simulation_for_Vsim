@@ -1,0 +1,984 @@
+######################################################################
+#
+# @file    cylHallThrusterT.pre
+#
+# @version $Rev: 7585 $ $Date: 2018-08-06 11:10:46 -0600 (Mon, 06 Aug 2018) $
+#
+# Copyright &copy; 2012-2018, Tech-X Corporation, Boulder, CO.
+# Freely distributable.
+#
+######################################################################
+
+##########################################
+# This input file performs
+# SPT-100 Hall thruster channel
+# simulations using a 2-D Axisymmetric
+# cylindrical set up in this simulation.
+#
+##########################################
+
+<XSim cylHallThrusterT>
+   shortDescription = "Cylindrical Hall Thruster (text-based setup)"
+   description = "Cylindrical SPT-100 Hall Thruster Channel Plasma Discharge Simulation"
+   longDescription = "Simulation of a Stationary Plasma Thruster-100 (SPT-100) cylindrical Hall thruster channel plasma discharge processes at 1.35 kW operating power. This simulation kinetically tracks electrons, xenon ions and sputter hBN wall materials. The sputtered hBN wall material can help predict the erosion of channel during the thruster operation."
+   image = "cylHallThrusterTSchematic.png"
+   thumbnail = "cylHallThrusterTTn.png"
+   analyzers = [computePtclNumDensity.py]
+</XSim>
+
+##########
+#
+# Exposed variables
+#
+##########
+
+# Hall thruster channel length
+<XVar CHANNEL_LENGTH>
+   description = "Hall thruster channel length"
+</XVar>
+
+# Hall thruster inner cylinder radius
+<XVar CHANNEL_RMIN>
+   description = "Hall thruster inner cylinder radius"
+</XVar>
+
+# Hall thruster outer cylinder radius
+<XVar CHANNEL_RMAX>
+   description = "Hall thruster outer cylinder radius"
+</XVar>
+
+# Inner dielectric wall thickness
+<XVar INNER_DIELEC_THICK>
+   description = "Inner dielectric wall thickness"
+</XVar>
+
+# Outer dielectric wall thickness
+<XVar OUTER_DIELEC_THICK>
+   description = "Outer dielectric wall thickness"
+</XVar>
+
+# Length of the exit region
+<XVar EXIT_LENGTH>
+   description = "Length of the exit region"
+</XVar>
+
+# Anode voltage in V
+<XVar ANODE_V>
+   description = "Anode voltage in V"
+</XVar>
+
+# Cathode voltage considered at the exit region in V
+<XVar CATHODE_V>
+   description = "Cathode voltage considered at the exit region in V"
+</XVar>
+
+# Cathode emission current in A
+<XVar EMISSION_CURRENT>
+   description = "Cathode emission current in A"
+</XVar>
+
+# Initial cathode emitted electron energy in eV
+<XVar INIT_ELEC_ENERGY_IN_EV>
+   description = "Initial cathode emitted electron energy in eV"
+</XVar>
+
+# Maximum radial magnetic field strength in T
+<XVar MAX_RAD_BFIELD>
+   description = "Maximum radial magnetic field strength in T"
+</XVar>
+
+# Maximum xenon neutral gas density at anode location
+<XVar MAX_XEGAS_DENS>
+   description = "Maximum xenon neutral gas density at anode location"
+</XVar>
+
+# Number of cells in the Z direction
+<XVar NZ>
+  description = "Number of cells in the Z direction"
+</XVar>
+
+# Number of cells in the R direction
+<XVar NR>
+   description = "Number of cells in R direction"
+</XVar>
+
+# Scale reduction Factor
+<XVar SHRINK_FACTOR>
+   description = "Inverse scale factor "
+</XVar>
+
+# Time step factor
+<XVar TIMESTEP_FACTOR>
+   description = "Time step factor "
+</XVar>
+
+<XVar CALCULATE_THRUST>
+  description = "0- Faster, more stable simulation that excludes histories for thrust, 1- Include histories for thrust"
+  default = 0
+</XVar>
+
+##########
+#
+# Primary variables (dimensions and operating parameters)
+#
+##########
+$ import verbosity
+
+verbosity = VP_NOTICE
+
+$ CHANNEL_LENGTH = 0.025 # 2.5 cm
+$ CHANNEL_RMIN = 0.035 # 3.5 cm
+$ CHANNEL_RMAX = 0.05 # 5 cm
+$ INNER_DIELEC_THICK = 0.01 # 10 mm
+$ OUTER_DIELEC_THICK = 0.005 # 5 mm
+$ EXIT_LENGTH = 0.01 # 1 cm
+
+$ ANODE_V = 300.0 # in V
+$ CATHODE_V = 0.0
+$ EMISSION_CURRENT = 4.5 # in A.
+$ INIT_ELEC_ENERGY_IN_EV = 25.0 # in eV
+$ MAX_RAD_BFIELD = 120.e-4 # in T.
+$ MAX_XEGAS_DENS = 1.e21 # in m^-3.
+
+$ NDIM = 2
+$ NZ = 128
+$ NR = 80
+$ SHRINK_FACTOR = 50.0
+$ TIMESTEP_FACTOR = 1.0
+
+##########
+#
+# Import values and macros
+#
+##########
+
+$ import mathphys
+$ import absorbingBox
+$ import matrix
+$ import solverbcs
+$ import statics
+
+##########
+#
+# Secondary variables (defined in terms of other variables)
+#
+##########
+
+# plasma ion and sputtered atom parameters
+$ XENONMASS = 131.3 * PROTMASS
+$ XENONCHARGE = 54.*ELEMCHARGE
+$ hBNMASS = 24.82*PROTMASS
+$ hBNVSIG = sqrt(300.*KB/hBNMASS)
+$ ZEROCHARGE = 0.
+
+$ CHANNEL_GAP = CHANNEL_RMAX - CHANNEL_RMIN
+$ MIN_RADIUS = CHANNEL_RMIN - INNER_DIELEC_THICK
+$ ANODE_MIN_RADIUS = CHANNEL_RMIN - 0.5 * INNER_DIELEC_THICK
+$ MAX_RADIUS = CHANNEL_RMAX + OUTER_DIELEC_THICK
+$ ANODE_MAX_RADIUS = CHANNEL_RMAX + 0.5 * OUTER_DIELEC_THICK
+$ TOTAL_LENGTH = CHANNEL_LENGTH + EXIT_LENGTH
+#$ DENSITY_FACTOR = 0.04
+#$ DENSITY_FACTOR1 = 1.25 * 0.04 * (1./54.0)
+
+# Declare scaled quantities
+$ ZETA = 1. / SHRINK_FACTOR
+$ SCALE_CHANNEL_LENGTH = ZETA * TOTAL_LENGTH
+$ SCALE_CHANNEL_RMIN = ZETA * CHANNEL_RMIN
+$ SCALE_CHANNEL_RMAX = ZETA * CHANNEL_RMAX
+$ SCALE_CHANNEL_GAP = ZETA * CHANNEL_GAP
+$ SCALE_EMISSION_CURRENT = ZETA * EMISSION_CURRENT # in A.
+$ SCALE_MAX_RAD_BFIELD = MAX_RAD_BFIELD / ZETA
+$ SCALE_MAX_XEGAS_DENS = MAX_XEGAS_DENS / ZETA
+$ SCALE_MIN_RADIUS = ZETA * MIN_RADIUS
+$ SCALE_MAX_RADIUS = ZETA * MAX_RADIUS
+$ SCALE_ANODE_MIN_RADIUS = ZETA * ANODE_MIN_RADIUS
+$ SCALE_ANODE_MAX_RADIUS = ZETA * ANODE_MAX_RADIUS
+
+$ NZ1 = NZ + 1
+$ NR1 = NR + 1
+$ NZM1 = NZ - 1
+$ NRM1 = NR - 1
+
+$ LZ = SCALE_CHANNEL_LENGTH
+$ ZBGN = 0.0
+$ ZEND = ZBGN + LZ
+$ CHANNEL_ZEND = ZBGN + CHANNEL_LENGTH * ZETA
+$ INNER_RAD = SCALE_CHANNEL_RMIN
+$ OUTER_RAD = SCALE_CHANNEL_RMAX
+$ RAD_GAP = OUTER_RAD - INNER_RAD
+$ AREA = PI *(OUTER_RAD*OUTER_RAD - INNER_RAD*INNER_RAD)
+$ RBGN = SCALE_MIN_RADIUS
+$ LR = SCALE_MAX_RADIUS - SCALE_MIN_RADIUS
+$ REND = RBGN + LR
+
+# Calculate actual grid spacings
+$ DZ = LZ / NZ
+$ DZI = 1. / DZ
+$ DR =  LR / NR
+$ DRI = 1. / DR
+$ DLI = sqrt(DZI * DZI + DRI * DRI)
+$ DL = 1. / DLI
+
+#experiment with secondary emission
+$ MATERIAL = 'copper'
+
+$ ELECTRON_CURRENT = SCALE_EMISSION_CURRENT
+$ EMISSION_RMIN = INNER_RAD
+$ EMISSION_RMAX = OUTER_RAD
+$ EMISSION_ZMIN = $CHANNEL_ZEND - 20.0*DZ$
+$ EMISSION_ZMAX = $CHANNEL_ZEND + 3.0*DZ$
+$ EMISSION_AREA = PI * (EMISSION_RMAX * EMISSION_RMAX - EMISSION_RMIN * EMISSION_RMIN)
+$ ELEC_VELOCITY = 2.3e6
+#$ NOMDEN = ELECTRON_CURRENT / (ELEMCHARGE * ELEC_VELOCITY * EMISSION_AREA)
+$ NOMDEN = 1.e19
+$ NOMPPC = 10.0
+$ NUM_MACRO_PER_STEP = 3
+$ NUM_PTCLS_PER_MACRO = NOMDEN * EMISSION_AREA * DZ / NUM_MACRO_PER_STEP
+$ NPIM = 1e5
+
+$ B0 = SCALE_MAX_RAD_BFIELD
+$ XE_MAX_DENSITY = SCALE_MAX_XEGAS_DENS
+$ Velectron = sqrt(2.0 * ELEMCHARGE * (100. + abs(ANODE_V)) / ELECMASS)
+$ VThermalE = sqrt(ELEMCHARGE * 2.0 * INIT_ELEC_ENERGY_IN_EV / ELECMASS)
+$ INIT_PLASMA_ENERGY_IN_EV = 0.5
+$ init_VThermalE = sqrt(ELEMCHARGE * 2.0 * INIT_PLASMA_ENERGY_IN_EV / ELECMASS)
+$ VThermalIon = sqrt(ELEMCHARGE * 2.0 * INIT_PLASMA_ENERGY_IN_EV / XENONMASS)
+
+# Run parameters
+$ DT = TIMESTEP_FACTOR * (DL / Velectron)
+$ CATHODE_NUMPHYS_ELEC_PER_STEP = ELECTRON_CURRENT * DT / ELEMCHARGE
+
+$ NSTEPS = 200000
+$ NDUMPS = 200
+
+# must emit a tiny distance off from ParticleSink surface
+$ EMISSION_OFFSET = 0.01*DR
+
+# Define top and bottom dielectric cylinder wall location indices
+$ SCALE_INNER_DIELEC_THICK = ZETA * INNER_DIELEC_THICK
+$ INNER_DIELEC_RAD_MAX = RBGN + SCALE_INNER_DIELEC_THICK
+$ BOT_WALL_RINDEX = (int) ( (INNER_DIELEC_RAD_MAX-RBGN) / DR )
+$ SPUT_BOTWALL_POS = RBGN + (BOT_WALL_RINDEX + 1) * DR + EMISSION_OFFSET
+$ BOT_WALL_ANODE_RINDEX = (int) ( (SCALE_ANODE_MIN_RADIUS-RBGN) / DR)
+$ TOP_WALL_ANODE_RINDEX = (int) ( (SCALE_ANODE_MAX_RADIUS-RBGN) / DR)
+
+$ SCALE_OUTER_DIELEC_THICK = ZETA * OUTER_DIELEC_THICK
+$ OUTER_DIELEC_RAD_MIN = REND - SCALE_OUTER_DIELEC_THICK
+$ TOP_WALL_RINDEX = (int) ( (OUTER_DIELEC_RAD_MIN - RBGN) / DR )
+$ SPUT_TOPWALL_POS = RBGN + TOP_WALL_RINDEX * DR - EMISSION_OFFSET
+$ CHANNEL_ZEND_INDEX = (int) (CHANNEL_ZEND / DZ) + 1
+
+$ DUMPPERIOD = int(NSTEPS / NDUMPS)
+
+<function By(x,y,z)>
+  H(CHANNEL_ZEND - x) * H(y-INNER_RAD) * H(OUTER_RAD-y) * B0 * (INNER_RAD / y) * exp(-16.0*(x/CHANNEL_ZEND-1.0)*(x/CHANNEL_ZEND-1.0)) + H(x-CHANNEL_ZEND) * H(y-INNER_RAD) * H(OUTER_RAD-y) * B0 * (INNER_RAD / y) * exp(-16.0*((x-CHANNEL_ZEND)/CHANNEL_ZEND)*((x-CHANNEL_ZEND)/CHANNEL_ZEND))
+</function>
+
+<function diel(x,y,z)>
+  EPSILON0*(1.0 + 3.6 * H(INNER_RAD-y) * H(CHANNEL_ZEND -x) + 3.6 * H(y-OUTER_RAD) * H(CHANNEL_ZEND - x))
+</function>
+
+#####################################
+# VSim input blocks
+#####################################
+# time step, number of steps, etc.
+dt = DT
+dimension = NDIM
+floattype = double
+nsteps = NSTEPS
+dumpPeriodicity = DUMPPERIOD
+
+# The grid
+<Grid globalGrid>
+
+  kind = coordProdGrid
+  coordinateSystem = Cylindrical
+  includeCylAxis = 0
+  # Z - direction
+  <CoordinateGrid dir0>
+     sectionBreaks = [ZBGN ZEND]
+     deltaAtBreaks = [DZ DZ]
+  </CoordinateGrid>
+  # R - direction
+  <CoordinateGrid dir1>
+     sectionBreaks = [RBGN REND]
+     deltaAtBreaks = [DR DR]
+  </CoordinateGrid>
+
+</Grid>
+
+# The decomposition (determines periodicity)
+<Decomp decomp>
+</Decomp>
+
+<MultiField esField>
+
+# need a rho field
+  <Field rho>
+    kind = depField
+    numComponents = 1
+    overlap = [1 1]
+    offset = none
+    <InitialCondition densityFunc>
+      kind = varset
+      lowerBounds = [  0   0]
+      upperBounds = [NZ1 NR1]
+      components = [0]
+      <STFunc component0>
+        kind = expression
+        expression = 0.0
+      </STFunc>
+    </InitialCondition>
+  </Field>
+
+# Electric potential on the nodes
+  <Field phi>
+    numComponents = 1
+    overlap = [1 1]
+    offset = none
+  </Field>
+
+# Electric field on edges
+  <Field edgeE>
+    numComponents = 3
+    overlap = [1 1]
+    offset = edge
+  </Field>
+
+# Electric field on edges
+  <Field nodalE>
+    numComponents = 3
+    overlap = [1 1]
+    offset = none
+  </Field>
+
+# Magnetic field on nodes; not updated
+  <Field nodalB>
+    numComponents = 3
+    overlap = [1 1]
+    offset = none
+    <InitialCondition initB>
+      kind = varset
+      lowerBounds = [  0   0]
+      upperBounds = [NZ1 NR1]
+      components = [0 1 2]
+      <STFunc component0>
+        kind = expression
+        expression = 0.0
+      </STFunc>
+      <STFunc component1>
+        kind = expression
+        expression = By(x,y,z)
+      </STFunc>
+      <STFunc component2>
+        kind = expression
+        expression = 0.0 #By(x,y,z)
+      </STFunc>
+    </InitialCondition>
+  </Field>
+
+# ES solve
+  <FieldUpdater esSolve>
+    kind = linearSolveUpdater
+    lowerBounds = [ 0   0]
+    upperBounds = [NZ1 NR1]
+    readFields = [rho]
+    readComponents = [0]
+    writeFields = [phi]
+    writeComponents = [0]
+    writeEquationToFile = false
+## matrix and rhs fill
+    coordProdLaplacian(interior, 0, 1, 1, 0, NZM1, NR, 1, 0, rho, 0,\
+                       1.0, diel(x,y,z))
+    dirichletBC(leftWall, 2, 0, BOT_WALL_ANODE_RINDEX, 1, 1, TOP_WALL_ANODE_RINDEX, 1,\
+                0, ANODE_V, 1.0)
+    dirichletBC(leftBotWall, 2, 0, 0, 0, 1, BOT_WALL_ANODE_RINDEX, 1, 0, 0.0, 1.0)
+    dirichletBC(leftTopWall, 2, 0, TOP_WALL_ANODE_RINDEX, 0, 1, NR1, 1, 0, 0.0, 1.0)
+    neumannBC(bottomWall, 2, 1, 0, 0, NZM1, 1, 1, 0, 0.0, 1, 1, 1.0)
+    neumannBC(topWall, 2, 1, NR, 0, NZM1, NR1, 1, 0, 0.0, 1, -1, 1.0)
+    dirichletBC(rightWall, 2, NZM1, 0, 0, NZ1, NR1, 1, 0, CATHODE_V, 1.0)
+## reading of lhs vector to field
+    <VectorReader phiReader>
+      kind = fieldVectorReader
+      minDim = 0
+      writeField = phi
+      writeComponent = 0
+      lowerBounds = [ 0   0]
+      upperBounds = [NZ1 NR1]
+      component = 0
+    </VectorReader>
+## direct solver
+    <LinearSolver mySolver>
+      kind = directSolver
+      solverType = superLU
+    </LinearSolver>
+  </FieldUpdater>
+
+# Gradient of phi gives E
+  <FieldUpdater gradPhi>
+    kind = gradVecUpdaterCoordProd
+    factor = -1.
+    lowerBounds = [ 0  0]
+    upperBounds = [NZ NR]
+    readFields = [phi]
+    writeFields = [edgeE]
+  </FieldUpdater>
+
+# Edge to nodes
+  <FieldUpdater edgeToNode>
+    kind = edgeToNodeVec
+    lowerBounds = [  0  0]
+    upperBounds = [NZ1 NR]
+    readFields = [edgeE]
+    writeFields = [nodalE]
+  </FieldUpdater>
+
+# Boundary edge to node is a copy
+  <FieldUpdater copyPerimLeft>
+    kind = unaryFieldOpUpdater
+    minDim = 1
+    lowerBounds = [0   0]
+    upperBounds = [1 NR1]
+    operation = set
+    bumpReadIter = [0 0 0]
+    readFields = [edgeE]
+    component = 0
+    writeFields = [nodalE]
+    <STFunc copyFunc>
+      kind = constantFunc
+      amplitude = 1.
+    </STFunc>
+  </FieldUpdater>
+
+# Boundary edge to node is a copy
+  <FieldUpdater copyPerimRight>
+    kind = unaryFieldOpUpdater
+    minDim = 1
+    lowerBounds = [NZ    0]
+    upperBounds = [NZ1 NR1]
+    operation = set
+    bumpReadIter = [-1 0 0]
+    readFields = [edgeE]
+    component = 0
+    writeFields = [nodalE]
+    <STFunc copyFunc>
+      kind = constantFunc
+      amplitude = 1.
+    </STFunc>
+  </FieldUpdater>
+
+# Boundary edge to node is a copy
+  <FieldUpdater copyPerimFront>
+    kind = unaryFieldOpUpdater
+    minDim = 2
+    lowerBounds = [  0  0]
+    upperBounds = [NZ1  1]
+    operation = set
+    bumpReadIter = [0 1 0]
+    readFields = [edgeE]
+    component = 1
+    writeFields = [nodalE]
+    <STFunc copyFunc>
+      kind = constantFunc
+      amplitude = 1.
+    </STFunc>
+  </FieldUpdater>
+
+# Boundary edge to node is a copy
+  <FieldUpdater copyPerimBack>
+    kind = unaryFieldOpUpdater
+    minDim = 2
+    lowerBounds = [  0 NR ]
+    upperBounds = [NZ1 NR1]
+    operation = set
+    bumpReadIter = [0 -1 0]
+    readFields = [edgeE]
+    component = 1
+    writeFields = [nodalE]
+    <STFunc copyFunc>
+      kind = constantFunc
+      amplitude = 1.
+    </STFunc>
+  </FieldUpdater>
+
+#
+# Update steps
+#
+# Fill phi initially
+  <InitialUpdateStep initStep01>
+    messageFields = [phi]
+    updaters = [esSolve]
+    alsoAfterRestore = true
+  </InitialUpdateStep>
+
+# Electrostatic solve
+  <UpdateStep step1>
+    toDtFrac = 1.
+    updaters = [esSolve]
+    messageFields = [phi]
+  </UpdateStep>
+
+# Compute fields on Yee mesh
+  <UpdateStep step2>
+    toDtFrac = 1.
+    updaters = [gradPhi]
+    messageFields = [edgeE]
+  </UpdateStep>
+
+# Compute nodal E
+  <UpdateStep step3>
+    toDtFrac = 1.0
+    updaters = [edgeToNode copyPerimLeft copyPerimRight copyPerimFront copyPerimBack]
+    messageFields = [nodalE]
+  </UpdateStep>
+
+  updateStepOrder = [step1 step2 step3]
+
+</MultiField>
+
+<ScalarDepositor rhoDep>
+  kind = areaWeightingCP
+  depField = esField.rho
+</ScalarDepositor>
+
+<Species Xeplus>
+  kind = relBorisCyl
+  charge = ELEMCHARGE
+  mass = XENONMASS
+  chargeDeps = [rhoDep]
+  fields = [esField.nodalE esField.nodalB]
+  numPtclsInMacro = NPIM
+
+  <ParticleSink leftIonAbsorber>
+    kind = absAndSav
+    minDim = 1
+    lowerBounds = [-1 -1]
+    upperBounds = [0 NR1]
+  </ParticleSink>
+
+# Particles out right are removed
+  <ParticleSink rightIonAbsorber>
+    kind = absAndSav
+    minDim = 1
+    lowerBounds = [NZ  -1 ]
+    upperBounds = [NZ1 NR1]
+  </ParticleSink>
+
+  # for top boundary
+  <ParticleSource topIonSEEemitter>
+      kind = secElec
+      ptclAbsorber = topIonAbsorber
+      material = MATERIAL
+      emissionProb = 0.5
+      direction = [0.0 -1.0]
+      emittingSurface = SPUT_TOPWALL_POS
+      secondarySpecies = electrons
+  </ParticleSource>
+  # for bottom boundary
+  <ParticleSource botIonSEEemitter>
+      kind = secElec
+      ptclAbsorber = bottomIonAbsorber
+      material = MATERIAL
+      emissionProb = 0.5
+      direction = [0.0 1.0]
+      emittingSurface = SPUT_BOTWALL_POS
+      secondarySpecies = electrons
+  </ParticleSource>
+
+  # The sputter emitter
+  <ParticleSource topIonSputterEmitter>
+    kind = sputter
+    minDim = 1
+    ptclAbsorber = topIonAbsorber
+    emittingSurface = SPUT_TOPWALL_POS
+    # The 'direction' vector should point along the
+    # *outward-facing* normal...be sure to check this!
+    direction = [0. 1. 0.]
+
+    # The material that makes up the wall
+    sputterAtomType = hBN
+
+    # The species of neutral atoms that is being sputtered off the wall
+    sputterAtomSpecies = BNAtoms
+
+    # The velocity spread of the sputtered atoms
+    secVSig = hBNVSIG
+  </ParticleSource>
+
+  # The absorber which is tied to the sputter emitter.
+  <ParticleSink topIonAbsorber>
+    kind = absAndSav
+    lowerBounds = [-1 TOP_WALL_RINDEX ]
+    upperBounds = [CHANNEL_ZEND_INDEX $TOP_WALL_RINDEX+1$]
+  </ParticleSink>
+
+  <ParticleSink topOuterIonAbsorber>
+    kind = absAndSav
+    lowerBounds = [$CHANNEL_ZEND_INDEX + 1$ NR]
+    upperBounds = [NZ1 NR1]
+  </ParticleSink>
+
+  <ParticleSink topFaceIonAbsorber>
+    kind = absAndSav
+    lowerBounds = [CHANNEL_ZEND_INDEX $TOP_WALL_RINDEX+1$]
+    upperBounds = [$CHANNEL_ZEND_INDEX+1$ NR1]
+  </ParticleSink>
+
+  <ParticleSource bottomIonSputterEmitter>
+    kind = sputter
+    minDim = 1
+    ptclAbsorber = bottomIonAbsorber
+    emittingSurface = SPUT_BOTWALL_POS
+
+    # The 'direction' vector should point along the
+    # *outward-facing* normal...be sure to check this!
+    direction = [0. -1. 0.]
+
+    # The material that makes up the wall
+    sputterAtomType = hBN
+
+    # The species of neutral atoms that is being sputtered off the wall
+    sputterAtomSpecies = BNAtoms
+
+    # The velocity spread of the sputtered atoms
+    secVSig = hBNVSIG
+  </ParticleSource>
+
+  <ParticleSink bottomIonAbsorber>
+      kind = absAndSav
+      minDim = 1
+      lowerBounds = [-1 BOT_WALL_RINDEX  -1]
+      upperBounds = [CHANNEL_ZEND_INDEX $BOT_WALL_RINDEX+1$  NZ1]
+  </ParticleSink>
+
+  <ParticleSink botOuterIonAbsorber>
+    kind = absAndSav
+    lowerBounds = [$CHANNEL_ZEND_INDEX + 1$ -1]
+    upperBounds = [NZ1 0]
+  </ParticleSink>
+
+  <ParticleSink botFaceIonAbsorber>
+    kind = absAndSav
+    lowerBounds = [CHANNEL_ZEND_INDEX -1]
+    upperBounds = [$CHANNEL_ZEND_INDEX+1$ BOT_WALL_RINDEX]
+  </ParticleSink>
+$ if CALCULATE_THRUST==0
+   absorbingBox(NZ, NR, 1)
+$ endif
+</Species>
+
+# Neutral Gas Fluid.
+<Fluid XeNeutralGas>
+  kind = neutralGas
+  gasKind = Xe
+  <InitialCondition constGasDensity>
+    lowerBounds = [0 0]
+    upperBounds = [NZ NR]
+    components = [0]
+      kind = varset
+    <STFunc component0>
+      kind = expression
+      expression = XE_MAX_DENSITY * (0.1+(1.0-x/CHANNEL_ZEND)) * H(CHANNEL_ZEND-x) * H(y-INNER_RAD) * H(OUTER_RAD-y) + H(x-CHANNEL_ZEND) * XE_MAX_DENSITY * 0.1 * (1.0 - (x-CHANNEL_ZEND)/CHANNEL_ZEND)
+     </STFunc>
+  </InitialCondition>
+</Fluid>
+
+<MonteCarloInteractions mainMC>
+   <IncidentSelector mySelector>
+      kind = unbiasedSelector
+   </IncidentSelector>
+
+   # electron-neutral elastic scattering
+   <Interaction elecElastic>
+      kind = impactElastic
+      neutralGas = XeNeutralGas
+      impactSpecies = electrons
+      crossSection = eedl
+      crossSectionDataFile = eedl.dat
+    </Interaction>
+
+   # electron-neutral excitation
+    <Interaction elecExcite>
+      kind = impactExcitation
+      excitationThreshold = 8.35
+      neutralGas = XeNeutralGas
+      impactSpecies = electrons
+      crossSection = eedl
+      crossSectionDataFile = eedl.dat
+    </Interaction>
+
+   # electron-neutral ionization
+    <Interaction elecIonize>
+      kind = impactIonization
+      ionizationThreshold = 12.1
+      neutralGas = XeNeutralGas
+      impactSpecies = electrons
+      ionizedElectronSpecies = electrons
+      ionSpecies = Xeplus
+      crossSection = eedl
+      crossSectionDataFile = eedl.dat
+    </Interaction>
+
+   # ion-neutral elastic scattering
+   <Interaction XeIonElasticM>
+        kind = impactIonCollisions
+        neutralGas = XeNeutralGas
+        impactSpecies = Xeplus
+        neutralGasTemp = 300.0
+        ionCollType = MomentumExchange
+        crossSection = builtIn
+    </Interaction>
+
+   # ion-neutral momentum-exchange
+    <Interaction XeIonCEX>
+      kind = impactIonCollisions
+      neutralGas = XeNeutralGas
+      impactSpecies = Xeplus
+      neutralGasTemp = 300.0
+      ionCollType = ChargeExchange
+      crossSection = builtIn
+    </Interaction>
+
+</MonteCarloInteractions>
+
+<Species electrons>
+  kind = relBorisCyl
+  charge = ELECCHARGE
+  mass = ELECMASS
+  chargeDeps = [rhoDep]
+  fields = [esField.nodalE esField.nodalB]
+
+  numPtclsInMacro = NPIM
+  #numPtclsInMacro = NUM_PTCLS_PER_MACRO
+
+# The following is a particle source for emission at every DT.
+# A particle source block for discharge
+# cathode emitter for electrons
+  <ParticleSource cathodeElecEmitter>
+      kind = xvLoaderEmitter
+      applyTimes = [0. 1.0]
+      emit = false
+      load = true
+      loadAfterInit = true
+      <PositionGenerator bitRevSlab>
+         kind = bitRevSlabPosGen
+         <Slab loadSlab>
+             lowerBounds = [EMISSION_ZMIN EMISSION_RMIN]
+             upperBounds = [EMISSION_ZMAX EMISSION_RMAX]
+         </Slab>
+         numPhysPtclsPerStep = CATHODE_NUMPHYS_ELEC_PER_STEP
+      </PositionGenerator>
+
+      <VelocityGenerator emitVelGen>
+         kind = beamVelocityGen
+         vbar = [ -VThermalE 0.0 0.0]
+         vsig = [ 0.0 $0.5*VThermalE$ $0.5*VThermalE$ ]
+         #emissionQuad = 1
+      </VelocityGenerator>
+
+      <STFunc relMacroDenFunc>
+         kind = expression
+         expression = 1.0
+      </STFunc>
+
+  </ParticleSource>
+
+# Particles out left are removed
+  <ParticleSink leftElecAbsorber>
+    kind = absAndSav
+    lowerBounds = [-1  -1]
+    upperBounds = [0 NR1]
+  </ParticleSink>
+
+# Particles out right are removed
+  <ParticleSink rightElecAbsorber>
+    kind = absAndSav
+    lowerBounds = [NZ -1]
+    upperBounds = [NZ1 NR1]
+  </ParticleSink>
+
+  <ParticleSink topElecAbsorber>
+    kind = absAndSav
+    minDim = 1
+    lowerBounds = [-1 TOP_WALL_RINDEX]
+    upperBounds = [CHANNEL_ZEND_INDEX $TOP_WALL_RINDEX+1$]
+  </ParticleSink>
+
+  <ParticleSink topOuterElecAbsorber>
+    kind = absAndSav
+    lowerBounds = [$CHANNEL_ZEND_INDEX + 1$ NR]
+    upperBounds = [NZ1 NR1]
+  </ParticleSink>
+
+  <ParticleSink topFaceElecAbsorber>
+    kind = absAndSav
+    lowerBounds = [CHANNEL_ZEND_INDEX $TOP_WALL_RINDEX+1$]
+    upperBounds = [$CHANNEL_ZEND_INDEX+1$ NR1]
+  </ParticleSink>
+
+  <ParticleSink bottomElecAbsorber>
+    kind = absAndSav
+    minDim = 1
+    lowerBounds = [-1 BOT_WALL_RINDEX]
+    upperBounds = [CHANNEL_ZEND_INDEX $BOT_WALL_RINDEX+1$]
+  </ParticleSink>
+
+  <ParticleSink botOuterElecAbsorber>
+    kind = absAndSav
+    lowerBounds = [$CHANNEL_ZEND_INDEX + 1$ -1]
+    upperBounds = [NZ1 0]
+  </ParticleSink>
+
+  <ParticleSink botFaceElecAbsorber>
+    kind = absAndSav
+    lowerBounds = [CHANNEL_ZEND_INDEX -1]
+    upperBounds = [$CHANNEL_ZEND_INDEX+1$ BOT_WALL_RINDEX]
+  </ParticleSink>
+
+   absorbingBox(NZ, NR, 1)
+</Species>
+
+#
+# Species for the sputtered atoms
+#
+<Species BNAtoms>
+  kind = relBorisCyl
+  charge = ZEROCHARGE
+  mass = hBNMASS
+  chargeDeps = [rhoDep]
+  fields = [esField.nodalE esField.nodalB]
+  numPtclsInMacro = NPIM
+
+  absorbingBox(NZ, NR, 1)
+</Species>
+
+#
+# Species for heavyElectrons
+#
+<Species heavyElectrons>
+  kind = relBorisCyl
+  charge = ELECCHARGE
+  mass = 1.0
+  chargeDeps = [rhoDep]
+  fields = [esField.nodalE esField.nodalB]
+  numPtclsInMacro = NPIM
+
+# Now add the boundary sources for heavy electrons
+# to account for particle charge up on the boundaries.
+  # for top boundary
+  <ParticleSource topHEemitter>
+      kind = simpleSec
+      ptclAbsorber = electrons.topElecAbsorber
+      emittedEnergy = 0.
+      suppressEnergy = 1.e20
+      direction = [0.0 -1.0]
+      emittingSurface = SPUT_TOPWALL_POS
+  </ParticleSource>
+  # for bottom boundary
+  <ParticleSource botHEemitter>
+      kind = simpleSec
+      ptclAbsorber = electrons.bottomElecAbsorber
+      emittedEnergy = 0.
+      suppressEnergy = 1.e20
+      direction = [0.0 1.0]
+      emittingSurface = SPUT_BOTWALL_POS
+  </ParticleSource>
+
+  absorbingBox(NZ, NR, 1)
+</Species>
+
+#
+# Species for heavyIons
+#
+<Species heavyIons>
+  kind = relBorisCyl
+  charge = ELEMCHARGE
+  mass = 1.0
+  chargeDeps = [rhoDep]
+  fields = [esField.nodalE esField.nodalB]
+  numPtclsInMacro = NPIM
+
+# Now add the boundary sources for heavy electrons
+# to account for particle charge up on the boundaries.
+  # for top boundary
+  <ParticleSource topHIemitter>
+      kind = simpleSec
+      ptclAbsorber = Xeplus.topIonAbsorber
+      emittedEnergy = 0.
+      suppressEnergy = 1.e20
+      direction = [0.0 -1.0]
+      emittingSurface = SPUT_TOPWALL_POS
+  </ParticleSource>
+  # for bottom boundary
+  <ParticleSource botHIemitter>
+      kind = simpleSec
+      ptclAbsorber = Xeplus.bottomIonAbsorber
+      emittedEnergy = 0.
+      suppressEnergy = 1.e20
+      direction = [0.0 1.0]
+      emittingSurface = SPUT_BOTWALL_POS
+  </ParticleSource>
+
+  absorbingBox(NZ, NR, 1)
+</Species>
+
+# History blocks for particles
+
+<History numXeIons>
+  kind = speciesNumberOf
+  species = [Xeplus]
+</History>
+
+<History numElectrons>
+  kind = speciesNumberOf
+  species = [electrons]
+</History>
+
+<History numSputteredAtoms>
+  kind = speciesNumberOf
+  species = [BNAtoms]
+</History>
+
+<History numHE>
+  kind = speciesNumberOf
+  species = [heavyElectrons]
+</History>
+
+<History numHI>
+  kind = speciesNumberOf
+  species = [heavyIons]
+</History>
+
+$if CALCULATE_THRUST==1
+
+<History absorbedIonCurrent>
+  kind = speciesCurrAbs
+  species = [ Xeplus ]
+  ptclAbsorbers  = [ rightIonAbsorber ]
+</History>
+
+<History absorbedIonVelocity>
+  kind = speciesAbsPtclData2
+  species = [ Xeplus]
+  ptclAbsorbers = [ topOuterIonAbsorber rightIonAbsorber botOuterIonAbsorber]
+  ptclAttributes = [ xVelocity numPtclsInMacro kineticEnergy xPosition yPosition ]
+  collectMethod = statsForEachStep
+</History>
+$endif
+
+<History ionAbsData>
+  kind = speciesAbsPtclData2
+  species = [ Xeplus ]
+  ptclAbsorbers = [ topIonAbsorber bottomIonAbsorber ]
+  ptclAttributes = [xPosition yPosition kineticEnergy current ]
+  collectMethod = recordForEachPtcl
+</History>
+
+<History elecAbsData>
+  kind = speciesAbsPtclData2
+  species = [ electrons ]
+  ptclAbsorbers = [ topElecAbsorber bottomElecAbsorber ]
+  ptclAttributes = [xPosition yPosition kineticEnergy current ]
+  collectMethod = recordForEachPtcl
+</History>
+

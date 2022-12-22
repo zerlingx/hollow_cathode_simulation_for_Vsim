@@ -1,0 +1,1647 @@
+<SDFfile cylHallThruster>
+  <Tab Run>
+    <attribs>
+    <RunTime Advanced>
+    </RunTime>
+    <RunTime MPI>
+      <strings>
+      useMPI = "false"
+      </strings>
+    </RunTime>
+    <RunTime Standard>
+    </RunTime>
+    </attribs>
+  </Tab>
+  <Tab Setup>
+    <Node root>
+      <strings>
+      kind = "Set"
+      </strings>
+      <attribs>
+      <TxHierAttribSet hiddenProps>
+      </TxHierAttribSet>
+      </attribs>
+      <SubItems items>
+        <AttribLeaf Description>
+          <strings>
+          description = "Cylindrical SPT-100 Hall Thruster Channel Plasma Discharge Simulation"
+          image = "cylHallThrusterSchematic.png"
+          long description = "Simulation of a Stationary Plasma Thruster-100 (SPT-100) cylindrical Hall thruster channel plasma discharge processes at 1.35 kW operating power. This simulation kinetically tracks electrons, xenon ions and sputter hBN wall materials. The sputtered hBN wall material can help predict the erosion of channel during the thruster operation."
+          short description = "Cylindrical Hall Thruster"
+          thumbnail = "cylHallThrusterTn.png"
+          version = "9.0"
+          </strings>
+          <attribs>
+          <TxHierAttribSet hiddenProps>
+          </TxHierAttribSet>
+          </attribs>
+        </AttribLeaf>
+        <Set Constants>
+          <attribs>
+          <TxHierAttribSet hiddenProps>
+          </TxHierAttribSet>
+          </attribs>
+          <SubItems items>
+            <Constant PI>
+              <params>
+              value = 3.14159265358980e+00
+              </params>
+              <strings>
+              kind = "PI (built-in)"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant PIO2>
+              <params>
+              value = 1.57079632679490e+00
+              </params>
+              <strings>
+              kind = "PIO2 (built-in)"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant TWOPI>
+              <params>
+              value = 6.28318530717960e+00
+              </params>
+              <strings>
+              kind = "TWOPI (built-in)"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant LIGHTSPEED>
+              <params>
+              value = 2.99792458000000e+08
+              </params>
+              <strings>
+              kind = "LIGHTSPEED (built-in)"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant MU0>
+              <params>
+              value = 1.25663706143590e-06
+              </params>
+              <strings>
+              kind = "MU0 (built-in)"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant ELEMCHARGE>
+              <params>
+              value = 1.60217648700000e-19
+              </params>
+              <strings>
+              kind = "ELEMCHARGE (built-in)"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant ELECMASS>
+              <params>
+              value = 9.10938215000000e-31
+              </params>
+              <strings>
+              kind = "ELECMASS (built-in)"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant PROTMASS>
+              <params>
+              value = 1.67262163700000e-27
+              </params>
+              <strings>
+              kind = "PROTMASS (built-in)"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant MUONMASS>
+              <params>
+              value = 1.88353130000000e-28
+              </params>
+              <strings>
+              kind = "MUONMASS (built-in)"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant KB>
+              <params>
+              value = 1.38065040000000e-23
+              </params>
+              <strings>
+              kind = "KB (built-in)"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant EPSILON0>
+              <params>
+              value = 8.85418700000000e-12
+              </params>
+              <strings>
+              kind = "EPSILON0 (built-in)"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant C2>
+              <params>
+              value = 8.98755179000000e+16
+              </params>
+              <strings>
+              kind = "C2 (built-in)"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant ELECCHARGE>
+              <params>
+              value = -1.60217648700000e-19
+              </params>
+              <strings>
+              kind = "ELECCHARGE (built-in)"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant ELECMASSEV>
+              <params>
+              value = 5.10998909847640e+05
+              </params>
+              <strings>
+              kind = "ELECMASSEV (built-in)"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant B0>
+              <params>
+              value = 6.00000000000000e-01
+              </params>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant anodeV>
+              <params>
+              value = 3.00000000000000e+02
+              </params>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant channelEndZ>
+              <params>
+              value = 5.00000000000000e-04
+              </params>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant innerRad>
+              <params>
+              value = 7.00000000000000e-04
+              </params>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant maxXeGasDens>
+              <params>
+              value = 1.00000000000000e+21
+              </params>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant outerRad>
+              <params>
+              value = 1.00000000000000e-03
+              </params>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant rMax>
+              <params>
+              value = 1.10000000000000e-03
+              </params>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant rMin>
+              <params>
+              value = 5.00000000000000e-04
+              </params>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant xeMaxDensity>
+              <params>
+              value = 5.00000000000000e+22
+              </params>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant xenonCharge>
+              <params>
+              value = 8.65175000000000e-18
+              </params>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant xenonMass>
+              <params>
+              value = 2.19615000000000e-25
+              </params>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant zMax>
+              <params>
+              value = 7.00000000000000e-04
+              </params>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+            <Constant zMin>
+              <params>
+              value = 0.00000000000000e+00
+              </params>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </Constant>
+          </SubItems>
+        </Set>
+        <Set Parameters>
+          <attribs>
+          <TxHierAttribSet hiddenProps>
+          </TxHierAttribSet>
+          </attribs>
+        </Set>
+        <AttribLeaf Basic Settings>
+          <options>
+          number of steps = 6000
+          steps between dumps = 1000
+          </options>
+          <strings>
+          surface meshing tolerance = "0.5"
+          cfl number = "1"
+          time step = "3.7251800000e-13"
+          </strings>
+          <strvecs>
+          dimensionality = ["2" "1" "3"]
+          grid spacing = ["uniform"]
+          restore geometries = ["True" "False"]
+          MPI decomposition = ["default" "0 axis" "1 axis" "2 axis"]
+          length unit = ["meter"]
+          precision = ["double" "float"]
+          use GPU (if found) = ["false"]
+          verbosity = ["information" "emergency" "alert" "critical" "error" "warning" "notice" "debug level 1" "debug level 2" "debug level 3"]
+          </strvecs>
+          <attribs>
+          <coordinateSystem cylindrical>
+          </coordinateSystem>
+          <fieldSolver electrostatic>
+            <options>
+            number of guard cells = 2
+            </options>
+          </fieldSolver>
+          <particles include particles>
+            <strings>
+            estimated max electron density = "1.e20"
+            estimated min electron temperature (eV) = "1.0"
+            </strings>
+            <strvecs>
+            dump nodal fields = ["True" "False"]
+            </strvecs>
+          </particles>
+          <collisionsFramework reduced>
+          </collisionsFramework>
+          <movingWindow no moving window>
+          </movingWindow>
+          <periodicDirections no periodicity>
+          </periodicDirections>
+          <TxHierAttribSet hiddenProps>
+          </TxHierAttribSet>
+          </attribs>
+        </AttribLeaf>
+        <Set Functions>
+          <attribs>
+          <TxHierAttribSet hiddenProps>
+          </TxHierAttribSet>
+          </attribs>
+        </Set>
+        <Set SpaceTimeFunctions>
+          <attribs>
+          <TxHierAttribSet hiddenProps>
+          </TxHierAttribSet>
+          </attribs>
+          <SubItems items>
+            <SpaceTimeFunction By>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              expression = "H(channelEndZ-x) * H(y-innerRad) * H(outerRad-y) * B0 *            (innerRad / y) * exp(-16.0*(x/ channelEndZ-1.0)*(x/channelEndZ-1.0)) + H(x-channelEndZ) * H(y-innerRad) * H(outerRad-y) * B0 * (innerRad/ y) * exp(-16.0*((x-channelEndZ)/channelEndZ)*((x- channelEndZ)/channelEndZ))"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </SpaceTimeFunction>
+            <SpaceTimeFunction initialGasDensity>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              expression = "xeMaxDensity * (0.1+(1.0-x/channelEndZ)) * H(channelEndZ-x)*H(y-innerRad) * H(outerRad-y) + H(x-channelEndZ) * xeMaxDensity * 0.1 * (1.0 - (x-channelEndZ)/channelEndZ)"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </SpaceTimeFunction>
+            <SpaceTimeFunction relPermFunc>
+              <strings>
+              kind = "User Defined"
+              description = ""
+              expression = "(1.0 + 3.6 * H(innerRad-y) * H(channelEndZ-x) + 3.6 * H(y-outerRad) * H(channelEndZ-x))"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </SpaceTimeFunction>
+            <SpaceTimeFunction velocityFunctionZ>
+              <strings>
+              kind = "User Defined"
+              expression = "-2.965e6"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </SpaceTimeFunction>
+            <SpaceTimeFunction velocityFunctionR>
+              <strings>
+              kind = "User Defined"
+              expression = "1.48e6*gauss()"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+              </TxHierAttribSet>
+              </attribs>
+            </SpaceTimeFunction>
+          </SubItems>
+        </Set>
+        <Set Materials>
+          <attribs>
+          <TxHierAttribSet hiddenProps>
+          </TxHierAttribSet>
+          </attribs>
+        </Set>
+        <Set Geometries>
+          <attribs>
+          <TxHierAttribSet hiddenProps>
+          </TxHierAttribSet>
+          </attribs>
+          <SubItems items>
+            <CSG CSG>
+              <params>
+              tessellation = 1.00000000000000e-02
+              </params>
+              <strings>
+              kind = "Construction Group"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                visibility = 1
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </CSG>
+          </SubItems>
+        </Set>
+        <Set Grids>
+          <attribs>
+          <TxHierAttribSet hiddenProps>
+          </TxHierAttribSet>
+          </attribs>
+          <SubItems items>
+            <Grid Grid>
+              <strings>
+              kind = "CylCoord2D"
+              zMin = "zMin"
+              zMax = "zMax"
+              rMin = "rMin"
+              rMax = "rMax"
+              zCells = "128"
+              rCells = "80"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                visibility = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+              <SubItems items>
+                <Geom plane>
+                  <strings>
+                  kind = "GridFace"
+                  </strings>
+                  <attribs>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    visibility = 1
+                    </options>
+                    <params>
+                    scale = 1.00000000000000e+00
+                    </params>
+                  </TxHierAttribSet>
+                  </attribs>
+                </Geom>
+              </SubItems>
+            </Grid>
+          </SubItems>
+        </Set>
+        <Set Field Dynamics>
+          <attribs>
+          <TxHierAttribSet hiddenProps>
+            <options>
+            required = 1
+            </options>
+          </TxHierAttribSet>
+          </attribs>
+          <SubItems items>
+            <Fields Fields>
+              <strings>
+              kind = "Field Group"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+              <SubItems items>
+                <Field Charge Density>
+                  <strings>
+                  kind = "Charge Density"
+                  </strings>
+                  <attribs>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    isEstablished = 1
+                    required = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </Field>
+                <Field Electric Field>
+                  <strings>
+                  kind = "Electric Field"
+                  </strings>
+                  <attribs>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    isEstablished = 1
+                    required = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </Field>
+                <Field Magnetic Field>
+                  <strings>
+                  kind = "Magnetic Field"
+                  </strings>
+                  <attribs>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    isEstablished = 1
+                    required = 0
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </Field>
+                <Field Phi>
+                  <strings>
+                  kind = "Phi"
+                  </strings>
+                  <attribs>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    isEstablished = 1
+                    required = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </Field>
+                <Field Applied Magnetic Field>
+                  <strings>
+                  kind = "External Field"
+                  </strings>
+                  <attribs>
+                  <fieldType magnetic>
+                  </fieldType>
+                  <FieldSpecification function defined>
+                    <strings>
+                    description = "Functionally defined field seperate from the normal simulation"
+                    component 0 = "0.0"
+                    component 1 = "By"
+                    component 2 = "0.0"
+                    </strings>
+                    <strvecs>
+                    time dependent = ["False" "True"]
+                    </strvecs>
+                  </FieldSpecification>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    required = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </Field>
+              </SubItems>
+            </Fields>
+            <FieldBoundaryConditions FieldBoundaryConditions>
+              <strings>
+              kind = "Field Boundary Condition Group"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                required = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+              <SubItems items>
+                <FieldBoundaryCondition bottomWall>
+                  <strings>
+                  kind = "Neumann"
+                  value = "0."
+                  </strings>
+                  <attribs>
+                  <surface lower R>
+                  </surface>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    required = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </FieldBoundaryCondition>
+                <FieldBoundaryCondition leftBottomWall>
+                  <strings>
+                  kind = "Dirichlet"
+                  description = ""
+                  value = "0.0"
+                  </strings>
+                  <attribs>
+                  <boundarySurface partial lower Z>
+                    <strings>
+                    lower R coordinate = "0.0005075"
+                    upper R coordinate = "0.0005975"
+                    </strings>
+                  </boundarySurface>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    required = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </FieldBoundaryCondition>
+                <FieldBoundaryCondition leftTopWall>
+                  <strings>
+                  kind = "Dirichlet"
+                  description = ""
+                  value = "0.0"
+                  </strings>
+                  <attribs>
+                  <boundarySurface partial lower Z>
+                    <strings>
+                    lower R coordinate = "0.0010475"
+                    upper R coordinate = ".0011"
+                    </strings>
+                  </boundarySurface>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    required = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </FieldBoundaryCondition>
+                <FieldBoundaryCondition leftWall>
+                  <strings>
+                  kind = "Dirichlet"
+                  description = ""
+                  value = "anodeV"
+                  </strings>
+                  <attribs>
+                  <boundarySurface partial lower Z>
+                    <strings>
+                    lower R coordinate = "0.0005975"
+                    upper R coordinate = "0.0010475"
+                    </strings>
+                  </boundarySurface>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    required = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </FieldBoundaryCondition>
+                <FieldBoundaryCondition topWall>
+                  <strings>
+                  kind = "Neumann"
+                  description = ""
+                  value = "0.0"
+                  </strings>
+                  <attribs>
+                  <boundarySurface upper  R>
+                  </boundarySurface>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    required = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </FieldBoundaryCondition>
+                <FieldBoundaryCondition rightWall>
+                  <strings>
+                  kind = "Dirichlet"
+                  description = ""
+                  value = "0.0"
+                  </strings>
+                  <attribs>
+                  <boundarySurface upper  Z>
+                  </boundarySurface>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    required = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </FieldBoundaryCondition>
+              </SubItems>
+            </FieldBoundaryConditions>
+            <CurrentDistributions CurrentDistributions>
+              <strings>
+              kind = "Current Distributions Group"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                required = 0
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </CurrentDistributions>
+            <RCSBox RCSBox>
+              <strings>
+              kind = "RCS Box"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                required = 0
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </RCSBox>
+            <PoissonSolver PoissonSolver>
+              <strings>
+              kind = "Poisson Solver"
+              relative permittivity = "relPermFunc"
+              </strings>
+              <attribs>
+              <Solver SuperLU>
+              </Solver>
+              <Preconditioner none>
+              </Preconditioner>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                required = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </PoissonSolver>
+          </SubItems>
+        </Set>
+        <Set Particle Dynamics>
+          <attribs>
+          <TxHierAttribSet hiddenProps>
+            <options>
+            required = 1
+            </options>
+          </TxHierAttribSet>
+          </attribs>
+          <SubItems items>
+            <KineticParticles KineticParticles>
+              <strings>
+              kind = "Kinetic Particles Group"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+              <SubItems items>
+                <ParticleSpecies electrons>
+                  <strings>
+                  kind = "Electrons"
+                  nominal density = "1.e18"
+                  </strings>
+                  <attribs>
+                  <particleWeights constant weights>
+                  </particleWeights>
+                  <weightSetting explicitly set weights>
+                    <strings>
+                    particles per macroparticle = "1.0e5"
+                    </strings>
+                  </weightSetting>
+                  <particleDynamics relativistic>
+                  </particleDynamics>
+                  <TxHierAttribSet hiddenProps>
+                  </TxHierAttribSet>
+                  </attribs>
+                  <SubItems items>
+                    <ParticleBoundaryCondition bottomElectronAbsorber>
+                      <strings>
+                      kind = "Interior Absorb and Save"
+                      </strings>
+                      <attribs>
+                      <volume cylindrical 2d slab>
+                        <strings>
+                        rMax = "0.0007025"
+                        rMin = "0.000695"
+                        zMax = "0.000503125"
+                        zMin = "-5.468750000000001e-06"
+                        </strings>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        visibility = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                    <ParticleBoundaryCondition bottomFaceElectronAbsorber>
+                      <strings>
+                      kind = "Interior Absorb and Save"
+                      </strings>
+                      <attribs>
+                      <volume cylindrical 2d slab>
+                        <strings>
+                        rMax = "0.000695"
+                        rMin = "0.0004925"
+                        zMax = "0.00050859375"
+                        zMin = "0.000503125"
+                        </strings>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        visibility = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                    <ElectronEmitter bottomIonSecElecEmitter>
+                      <strings>
+                      kind = "Secondary Emitter"
+                      </strings>
+                      <attribs>
+                      <EmitterType interior secondary electron emitter>
+                        <strings>
+                        emission coordinate = "0.0007025"
+                        particle boundary condition = "bottomIonAbsorber"
+                        suppression energy = "1.e20"
+                        </strings>
+                        <strvecs>
+                        emission axis = ["1" "0" "2"]
+                        emission direction = ["positive" "negative"]
+                        material = ["copper" "stainless"]
+                        </strvecs>
+                      </EmitterType>
+                      <TxHierAttribSet hiddenProps>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ElectronEmitter>
+                    <ParticleBoundaryCondition bottomOuterElectronAbsorber>
+                      <strings>
+                      kind = "Interior Absorb and Save"
+                      </strings>
+                      <attribs>
+                      <volume cylindrical 2d slab>
+                        <strings>
+                        rMax = "0.0005"
+                        rMin = "0.0004925"
+                        zMax = "0.00070546875"
+                        zMin = "0.00050859375"
+                        </strings>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        visibility = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                    <ParticleBoundaryCondition leftElectronAbsorber>
+                      <strings>
+                      kind = "Boundary Absorb and Save"
+                      </strings>
+                      <attribs>
+                      <volume lower Z slab>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                    <ParticleBoundaryCondition rightElectronAbsorber>
+                      <strings>
+                      kind = "Boundary Absorb and Save"
+                      </strings>
+                      <attribs>
+                      <volume upper Z slab>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                    <ParticleBoundaryCondition topElectronAbsorber>
+                      <strings>
+                      kind = "Interior Absorb and Save"
+                      </strings>
+                      <attribs>
+                      <volume cylindrical 2d slab>
+                        <strings>
+                        rMax = "0.0010025"
+                        rMin = "0.000995"
+                        zMax = "0.000503125"
+                        zMin = "-5.468750000000001e-06"
+                        </strings>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        visibility = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                    <ParticleBoundaryCondition topFaceElectronAbsorber>
+                      <strings>
+                      kind = "Interior Absorb and Save"
+                      </strings>
+                      <attribs>
+                      <volume cylindrical 2d slab>
+                        <strings>
+                        rMax = "0.0011075"
+                        rMin = "0.0010025"
+                        zMax = "0.00050859375"
+                        zMin = "0.000503125"
+                        </strings>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        visibility = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                    <ElectronEmitter topIonSecElecEmitter>
+                      <strings>
+                      kind = "Secondary Emitter"
+                      </strings>
+                      <attribs>
+                      <EmitterType interior secondary electron emitter>
+                        <strings>
+                        emission coordinate = "0.000995"
+                        particle boundary condition = "topIonAbsorber"
+                        suppression energy = "1.e20"
+                        </strings>
+                        <strvecs>
+                        emission axis = ["1" "0" "2"]
+                        emission direction = ["negative" "positive"]
+                        material = ["copper" "stainless"]
+                        </strvecs>
+                      </EmitterType>
+                      <TxHierAttribSet hiddenProps>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ElectronEmitter>
+                    <ParticleBoundaryCondition topOuterElectronAbsorber>
+                      <strings>
+                      kind = "Interior Absorb and Save"
+                      </strings>
+                      <attribs>
+                      <volume cylindrical 2d slab>
+                        <strings>
+                        rMax = "0.0011075"
+                        rMin = "0.0011"
+                        zMax = "0.00070546875"
+                        zMin = "0.00050859375"
+                        </strings>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        visibility = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                    <ParticleLoader particleLoader>
+                      <strings>
+                      kind = "Particle Loader"
+                      </strings>
+                      <attribs>
+                      <loadDensity relative density>
+                        <strings>
+                        relative density = "1.0"
+                        </strings>
+                      </loadDensity>
+                      <particleLoadPlacement grid>
+                        <optvecs>
+                        macro particles per direction = [1 1 1]
+                        </optvecs>
+                      </particleLoadPlacement>
+                      <loadDuration repeat loading>
+                        <strings>
+                        start time = "0.0"
+                        stop time = "1.0"
+                        </strings>
+                        <strvecs>
+                        load after initialization = ["true" "false"]
+                        load upon shift = ["false" "true"]
+                        </strvecs>
+                      </loadDuration>
+                      <velocityDistribution functional velocity>
+                        <strings>
+                        u0 = "velocityFunctionZ"
+                        u1 = "velocityFunctionR"
+                        u2 = "velocityFunctionR"
+                        </strings>
+                      </velocityDistribution>
+                      <volume cylindrical 2d slab>
+                        <strings>
+                        zMin = "0.000390625"
+                        zMax = ".0005164"
+                        rMin = "0.0007"
+                        rMax = ".0009925"
+                        </strings>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        visibility = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleLoader>
+                  </SubItems>
+                </ParticleSpecies>
+                <ParticleSpecies XePlus>
+                  <strings>
+                  kind = "Charged Particles"
+                  nominal density = "1.e18"
+                  </strings>
+                  <attribs>
+                  <particleWeights constant weights>
+                  </particleWeights>
+                  <particleDynamics relativistic>
+                  </particleDynamics>
+                  <weightSetting explicitly set weights>
+                    <strings>
+                    particles per macroparticle = "1.0e5"
+                    </strings>
+                  </weightSetting>
+                  <molecule custom ion>
+                    <strings>
+                    mass [amu] = "131.2925"
+                    charge number = "1.0"
+                    ionization energy [eV] = "1."
+                    </strings>
+                  </molecule>
+                  <TxHierAttribSet hiddenProps>
+                  </TxHierAttribSet>
+                  </attribs>
+                  <SubItems items>
+                    <ParticleBoundaryCondition XePlusabsorbingLeft>
+                      <strings>
+                      kind = "Absorbing"
+                      </strings>
+                      <attribs>
+                      <volume lower Z slab>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        visibility = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                    <ParticleBoundaryCondition XePlusabsorbingRight>
+                      <strings>
+                      kind = "Absorbing"
+                      </strings>
+                      <attribs>
+                      <volume upper Z slab>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        visibility = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                    <ParticleBoundaryCondition XePlusabsorbingBottom>
+                      <strings>
+                      kind = "Absorbing"
+                      </strings>
+                      <attribs>
+                      <volume cylindrical 2d slab>
+                        <strings>
+                        zMin = "0.0"
+                        zMax = "0.000503125"
+                        rMin = "0.000695"
+                        rMax = "0.0007025"
+                        </strings>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        visibility = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                    <ParticleBoundaryCondition XePlusabsorbingBottomFace>
+                      <strings>
+                      kind = "Absorbing"
+                      </strings>
+                      <attribs>
+                      <volume cylindrical 2d slab>
+                        <strings>
+                        zMin = "0.000503125"
+                        zMax = "0.00050859375"
+                        rMin = "0.0004925"
+                        rMax = "0.000695"
+                        </strings>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        visibility = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                    <ParticleBoundaryCondition XePlusabsorbingBottomOuter>
+                      <strings>
+                      kind = "Absorbing"
+                      </strings>
+                      <attribs>
+                      <volume cylindrical 2d slab>
+                        <strings>
+                        zMin = "0.00050859375"
+                        zMax = "0.00070546875"
+                        rMin = "0.0004925"
+                        rMax = "0.0005"
+                        </strings>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        visibility = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                    <ParticleBoundaryCondition XePlusabsorbingTop>
+                      <strings>
+                      kind = "Absorbing"
+                      </strings>
+                      <attribs>
+                      <volume cylindrical 2d slab>
+                        <strings>
+                        zMin = "0.0"
+                        zMax = "0.000503125"
+                        rMin = "0.000995"
+                        rMax = "0.0010025"
+                        </strings>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        visibility = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                    <ParticleBoundaryCondition XePlusabsorbingTopFace>
+                      <strings>
+                      kind = "Absorbing"
+                      </strings>
+                      <attribs>
+                      <volume cylindrical 2d slab>
+                        <strings>
+                        zMin = "0.000503125"
+                        zMax = "0.00050859375"
+                        rMin = "0.0010025"
+                        rMax = "0.0011075"
+                        </strings>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        visibility = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                    <ParticleBoundaryCondition XePlusabsorbingTopOuter>
+                      <strings>
+                      kind = "Absorbing"
+                      </strings>
+                      <attribs>
+                      <volume cylindrical 2d slab>
+                        <strings>
+                        zMin = "0.00050859375"
+                        zMax = "0.00070546875"
+                        rMin = "0.0011"
+                        rMax = "0.0011075"
+                        </strings>
+                      </volume>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        visibility = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </ParticleBoundaryCondition>
+                  </SubItems>
+                </ParticleSpecies>
+              </SubItems>
+            </KineticParticles>
+            <Fluids Fluids>
+              <strings>
+              kind = "Fluids Group"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+              <SubItems items>
+                <Fluid XeNeutralFluid>
+                  <strings>
+                  kind = "Neutral Fluid"
+                  fluid temperature (K) = "300."
+                  </strings>
+                  <attribs>
+                  <molecule Xe>
+                    <strings>
+                    mass [amu] = "131.293"
+                    ionization energy [eV] = "12.13"
+                    </strings>
+                  </molecule>
+                  <volume cylindrical 2d slab>
+                    <strings>
+                    zMin = "zMin"
+                    zMax = "zMax"
+                    rMin = "rMin"
+                    rMax = "rMax"
+                    </strings>
+                  </volume>
+                  <fluidDensity variable fluid density>
+                    <strings>
+                    density = "initialGasDensity"
+                    </strings>
+                  </fluidDensity>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    visibility = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </Fluid>
+              </SubItems>
+            </Fluids>
+            <Collisions ReducedCollisions>
+              <strings>
+              kind = "Reduced"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                required = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+              <SubItems items>
+                <ParticleFluidCollisions electronNeutralFluidCollisions0>
+                  <strings>
+                  kind = "Electron Neutral Fluid Collisions"
+                  neutral fluid = "XeNeutralFluid"
+                  impact particles = "electrons"
+                  </strings>
+                  <attribs>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    required = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                  <SubItems items>
+                    <CollisionProcess electronNeutralFluidIonization0>
+                      <strings>
+                      kind = "Ionization"
+                      product electrons = "electrons"
+                      product ions = "XePlus"
+                      </strings>
+                      <attribs>
+                      <crossSectionType Evaluated Electron Data Library>
+                        <strings>
+                        cross section data file = "eedl.dat"
+                        </strings>
+                      </crossSectionType>
+                      <productDistribution isotropic>
+                      </productDistribution>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        required = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </CollisionProcess>
+                    <CollisionProcess electronNeutralFluidElastic0>
+                      <strings>
+                      kind = "Elastic"
+                      </strings>
+                      <attribs>
+                      <crossSectionType Evaluated Electron Data Library>
+                        <strings>
+                        cross section data file = "eedl.dat"
+                        </strings>
+                      </crossSectionType>
+                      <productDistribution isotropic>
+                      </productDistribution>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        required = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </CollisionProcess>
+                    <CollisionProcess electronNeutralFluidExcitation0>
+                      <strings>
+                      kind = "Excitation"
+                      </strings>
+                      <attribs>
+                      <crossSectionType Evaluated Electron Data Library>
+                        <strings>
+                        cross section data file = "eedl.dat"
+                        </strings>
+                      </crossSectionType>
+                      <productDistribution isotropic>
+                      </productDistribution>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        required = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </CollisionProcess>
+                  </SubItems>
+                </ParticleFluidCollisions>
+                <ParticleFluidCollisions ionNeutralFluidCollisions0>
+                  <strings>
+                  kind = "Ion Neutral Fluid Collisions"
+                  neutral fluid = "XeNeutralFluid"
+                  impact particles = "XePlus"
+                  </strings>
+                  <attribs>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    required = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                  <SubItems items>
+                    <CollisionProcess ionNeutralFluidChargeExchange0>
+                      <strings>
+                      kind = "Charge Exchange"
+                      </strings>
+                      <attribs>
+                      <crossSectionType built in>
+                      </crossSectionType>
+                      <productDistribution backward>
+                      </productDistribution>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        required = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </CollisionProcess>
+                    <CollisionProcess ionNeutralFluidMomentumExchange0>
+                      <strings>
+                      kind = "Momentum Exchange"
+                      </strings>
+                      <attribs>
+                      <crossSectionType built in>
+                      </crossSectionType>
+                      <productDistribution isotropic>
+                      </productDistribution>
+                      <TxHierAttribSet hiddenProps>
+                        <options>
+                        required = 1
+                        </options>
+                      </TxHierAttribSet>
+                      </attribs>
+                    </CollisionProcess>
+                  </SubItems>
+                </ParticleFluidCollisions>
+              </SubItems>
+            </Collisions>
+            <Collisions Reactions>
+              <strings>
+              kind = "Full"
+              description = "The full interactions group allow more sophisticated particle, fluid and field interactions in either the legacy Monte Carlo or Reactions framework"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                isEstablished = 1
+                required = 0
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+              <SubItems items>
+                <InteractionType Particle Particle Collisions>
+                  <strings>
+                  kind = "Particle Particle Collisions"
+                  </strings>
+                  <attribs>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    isEstablished = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </InteractionType>
+                <InteractionType Particle Fluid Collisions>
+                  <strings>
+                  kind = "Particle Fluid Collisions"
+                  </strings>
+                  <attribs>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    isEstablished = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </InteractionType>
+                <InteractionType Three Body Reactions>
+                  <strings>
+                  kind = "Three Body Reactions"
+                  </strings>
+                  <attribs>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    isEstablished = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </InteractionType>
+                <InteractionType Field Ionization Processes>
+                  <strings>
+                  kind = "Field Ionization Processes"
+                  </strings>
+                  <attribs>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    isEstablished = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </InteractionType>
+                <InteractionType Decay Processes>
+                  <strings>
+                  kind = "Decay Processes"
+                  </strings>
+                  <attribs>
+                  <TxHierAttribSet hiddenProps>
+                    <options>
+                    isEstablished = 1
+                    </options>
+                  </TxHierAttribSet>
+                  </attribs>
+                </InteractionType>
+              </SubItems>
+            </Collisions>
+          </SubItems>
+        </Set>
+        <Set Histories>
+          <attribs>
+          <TxHierAttribSet hiddenProps>
+            <options>
+            required = 1
+            </options>
+          </TxHierAttribSet>
+          </attribs>
+          <SubItems items>
+            <ParticleHistory numElectrons>
+              <strings>
+              kind = "Number of Macroparticles"
+              particles = "electrons"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                required = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </ParticleHistory>
+            <ParticleHistory numXeIons>
+              <strings>
+              kind = "Number of Macroparticles"
+              particles = "XePlus"
+              </strings>
+              <attribs>
+              <TxHierAttribSet hiddenProps>
+                <options>
+                required = 1
+                </options>
+              </TxHierAttribSet>
+              </attribs>
+            </ParticleHistory>
+          </SubItems>
+        </Set>
+      </SubItems>
+    </Node>
+  </Tab>
+  <Tab Analyze>
+    <strvecs>
+    DefaultAnalyzers = []
+    </strvecs>
+  </Tab>
+  <Tab Visualize>
+  </Tab>
+</SDFfile>

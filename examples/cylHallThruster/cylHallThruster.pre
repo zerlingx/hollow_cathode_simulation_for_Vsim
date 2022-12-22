@@ -1,0 +1,251 @@
+#######################################################
+#
+# This PRE file,
+#   cylHallThruster/cylHallThruster.pre,
+# was generated from the simulation definition file,
+#   cylHallThruster.sdf,
+# by the sdf2vpre translator.
+# Any changes to this file will be lost if the
+# translator is rerun.
+#
+#######################################################
+
+#######################################################
+# User defined constants and parameters
+#######################################################
+
+$ import verbosity
+$ import mathphys
+
+$ B0 = 6.00000000000000e-01
+$ anodeV = 3.00000000000000e+02
+$ channelEndZ = 5.00000000000000e-04
+$ innerRad = 7.00000000000000e-04
+$ maxXeGasDens = 1.00000000000000e+21
+$ outerRad = 1.00000000000000e-03
+$ rMax = 1.10000000000000e-03
+$ rMin = 5.00000000000000e-04
+$ xeMaxDensity = 5.00000000000000e+22
+$ xenonCharge = 8.65175000000000e-18
+$ xenonMass = 2.19615000000000e-25
+$ zMax = 7.00000000000000e-04
+$ zMin = 0.00000000000000e+00
+
+#######################################################
+# Simulation definition from the basic settings
+#######################################################
+
+# cartesian not found.
+$ VPMW_COORDINATE_SYSTEM = "cylindrical"
+$ VPMW_GRID_SPACING = "uniform"
+$ VPMW_NDIM = "2"
+$ VPMW_PRECISION = "double"
+$ VPMW_USE_GPU = "False"
+# electromagnetic not found.
+$ VPMW_SIMULATION_TYPE = "electrostatic"
+# magnetostatic not found.
+# no field solver not found.
+# prescribed fields not found.
+# electromagnetic.background permittivity not found.
+# electromagnetic.dielectric solver not found.
+$ VPMW_INCLUDE_PARTICLES = "True"
+$ VPMW_MAX_ELECTRON_DENSITY = "1.e20"
+$ VPMW_MAX_ELECTRON_TEMP_EV = "1.0"
+$ VPMW_DUMP_NODAL_FIELDS = "True"
+$ VPMW_COLLISIONS_FRAMEWORK = "reduced"
+# monte carlo not found.
+# reactions not found.
+# reactions.collision order not found.
+$ VPMW_RESTORE_GRID_BNDRY = "True"
+$ VPMW_DECOMP = "default"
+$ VPMW_TOP_LEVEL_VERBOSITY = VPM_INFO
+$ VPMW_GRID_TYPE = Cylindrical
+
+#######################################################
+# Import needed system macros
+#######################################################
+
+$ import VSim
+
+#######################################################
+# User defined functions
+#######################################################
+
+
+#######################################################
+# User defined space-time functions
+#######################################################
+
+$ By = (H(channelEndZ-x) * H(y-innerRad) * H(outerRad-y) * B0 *            (innerRad / y) * exp(-16.0*(x/ channelEndZ-1.0)*(x/channelEndZ-1.0)) + H(x-channelEndZ) * H(y-innerRad) * H(outerRad-y) * B0 * (innerRad/ y) * exp(-16.0*((x-channelEndZ)/channelEndZ)*((x- channelEndZ)/channelEndZ)))
+$ initialGasDensity = (xeMaxDensity * (0.1+(1.0-x/channelEndZ)) * H(channelEndZ-x)*H(y-innerRad) * H(outerRad-y) + H(x-channelEndZ) * xeMaxDensity * 0.1 * (1.0 - (x-channelEndZ)/channelEndZ))
+$ relPermFunc = ((1.0 + 3.6 * H(innerRad-y) * H(channelEndZ-x) + 3.6 * H(y-outerRad) * H(channelEndZ-x)))
+$ velocityFunctionZ = (-2.965e6)
+$ velocityFunctionR = (1.48e6*gauss())
+
+#######################################################
+#
+# Ordered blocks
+#
+#######################################################
+
+#######################################################
+# Translation of the grid
+#######################################################
+
+$ VPMW_NUM_GUARD_CELLS = 2
+$ VPMW_NUM_GUARD_CELLSP1 = 3
+$ VPMW_BGN0 = zMin
+$ VPMW_BGN1 = rMin
+$ VPMW_L0 = zMax - zMin
+$ VPMW_L1 = rMax - rMin
+$ VPMW_N0 = int(128)
+$ VPMW_N1 = int(80)
+
+# Derived grid variables.  Here for partial processing
+$ VPMW_UB0P1 = VPMW_N0 + 1
+$ VPMW_UB1P1 = VPMW_N1 + 1
+$ VPMW_UB2P1 = VPMW_N2 + 1
+$ VPMW_END0 = VPMW_BGN0 + VPMW_L0
+$ VPMW_END1 = VPMW_BGN1 + VPMW_L1
+$ VPMW_END2 = VPMW_BGN2 + VPMW_L2
+# Average cell sizes
+$ VPMW_DL0 = VPMW_L0/VPMW_N0
+$ VPMW_DL1 = VPMW_L1/VPMW_N1
+$ VPMW_DL2 = VPMW_L2/VPMW_N2
+$ VPMW_DLI0 = 1./VPMW_DL0
+$ VPMW_DLI1 = 1./VPMW_DL1
+$ VPMW_DLI2 = 1./VPMW_DL2
+$ VPMW_DLISQ = VPMW_DLI0**2 + (VPMW_NDIM>1)*VPMW_DLI1**2 + (VPMW_NDIM>2)*VPMW_DLI2**2
+$ VPMW_DLI = math.sqrt(VPMW_DLISQ)
+
+$ VPMW_PERIODIC_DIRS = []
+
+# Requires VPMW_N0[1,2], VPMW_L0[1,2], VPMW_BGN0[1,2]
+#
+# For UniformCartesian, defines:
+#     VPM_NX, VPM_NY, VPM_NZ, VPM_LX, VPM_LY, VPM_LZ,
+#     VPM_BGNX, VPM_BGNY, VPM_BGNZ,
+#     VPM_ENDX, VPM_ENDY, VPM_ENDZ,
+#     VPM_NXP1, VPM_NYP1, VPM_NZP1,
+#     VPM_NXM1, VPM_NYM1, VPM_NZM1,
+#     VPM_DX, VPM_DY, VPM_DZ,
+#     VPM_DXI, VPM_DYI, VPM_DZI,
+#     VPM_DL, VPM_DLI
+# For Cylindrical, defines:
+#     VPM_NZ, VPM_NR, VPM_NPHI, VPM_LZ, VPM_LR, VPM_LPHI,
+#     VPM_BGNR, VPM_BGNR, VPM_BGNPHI,
+#     VPM_ENDZ, VPM_ENDR, VPM_ENDPHI,
+#     VPM_NZP1, VPM_NRP1, VPM_NPHIP1,
+#     VPM_NZM1, VPM_NRM1, VPM_NPHIM1,
+#     VPM_DZ, VPM_DR, VPM_DPHI,
+#     VPM_DZI, VPM_DRI, VPM_DPHII,
+#     VPM_DL, VPM_DLI
+setGridData()
+
+
+#######################################################
+# Translation of the time group
+#######################################################
+
+$ VPMW_DMFRAC = "0.5"
+$ VPMW_CFL_NUMBER = "1"
+$ VPMW_DT = "3.7251800000e-13"
+$ VPMW_NSTEPS = 6000
+$ VPMW_DUMP_PERIOD = 1000
+$ VPMW_DUMP_GROUP_SIZE = 1
+
+# Requires VPMW_SIMULATION_TYPE
+# For Electromagnetic:
+#   if VPMW_DT not defined
+#     Requires LIGHTSPEED, DLI
+#     Will calculate VPMW_DT based on CFL
+# For Electrostatic:
+#   Requires VPMW_MAX_ELECTRON_DENSITY, VPMW_MAX_ELECTRON_TEMP_EV
+setTimingData()
+
+#######################################################
+#
+# Unordered blocks
+#
+#######################################################
+addExternalField(AppliedMagneticField, magnetic, functionDefined, 0.0, By, 0.0, False)
+
+#######################################################
+# Translation of Boundary Conditions
+#######################################################
+
+addEsNeumannBC(bottomWall, 0., lowerR)
+addEsDirichletBC(leftBottomWall, 0.0, [VPMW_BGN0, 0.0005075, 0], [VPMW_BGN0+VPMW_DR, 0.0005975, 1])
+addEsDirichletBC(leftTopWall, 0.0, [VPMW_BGN0, 0.0010475, 0], [VPMW_BGN0+VPMW_DR, .0011, 1])
+addEsDirichletBC(leftWall, anodeV, [VPMW_BGN0, 0.0005975, 0], [VPMW_BGN0+VPMW_DR, 0.0010475, 1])
+addEsNeumannBC(topWall, 0.0, upperR)
+addEsDirichletBC(rightWall, 0.0, upperZ)
+
+#######################################################
+# Translation of Solver
+#######################################################
+
+addPoissonSolver(relPermFunc)
+
+#######################################################
+# Translation of Particles
+#######################################################
+
+addParticleSpeciesSink(bottomElectronAbsorber, electrons, absAndSav, cylindrical, [-5.468750000000001e-06, 0.000695], [0.000503125, 0.0007025])
+addParticleSpeciesSink(bottomFaceElectronAbsorber, electrons, absAndSav, cylindrical, [0.000503125, 0.0004925], [0.00050859375, 0.000695])
+addInteriorSecondaryElectronEmitter(bottomIonSecElecEmitter, electrons, copper, 1.e20, 1, positive, 0.0007025, bottomIonAbsorber)
+addParticleSpeciesSink(bottomOuterElectronAbsorber, electrons, absAndSav, cylindrical, [0.00050859375, 0.0004925], [0.00070546875, 0.0005])
+addParticleSpeciesSink(leftElectronAbsorber, electrons, absAndSav, lowerZ)
+addParticleSpeciesSink(rightElectronAbsorber, electrons, absAndSav, upperZ)
+addParticleSpeciesSink(topElectronAbsorber, electrons, absAndSav, cylindrical, [-5.468750000000001e-06, 0.000995], [0.000503125, 0.0010025])
+addParticleSpeciesSink(topFaceElectronAbsorber, electrons, absAndSav, cylindrical, [0.000503125, 0.0010025], [0.00050859375, 0.0011075])
+addInteriorSecondaryElectronEmitter(topIonSecElecEmitter, electrons, copper, 1.e20, 1, negative, 0.000995, topIonAbsorber)
+addParticleSpeciesSink(topOuterElectronAbsorber, electrons, absAndSav, cylindrical, [0.00050859375, 0.0011], [0.00070546875, 0.0011075])
+addParticleSpeciesLoader(particleLoader, electrons, repeatLoading, 0.0, 1.0, true, false, relativeDensity, 1.0, grid, [1, 1, 1], functionalVelocity, velocityFunctionZ, velocityFunctionR, velocityFunctionR, [0.000390625, 0.0007], [.0005164, .0009925])
+addParticleSpecies(electrons, relBoris, 1.e18, constantWeights, explicitlySetWeights, 1.0e5)
+
+addParticleSpeciesSink(XePlusabsorbingLeft, XePlus, absorber, lowerZ)
+addParticleSpeciesSink(XePlusabsorbingRight, XePlus, absorber, upperZ)
+addParticleSpeciesSink(XePlusabsorbingBottom, XePlus, absorber, cylindrical, [0.0, 0.000695], [0.000503125, 0.0007025])
+addParticleSpeciesSink(XePlusabsorbingBottomFace, XePlus, absorber, cylindrical, [0.000503125, 0.0004925], [0.00050859375, 0.000695])
+addParticleSpeciesSink(XePlusabsorbingBottomOuter, XePlus, absorber, cylindrical, [0.00050859375, 0.0004925], [0.00070546875, 0.0005])
+addParticleSpeciesSink(XePlusabsorbingTop, XePlus, absorber, cylindrical, [0.0, 0.000995], [0.000503125, 0.0010025])
+addParticleSpeciesSink(XePlusabsorbingTopFace, XePlus, absorber, cylindrical, [0.000503125, 0.0010025], [0.00050859375, 0.0011075])
+addParticleSpeciesSink(XePlusabsorbingTopOuter, XePlus, absorber, cylindrical, [0.00050859375, 0.0011], [0.00070546875, 0.0011075])
+addParticleSpecies(XePlus, relBoris, 1.0, 131.2925, 1., 1.e18, constantWeights, explicitlySetWeights, 1.0e5)
+
+#######################################################
+# Translation of Fluids
+#######################################################
+
+addNeutralFluid(XeNeutralFluid, Xe, 131.293, 12.13, initialGasDensity, 300., True, [zMin, rMin], [zMax, rMax])
+addElectronNeutralFluidIonizationCollision(electronNeutralFluidIonization0, electronNeutralFluidCollisions0, electrons, XePlus, isotropic, EvaluatedElectronDataLibrary, eedl.dat)
+
+addElectronNeutralFluidElasticCollision(electronNeutralFluidElastic0, electronNeutralFluidCollisions0, isotropic, EvaluatedElectronDataLibrary, eedl.dat)
+
+addElectronNeutralFluidExcitationCollision(electronNeutralFluidExcitation0, electronNeutralFluidCollisions0, isotropic, EvaluatedElectronDataLibrary, eedl.dat)
+
+addElectronNeutralFluidCollisions(electronNeutralFluidCollisions0, electrons, XeNeutralFluid)
+
+addIonNeutralFluidChargeExchangeCollision(ionNeutralFluidChargeExchange0, ionNeutralFluidCollisions0, backward, builtIn)
+
+addIonNeutralFluidMomentumExchangeCollision(ionNeutralFluidMomentumExchange0, ionNeutralFluidCollisions0, isotropic, builtIn)
+
+addIonNeutralFluidCollisions(ionNeutralFluidCollisions0, XePlus, XeNeutralFluid)
+
+
+#######################################################
+# Translation of Histories
+#######################################################
+
+addMacroParticleCountHistory(numElectrons, electrons)
+addMacroParticleCountHistory(numXeIons, XePlus)
+
+#######################################################
+#
+# Finalize
+#
+#######################################################
+
+finalize()
+

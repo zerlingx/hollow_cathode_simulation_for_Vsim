@@ -1,0 +1,194 @@
+Working directory: D:\001_zerlingx\literature\HC\006_models\01_test
+Running input file: vsim_test_bound.pre
+Command is "C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\mpiexec.exe" -np 4 -env PYTHONPATH "C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\share\scripts;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\lib\site-packages;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\lib;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin\lib\site-packages;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin\lib\python\lib;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin\lib\python\DLLs;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin;." "C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\\vorpal.exe" -dt 1e-12 -d 500 -n 4000 -i "vsim_test_bound.pre"  -o "vsim_test_bound" 
+ 
+--------------------- START ENGINE OUTPUT ----------------
+Licensing Scheme file not found.
+Using Tech-X Licensing Scheme.
+LICENSE MANAGER: Using license file 'C:\ProgramData\Tech-X\VSim9\license.txt'
+LICENSE MANAGER: License valid for package(s)/module(s): VSimBase VSimEM VSimMD VSimPA VSimPD VSimSD 
+LICENSE MANAGER: License valid for macro(s): DrudeDebyeLorentzDielectric absorbingBox antennas antennasGPU deymittra dielectric dielectricGPU esGridBoundary farFields farFieldsGPU geometry geometryGPU gpuPml mal malGPU mirror originRadiatorPort perfectDispersion pml port scatteringBox scatteringBoxGPU secondOrderDiel specularBox statics yee yeeGPU 
+EULA not found. Skipping user agreement.
+No expand symbols file.  Will not limit expansion.
+Processing import: vsim_test_bound from 'D:\001_zerlingx\literature\HC\006_models\01_test'.
+Processing import: verbosity from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: mathphys from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: VSim from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: listUtilities from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: logicals from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: units from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: utilities from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: vputilities from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: VSimEs from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: esmatrix from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: solvers from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: matrices from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: grids from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: timing from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: shapes from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: multifields from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: histories from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: stfuncs from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: emfilters from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+
+TxsDevices::TxsDevices(): MPI found.
+Thread support is funneled.
+  commWorldSize = 4
+  commWorldRank = 0
+1 threads requested.
+
+SSE2 not found.
+AVX not found.
+AVX2 not found.
+16 hardware threads found.
+TxsDevices::TxsDevices(): 16 openmp processes and 16 openmp threads.
+
+TxsDevices::TxsDevices(): compiled with cuda toolkit.
+TxsDevices::TxsDevices(): opened cuda driver.
+getFuncPtr(): resolved cuLaunchKernel.
+getFuncPtr(): resolved cuModuleLoadData.
+getFuncPtr(): resolved cuModuleUnload.
+getFuncPtr(): resolved cuModuleGetFunction.
+TxsDevices::TxsDevices(): found all function pointers.
+TxsDevices::TxsDevices(): 1 CUDA devices detected.
+TxsDevices::deviceProperties for device 0 are:
+  name = NVIDIA GeForce RTX 3060 Laptop GPU
+  compute capability = 8.6
+  clockRate = 1425000
+  memoryClockRate = 7001000
+  multiProcessorCount = 30
+  maxThreadsPerMultiProcessor = 1536
+  warpSize = 32
+  totalGlobalMem = 5.99951 GB
+  sharedMemPerBlock = 49152
+  maxThreadsPerBlock = 1024
+  maxThreadsDim = 1024 1024 64
+  maxGridSize = 2147483647 65535 65535
+  unifiedAddressing = 1
+  concurrentKernels = 1
+  asyncEngineCount = 5
+TxsDevices::setDeviceNum(): setting device number to 0.
+
+VORPAL version 9.0.1 started at 2018-12-08-21:22:37.310.
+VORPAL Subversion revision = 32654
+CMake Subversion revision = 1392
+Built on host type = CYGWIN_NT-6.1-x86_64
+Built on host name = qawin7
+Built with compiler = C:/Program Files (x86)/Microsoft Visual Studio 12.0/VC/BIN/amd64/cl.exe  /DWIN32 /D_WINDOWS /W3 /GR /EHsc, version = 18.00.40629
+Run with command line = C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\\vorpal.exe -dt 1e-12 -d 500 -n 4000 -i vsim_test_bound.pre -o vsim_test_bound
+Using MPI
+
+Domain of kind, Domain2D, created at clock time 2018-12-08-21:22:38.576
+
+Domain: verbosity = 127.
+Domain: Dump mode is combo.
+Domain: Particle sorting is on.
+Time step is 1e-012.
+Grid(s): globalGrid.
+Decomp(s): decomp.
+No STRgn(s) present.
+GridBoundary(s): Anode Cathode vsim_test_boundPecShapes GrateArray-GrateGeomSolid.
+No GridCurve(s) present.
+MultiField(s): esMultiField.
+No EmField(s) present.
+No ComboEmField(s) present.
+No ScalarDepositor(s) present.
+No VectorDepositor(s) present.
+No Species(s) present.
+No Fluid(s) present.
+No Collision(s) present.
+No UpdateStep(s) present.
+No MonteCarloInteractions(s) present.
+No Ionizer(s) present.
+No ImpactCollider(s) present.
+No Semiconductor(s) present.
+Domain: No SumRhoJ present.
+
+RNGs will be seeded using randomSeed = 1 in a way that depends deterministially on randomSeed and the RNG name and mpi rank.
+decomp: Periodic directions: none.
+Grid kind = uniCartGrid
+Domain: VpGridInfo name = globalGrid with kind = uniCartGrid.
+Global simulation grid size: [400 480]
+Decomposition:
+ decomp0 = [200 400]
+ decomp1 = [240 480 240 480]
+
+Grid is globalGrid.
+Global grid:
+   start      length      dx         dxi     numCells
+-0.002500   0.005000 1.250e-005 8.000e+004      400
+-0.0005000   0.006000 1.250e-005 8.000e+004      480
+Local grid for rank 0:
+   start      length      dx         dxi     numCells
+-0.002500   0.002500 1.250e-005 8.000e+004      200
+-0.0005000   0.003000 1.250e-005 8.000e+004      240
+
+Domain: begin setup of fld/ptcl messaging... in the domain
+Domain: messaging set up... in the domain
+Domain: Creating grid boundaries at clock time 2018-12-08-21:22:38.617.
+Domain: Setting up grid boundary, Anode, at clock time 2018-12-08-21:22:38.617.
+Domain: grid boundary, Anode, data built at clock time 2018-12-08-21:22:38.620.
+Domain: Setting up grid boundary, Cathode, at clock time 2018-12-08-21:22:38.620.
+Domain: grid boundary, Cathode, data built at clock time 2018-12-08-21:22:38.624.
+Domain: Setting up grid boundary, vsim_test_boundPecShapes, at clock time 2018-12-08-21:22:38.624.
+Domain: grid boundary, vsim_test_boundPecShapes, data built at clock time 2018-12-08-21:22:38.626.
+Domain: Setting up grid boundary, GrateArray-GrateGeomSolid, at clock time 2018-12-08-21:22:38.627.
+Domain: grid boundary, GrateArray-GrateGeomSolid, data built at clock time 2018-12-08-21:22:38.629.
+Calculating in/out function for grid boundary, Anode.
+Anode: Collecting stair-step data.
+Anode: Collecting cut-cell face data.
+Anode: Collecting cut-cell volume data.
+Grid boundary, Anode, initialized in 0 seconds.
+Calculating in/out function for grid boundary, Cathode.
+Cathode: Collecting stair-step data.
+Cathode: Collecting cut-cell face data.
+Cathode: Collecting cut-cell volume data.
+VpGridBndry::calculateTriangleData(): calculating triangle data for Cathode
+Grid boundary, Cathode, initialized in 0 seconds.
+Calculating in/out function for grid boundary, vsim_test_boundPecShapes.
+vsim_test_boundPecShapes: Collecting stair-step data.
+vsim_test_boundPecShapes: Collecting cut-cell face data.
+vsim_test_boundPecShapes: Collecting cut-cell volume data.
+VpGridBndry::calculateTriangleData(): calculating triangle data for vsim_test_boundPecShapes
+Grid boundary, vsim_test_boundPecShapes, initialized in 0 seconds.
+Calculating in/out function for grid boundary, GrateArray-GrateGeomSolid.
+GrateArray-GrateGeomSolid: Collecting stair-step data.
+GrateArray-GrateGeomSolid: Collecting cut-cell face data.
+GrateArray-GrateGeomSolid: Collecting cut-cell volume data.
+VpGridBndry::calculateTriangleData(): calculating triangle data for GrateArray-GrateGeomSolid
+Grid boundary, GrateArray-GrateGeomSolid, initialized in 0 seconds.
+Domain: Grid boundaries created at clock time 2018-12-08-21:22:38.764.
+Domain: txsim reaction process holder built.
+Domain: txsim reaction physics holder built.
+Domain: History holder built.
+Domain: Multifields created.
+Domain: Multifields built.
+Domain: Non-combo EMfields built.
+Domain: Combo EMfields built.
+Settings in the Z axis will be ignored
+Lines from 'vsim_test_bound.pre' processed.
+Finished with 'vsim_test_bound.pre'.
+
+job aborted:
+[ranks] message
+
+[0-3] process exited without calling finalize
+
+---- error analysis -----
+
+[0-3] on ZERLINGX-TPX1E
+C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\\vorpal.exe ended prematurely and may have crashed. exit code 1
+
+---- error analysis -----
+AZ_extract_comm_info: Received elements must be stored after
+                   all 135162 local elements
+AZ_extract_comm_info: Received elements must be stored after
+                   all 136441 local elements
+AZ_extract_comm_info: Received elements must be stored after
+                   all 135840 local elements
+AZ_extract_comm_info: Received elements must be stored after
+                   all 135760 local elements
+
+--------------------- END ENGINE OUTPUT ----------------
+ 
+Engine completed with error: Composer detected that Vorpal crashed.

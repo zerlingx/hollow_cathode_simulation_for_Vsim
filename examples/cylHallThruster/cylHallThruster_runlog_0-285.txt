@@ -1,0 +1,966 @@
+Working directory: C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\examples\VSimPD\Spacecraft\cylHallThruster
+Running input file: cylHallThruster.pre
+Command is "C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\mpiexec.exe" -np 4 -env PYTHONPATH "C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\share\scripts;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\lib\site-packages;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\lib;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin\lib\site-packages;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin\lib\python\lib;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin\lib\python\DLLs;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin;." "C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\\vorpal.exe" -dt 3.72518e-13 -sd -d 1000 -n 6000 -i "cylHallThruster.pre"  -o "cylHallThruster" 
+ 
+--------------------- START ENGINE OUTPUT ----------------
+Licensing Scheme file not found.
+Using Tech-X Licensing Scheme.
+LICENSE MANAGER: Using license file 'C:\ProgramData\Tech-X\VSim9\license.txt'
+LICENSE MANAGER: License valid for package(s)/module(s): VSimBase VSimEM VSimMD VSimPA VSimPD VSimSD 
+LICENSE MANAGER: License valid for macro(s): DrudeDebyeLorentzDielectric absorbingBox antennas antennasGPU deymittra dielectric dielectricGPU esGridBoundary farFields farFieldsGPU geometry geometryGPU gpuPml mal malGPU mirror originRadiatorPort perfectDispersion pml port scatteringBox scatteringBoxGPU secondOrderDiel specularBox statics yee yeeGPU 
+EULA not found. Skipping user agreement.
+No expand symbols file.  Will not limit expansion.
+Processing import: cylHallThruster from 'C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\examples\VSimPD\Spacecraft\cylHallThruster'.
+Processing import: verbosity from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: mathphys from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: VSim from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: listUtilities from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: logicals from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: units from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: utilities from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: vputilities from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: VSimEs from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: esmatrix from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: solvers from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: matrices from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: grids from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: timing from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: shapes from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: multifields from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: histories from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: stfuncs from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: emfilters from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: particles from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: beamemitters from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: secondemits from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: fluids from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: collisions from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: collisionsinz from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Start-dumps enabled (if dumps active).
+
+TxsDevices::TxsDevices(): MPI found.
+Thread support is funneled.
+  commWorldSize = 4
+  commWorldRank = 0
+1 threads requested.
+
+SSE2 not found.
+AVX not found.
+AVX2 not found.
+16 hardware threads found.
+TxsDevices::TxsDevices(): 16 openmp processes and 16 openmp threads.
+
+TxsDevices::TxsDevices(): compiled with cuda toolkit.
+TxsDevices::TxsDevices(): opened cuda driver.
+getFuncPtr(): resolved cuLaunchKernel.
+getFuncPtr(): resolved cuModuleLoadData.
+getFuncPtr(): resolved cuModuleUnload.
+getFuncPtr(): resolved cuModuleGetFunction.
+TxsDevices::TxsDevices(): found all function pointers.
+TxsDevices::TxsDevices(): 1 CUDA devices detected.
+TxsDevices::deviceProperties for device 0 are:
+  name = NVIDIA GeForce RTX 3060 Laptop GPU
+  compute capability = 8.6
+  clockRate = 1425000
+  memoryClockRate = 7001000
+  multiProcessorCount = 30
+  maxThreadsPerMultiProcessor = 1536
+  warpSize = 32
+  totalGlobalMem = 5.99951 GB
+  sharedMemPerBlock = 49152
+  maxThreadsPerBlock = 1024
+  maxThreadsDim = 1024 1024 64
+  maxGridSize = 2147483647 65535 65535
+  unifiedAddressing = 1
+  concurrentKernels = 1
+  asyncEngineCount = 5
+TxsDevices::setDeviceNum(): setting device number to 0.
+
+VORPAL version 9.0.1 started at 2018-12-22-19:41:09.839.
+VORPAL Subversion revision = 32654
+CMake Subversion revision = 1392
+Built on host type = CYGWIN_NT-6.1-x86_64
+Built on host name = qawin7
+Built with compiler = C:/Program Files (x86)/Microsoft Visual Studio 12.0/VC/BIN/amd64/cl.exe  /DWIN32 /D_WINDOWS /W3 /GR /EHsc, version = 18.00.40629
+Run with command line = C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\\vorpal.exe -dt 3.72518e-13 -sd -d 1000 -n 6000 -i cylHallThruster.pre -o cylHallThruster
+Using MPI
+
+Domain of kind, Domain2D, created at clock time 2018-12-22-19:41:18.280
+
+Domain: verbosity = 127.
+Domain: Dump mode is combo.
+Domain: Particle sorting is on.
+Time step is 3.72518e-013.
+Grid(s): globalGrid.
+Decomp(s): decomp.
+No STRgn(s) present.
+No GridBoundary(s) present.
+No GridCurve(s) present.
+MultiField(s): esMultiField.
+No EmField(s) present.
+No ComboEmField(s) present.
+ScalarDepositor(s): ChargeDensityDep.
+No VectorDepositor(s) present.
+Species(s): XePlus electrons.
+Fluid(s): XeNeutralFluid.
+No Collision(s) present.
+No UpdateStep(s) present.
+No MonteCarloInteractions(s) present.
+No Ionizer(s) present.
+ImpactCollider(s): electronNeutralFluidCollisions0 ionNeutralFluidCollisions0.
+No Semiconductor(s) present.
+Domain: No SumRhoJ present.
+
+RNGs will be seeded using randomSeed = 1 in a way that depends deterministially on randomSeed and the RNG name and mpi rank.
+decomp: Periodic directions: none.
+Grid kind = varCylGrid
+Domain: VpGridInfo name = globalGrid with kind = coordProdGrid.
+Global simulation grid size: [128 80]
+Decomposition:
+ decomp0 = [64 128]
+ decomp1 = [40 80 40 80]
+
+Variable grid breaks/spacing info
+  idim = 0 -- txsBreaks = 0  0.0007  
+  idim = 0 -- txsSpacings = 5.46875e-006  5.46875e-006  
+  idim = 1 -- txsBreaks = 0.0005  0.0011  
+  idim = 1 -- txsSpacings = 7.5e-006  7.5e-006  
+
+Grid is globalGrid.
+Global grid:
+  start     length   dx.front    dx.back    numPhys
+      0     0.0007  5.47e-006  5.47e-006      128
+ 0.0005     0.0006   7.5e-006   7.5e-006       80
+Local grid for rank 0:
+  start     length   dx.front    dx.back    numPhys
+      0    0.00035  5.47e-006  5.47e-006       64
+ 0.0005     0.0003   7.5e-006   7.5e-006       40
+
+Variable grids deleted
+
+-------------------------------------
+Grid type is cylindrical: uniform
+-------------------------------------
+
+NOTE: grid type reset
+Grid kind = uniCylGrid
+Domain: VpGridInfo name = globalGrid with kind = coordProdGrid.
+Global simulation grid size: [128 80]
+Decomposition:
+ decomp0 = [64 128]
+ decomp1 = [40 80 40 80]
+
+Grid is globalGrid.
+Global grid:
+  start     length        dx     numPhys
+      0     0.0007 5.47e-006       128
+ 0.0005     0.0006  7.5e-006        80
+Local grid for rank 0:
+  start     length        dx     numPhys
+      0    0.00035 5.47e-006        64
+ 0.0005     0.0003  7.5e-006        40
+
+Domain: begin setup of fld/ptcl messaging... in the domain
+Domain: messaging set up... in the domain
+Domain: Creating grid boundaries at clock time 2018-12-22-19:41:18.434.
+Domain: Grid boundaries created at clock time 2018-12-22-19:41:18.435.
+Domain: txsim reaction process holder built.
+Domain: txsim reaction physics holder built.
+Domain: History holder built.
+Domain: Multifields created.
+Domain: Multifields built.
+Domain: Non-combo EMfields built.
+Domain: Combo EMfields built.
+Setting custom mass of 2.18016e-025 kg for species XePlus
+Setting custom charge of 1.60218e-019 C for species XePlus
+Setting custom ionization energy of 1 eV for species XePlus
+Domain:  attributes set.
+Domain: Species named XePlus added.
+Setting custom mass of 9.10938e-031 kg for species electrons
+Setting custom charge of -1.60218e-019 C for species electrons
+No ionizationEnergy specified for species electrons though it is species=custom, so setting ionizationEnergy to 0eV. If this species will be used in ionization or recombination reactions, you will want to specify the ionization energy in the species block.
+Domain:  attributes set.
+Domain: Species named electrons added.
+Species XePlus has velocity limits = [2.9361e+007, 2.84727e+007, 2.84727e+007].
+Sinks are: lower0Absorber upper0Absorber lower1Absorber upper1Absorber XePlusabsorbingLeft XePlusabsorbingRight XePlusabsorbingBottom XePlusabsorbingBottomFace XePlusabsorbingBottomOuter XePlusabsorbingTop XePlusabsorbingTopFace XePlusabsorbingTopOuter
+Species electrons has velocity limits = [2.9361e+007, 2.84727e+007, 2.84727e+007].
+Sinks are: lower0Absorber upper0Absorber lower1Absorber upper1Absorber bottomElectronAbsorber bottomFaceElectronAbsorber bottomOuterElectronAbsorber leftElectronAbsorber rightElectronAbsorber topElectronAbsorber topFaceElectronAbsorber topOuterElectronAbsorber
+Sources are:
+ particleLoader
+
+ Position generator named posGen set.
+ Velocity generator named velGen set.
+Particle source posGen will load particles.
+relMacroDenFunc found and set in xvLoaderEmitter particleLoader
+relMacroFluxFunc not found in xvLoaderEmitter particleLoader, assuming constant value of 1.
+Domain: XeNeutralFluid attributes set.
+Fluid named XeNeutralFluid added and available.
+ VpImpactCollider::setAttrib: numImpactCollisionTypes = 3
+VpImpactCollider::setPointersToCollisionableObjects: XeNeutralFluid object pointer obtained.
+ImpactCollision object name: electronNeutralFluidIonization0
+ ImpactCollision kind: impactIonization
+ ImpactCollision object name: electronNeutralFluidIonization0Xeelectrons
+ImpactCollision object name: electronNeutralFluidElastic0
+ ImpactCollision kind: impactElastic
+ ImpactCollision object name: electronNeutralFluidElastic0Xeelectrons
+ImpactCollision object name: electronNeutralFluidExcitation0
+ ImpactCollision kind: impactExcitation
+ ImpactCollision object name: electronNeutralFluidExcitation0Xeelectrons
+ VpImpactCollider::setAttrib: numImpactCollisionTypes = 2
+VpImpactCollider::setPointersToCollisionableObjects: XeNeutralFluid object pointer obtained.
+ImpactCollision object name: ionNeutralFluidChargeExchange0
+ ImpactCollision kind: impactIonCollision
+ ImpactCollision object name: ionNeutralFluidChargeExchange0XeXePlus
+ImpactCollision object name: ionNeutralFluidMomentumExchange0
+ ImpactCollision kind: impactIonCollision
+ ImpactCollision object name: ionNeutralFluidMomentumExchange0XeXePlus
+AppliedMagneticField has the grid initial conditions: initAppliedMagneticField.
+ Found kind = var(set,add) 
+Initial condition variableIC_initAppliedMagneticField_0 created for component 0
+ Found kind = var(set,add) 
+Initial condition variableIC_initAppliedMagneticField_1 created for component 1
+ Found kind = var(set,add) 
+Initial condition variableIC_initAppliedMagneticField_2 created for component 2
+MultiFields built.
+Building species XePlus with NDIM = 2.
+Added sink, lower0Absorber, to global region:
+[-2, 0) x [-2, 82)Region for sink, upper0Absorber, is empty on rank 0
+Added sink, lower1Absorber, to global region:
+[0, 128) x [-2, 0)Region for sink, upper1Absorber, is empty on rank 0
+WARNING: Detected overlapping sinks in PtclSinkArray.  Change verbosity to VP_DEBUG to see more information.
+Added sink, XePlusabsorbingLeft, to global region:
+[-2, 0) x [-2, 82)Region for sink, XePlusabsorbingRight, is empty on rank 0
+Added sink, XePlusabsorbingBottom, to global region:
+[0, 92) x [26, 27)Region for sink, XePlusabsorbingBottomFace, is empty on rank 0
+Region for sink, XePlusabsorbingBottomOuter, is empty on rank 0
+Region for sink, XePlusabsorbingTop, is empty on rank 0
+Region for sink, XePlusabsorbingTopFace, is empty on rank 0
+Region for sink, XePlusabsorbingTopOuter, is empty on rank 0
+Building species electrons with NDIM = 2.
+Added sink, lower0Absorber, to global region:
+[-2, 0) x [-2, 82)Region for sink, upper0Absorber, is empty on rank 0
+Added sink, lower1Absorber, to global region:
+[0, 128) x [-2, 0)Region for sink, upper1Absorber, is empty on rank 0
+WARNING: Detected overlapping sinks in PtclSinkArray.  Change verbosity to VP_DEBUG to see more information.
+Added sink, bottomElectronAbsorber, to global region:
+[-1, 92) x [26, 27)Region for sink, bottomFaceElectronAbsorber, is empty on rank 0
+Region for sink, bottomOuterElectronAbsorber, is empty on rank 0
+Added sink, leftElectronAbsorber, to global region:
+[-2, 0) x [-2, 82)Region for sink, rightElectronAbsorber, is empty on rank 0
+Region for sink, topElectronAbsorber, is empty on rank 0
+Region for sink, topFaceElectronAbsorber, is empty on rank 0
+Region for sink, topOuterElectronAbsorber, is empty on rank 0
+Sources (for buildSolvers) are:
+ particleLoader
+
+Source named particleLoader added to Species electrons.
+XeNeutralFluid has the grid initial conditions: initialDensity.
+ Found kind = var(set,add) 
+Initial condition variableIC_initialDensity_0 created for component 0
+XeNeutralFluidGroundStateDenFld has the grid initial conditions: initialDensity.
+ Found kind = var(set,add) 
+Initial condition variableIC_initialDensity_0 created for component 0
+XeNeutralFluidElasticMomFld has the grid initial conditions: initialDensity.
+ Found kind = var(set,add) 
+Initial condition variableIC_initialDensity_0 created for component 0
+XeNeutralFluidElasticErgFld has the grid initial conditions: initialDensity.
+ Found kind = var(set,add) 
+Initial condition variableIC_initialDensity_0 created for component 0
+XeNeutralFluidElasticEvtFld has the grid initial conditions: initialDensity.
+ Found kind = var(set,add) 
+Initial condition variableIC_initialDensity_0 created for component 0
+XeNeutralFluidExcitationDenFld has the grid initial conditions: initialDensity.
+ Found kind = var(set,add) 
+Initial condition variableIC_initialDensity_0 created for component 0
+XeNeutralFluidExcitationMomFld has the grid initial conditions: initialDensity.
+ Found kind = var(set,add) 
+Initial condition variableIC_initialDensity_0 created for component 0
+XeNeutralFluidExcitationErgFld has the grid initial conditions: initialDensity.
+ Found kind = var(set,add) 
+Initial condition variableIC_initialDensity_0 created for component 0
+XeNeutralFluidExcitationEvtFld has the grid initial conditions: initialDensity.
+ Found kind = var(set,add) 
+Initial condition variableIC_initialDensity_0 created for component 0
+XeNeutralFluidIonizationMomFld has the grid initial conditions: initialDensity.
+ Found kind = var(set,add) 
+Initial condition variableIC_initialDensity_0 created for component 0
+XeNeutralFluidIonizationErgFld has the grid initial conditions: initialDensity.
+ Found kind = var(set,add) 
+Initial condition variableIC_initialDensity_0 created for component 0
+XeNeutralFluidIonizationEvtFld has the grid initial conditions: initialDensity.
+ Found kind = var(set,add) 
+Initial condition variableIC_initialDensity_0 created for component 0
+Domain: XePlus initialized.
+Source, particleLoader, loaded 0 particles on this processor (rank 0)
+Domain: electrons initialized.
+Domain: All species initialized.
+Initializing 'XeNeutralFluid' with 1 setters.
+Initializing 'XeNeutralFluidGroundStateDenFld' with 1 setters.
+Initializing XeNeutralFluidElasticMomFld with 1 setters.
+Initializing XeNeutralFluidElasticErgFld with 1 setters.
+Initializing XeNeutralFluidElasticEvtFld with 1 setters.
+Initializing XeNeutralFluidExcitationDenFld with 1 setters.
+Initializing XeNeutralFluidExcitationMomFld with 1 setters.
+Initializing XeNeutralFluidExcitationErgFld with 1 setters.
+Initializing XeNeutralFluidExcitationEvtFld with 1 setters.
+Initializing XeNeutralFluidIonizationMomFld with 1 setters.
+Initializing XeNeutralFluidIonizationErgFld with 1 setters.
+Initializing XeNeutralFluidIonizationEvtFld with 1 setters.
+Domain: EmFluid 'XeNeutralFluid' initialized.
+Domain: XeNeutralFluid initialized.
+Domain: All emfluids initialized.
+Domain: All collisions initialized.
+Domain: All ionization processes initialized.
+ electron-neutral impact collider, maxSigmaV =1.33024e-012
+ ion-neutral impact collider, maxSigmaV =1.47983e-013
+Domain: All impactCollision processes initialized.
+All semiconductor materials initialized.
+All monteCarloHandlers initialized.
+Initializing 'AppliedMagneticField' with 3 setters.
+Initializing 'E' with 0 setters.
+Initializing 'nodalE' with 0 setters.
+Initializing 'nodalB' with 0 setters.
+Initializing 'Phi' with 0 setters.
+Initializing 'ChargeDensity' with 0 setters.
+Amesos_Superludist : vector 0, ||Ax - b|| = 4.34297e-012
+Domain: All MultiFields initialized at clock tim 2018-12-22-19:41:19.261.
+Domain: All emfields initialized at clock time 2018-12-22-19:41:19.261.
+Domain: Histories initialized at clock time 2018-12-22-19:41:19.261.
+Domain: Initialization complete at clock time 2018-12-22-19:41:19.261.
+
+Domain: Dumping all at clock time 2018-12-22-19:41:19.261.
+Globals dumped at 2018-12-22-19:41:19.264.
+Dumping grid boundaries at 2018-12-22-19:41:19.264.
+Dumped grid boundaries at 2018-12-22-19:41:19.264.
+Domain: Sorting XePlus.
+Domain: XePlus sorted.
+Dumping species data XePlus.
+Domain: Sorting electrons.
+Domain: electrons sorted.
+Dumping species data electrons.
+Dumped electrons.
+Dumping XeNeutralFluid at 2018-12-22-19:41:19.268.
+Dumped XeNeutralFluid at 2018-12-22-19:41:19.270.
+Fluids dumped at 2018-12-22-19:41:19.270.
+Domain: Dumping histories at 2018-12-22-19:41:19.270.
+Domain: Histories dumped at 2018-12-22-19:41:19.270.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-22-19:41:19.270.
+Dumping AppliedMagneticField at 2018-12-22-19:41:19.270.
+Dumped AppliedMagneticField at 2018-12-22-19:41:19.272.
+Dumping E at 2018-12-22-19:41:19.272.
+Dumped E at 2018-12-22-19:41:19.275.
+Dumping nodalE at 2018-12-22-19:41:19.275.
+Dumped nodalE at 2018-12-22-19:41:19.277.
+Dumping nodalB at 2018-12-22-19:41:19.277.
+Dumped nodalB at 2018-12-22-19:41:19.280.
+Dumping Phi at 2018-12-22-19:41:19.280.
+Dumped Phi at 2018-12-22-19:41:19.282.
+Dumping ChargeDensity at 2018-12-22-19:41:19.282.
+Dumped ChargeDensity at 2018-12-22-19:41:19.284.
+All multiFields dumped at 2018-12-22-19:41:19.286.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-22-19:41:19.286.
+
+Main loop started    at clock time 2018-12-22-19:41:19.286.
+Taking step        1 at clock time 2018-12-22-19:41:19.286.
+Rank 0 processed a total of 0 XePlus at an average of 0 seconds per particle push.
+Rank 0 just processed 0 XePlus at an average of 0 seconds per particle push.
+Rank 0 processed a total of 0 electrons at an average of 0 seconds per particle push.
+Rank 0 just processed 0 electrons at an average of 0 seconds per particle push.
+For all ranks, total average particle process time = 0 seconds.
+For all ranks, last average particle process time = 0 seconds.
+Sorting particles
+Sorting time: 0 per particle, 0 total
+Rank 0 processed a total of 0 XePlus at an average of 0 seconds per particle push.
+Rank 0 just processed 0 XePlus at an average of 0 seconds per particle push.
+Rank 0 processed a total of 0 electrons at an average of 0 seconds per particle push.
+Rank 0 just processed 0 electrons at an average of 0 seconds per particle push.
+For all ranks, total average particle process time = 0 seconds.
+For all ranks, last average particle process time = 0 seconds.
+Amesos_Superludist : vector 0, ||Ax - b|| = 4.29265e-012
+Taking step        2 at clock time 2018-12-22-19:41:19.295.
+Rank 0 processed a total of 0 XePlus at an average of 0 seconds per particle push.
+Rank 0 just processed 0 XePlus at an average of 0 seconds per particle push.
+Rank 0 processed a total of 0 electrons at an average of 0 seconds per particle push.
+Rank 0 just processed 0 electrons at an average of 0 seconds per particle push.
+For all ranks, total average particle process time = 0 seconds.
+For all ranks, last average particle process time = 0 seconds.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.52821e-012
+Taking step        3 at clock time 2018-12-22-19:41:19.301.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.14205e-012
+Taking step        4 at clock time 2018-12-22-19:41:19.307.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.06291e-012
+Taking step        5 at clock time 2018-12-22-19:41:19.314.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.17429e-012
+Taking step        6 at clock time 2018-12-22-19:41:19.320.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.6253e-012
+Taking step        7 at clock time 2018-12-22-19:41:19.328.
+Amesos_Superludist : vector 0, ||Ax - b|| = 4.24067e-012
+Taking step        8 at clock time 2018-12-22-19:41:19.335.
+Amesos_Superludist : vector 0, ||Ax - b|| = 4.76028e-012
+Taking step        9 at clock time 2018-12-22-19:41:19.344.
+Amesos_Superludist : vector 0, ||Ax - b|| = 5.8815e-012
+Taking step       10 at clock time 2018-12-22-19:41:19.353.
+Amesos_Superludist : vector 0, ||Ax - b|| = 6.72938e-012
+Taking step       11 at clock time 2018-12-22-19:41:19.361.
+Amesos_Superludist : vector 0, ||Ax - b|| = 7.64802e-012
+Taking step       12 at clock time 2018-12-22-19:41:19.371.
+Amesos_Superludist : vector 0, ||Ax - b|| = 8.01783e-012
+Taking step       13 at clock time 2018-12-22-19:41:19.381.
+Amesos_Superludist : vector 0, ||Ax - b|| = 8.518e-012
+Taking step       14 at clock time 2018-12-22-19:41:19.391.
+Amesos_Superludist : vector 0, ||Ax - b|| = 9.33264e-012
+Taking step       15 at clock time 2018-12-22-19:41:19.402.
+Amesos_Superludist : vector 0, ||Ax - b|| = 1.1009e-011
+Taking step       16 at clock time 2018-12-22-19:41:19.412.
+Amesos_Superludist : vector 0, ||Ax - b|| = 1.2237e-011
+Taking step       17 at clock time 2018-12-22-19:41:19.422.
+Amesos_Superludist : vector 0, ||Ax - b|| = 1.28838e-011
+Taking step       18 at clock time 2018-12-22-19:41:19.434.
+Amesos_Superludist : vector 0, ||Ax - b|| = 1.37881e-011
+Taking step       19 at clock time 2018-12-22-19:41:19.446.
+Amesos_Superludist : vector 0, ||Ax - b|| = 1.45527e-011
+Taking step       20 at clock time 2018-12-22-19:41:19.458.
+Amesos_Superludist : vector 0, ||Ax - b|| = 1.56566e-011
+Taking step       21 at clock time 2018-12-22-19:41:19.470.
+Amesos_Superludist : vector 0, ||Ax - b|| = 1.59192e-011
+Taking step       22 at clock time 2018-12-22-19:41:19.483.
+Amesos_Superludist : vector 0, ||Ax - b|| = 1.62703e-011
+Taking step       23 at clock time 2018-12-22-19:41:19.496.
+Amesos_Superludist : vector 0, ||Ax - b|| = 1.67053e-011
+Taking step       24 at clock time 2018-12-22-19:41:19.509.
+Amesos_Superludist : vector 0, ||Ax - b|| = 1.69723e-011
+Taking step       25 at clock time 2018-12-22-19:41:19.524.
+Amesos_Superludist : vector 0, ||Ax - b|| = 1.74824e-011
+Taking step       26 at clock time 2018-12-22-19:41:19.539.
+Amesos_Superludist : vector 0, ||Ax - b|| = 1.78882e-011
+Taking step       27 at clock time 2018-12-22-19:41:19.553.
+Amesos_Superludist : vector 0, ||Ax - b|| = 1.76882e-011
+Taking step       28 at clock time 2018-12-22-19:41:19.567.
+Amesos_Superludist : vector 0, ||Ax - b|| = 1.86233e-011
+Taking step       29 at clock time 2018-12-22-19:41:19.583.
+Amesos_Superludist : vector 0, ||Ax - b|| = 1.97079e-011
+Taking step       30 at clock time 2018-12-22-19:41:19.598.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.19799e-011
+Taking step       31 at clock time 2018-12-22-19:41:19.614.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.20054e-011
+Taking step       32 at clock time 2018-12-22-19:41:19.630.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.32257e-011
+Taking step       33 at clock time 2018-12-22-19:41:19.647.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.36256e-011
+Taking step       34 at clock time 2018-12-22-19:41:19.664.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.44864e-011
+Taking step       35 at clock time 2018-12-22-19:41:19.682.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.48402e-011
+Taking step       36 at clock time 2018-12-22-19:41:19.699.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.55181e-011
+Taking step       37 at clock time 2018-12-22-19:41:19.716.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.58046e-011
+Taking step       38 at clock time 2018-12-22-19:41:19.734.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.67898e-011
+Taking step       39 at clock time 2018-12-22-19:41:19.751.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.59599e-011
+Taking step       40 at clock time 2018-12-22-19:41:19.768.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.767e-011
+Taking step       41 at clock time 2018-12-22-19:41:19.786.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.7096e-011
+Taking step       42 at clock time 2018-12-22-19:41:19.803.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.74346e-011
+Taking step       43 at clock time 2018-12-22-19:41:19.821.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.85105e-011
+Taking step       44 at clock time 2018-12-22-19:41:19.837.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.86842e-011
+Taking step       45 at clock time 2018-12-22-19:41:19.855.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.9357e-011
+Taking step       46 at clock time 2018-12-22-19:41:19.878.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.88313e-011
+Taking step       47 at clock time 2018-12-22-19:41:19.899.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.9823e-011
+Taking step       48 at clock time 2018-12-22-19:41:19.916.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.0053e-011
+Taking step       49 at clock time 2018-12-22-19:41:19.934.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.97585e-011
+Taking step       50 at clock time 2018-12-22-19:41:19.952.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.01695e-011
+Taking step       51 at clock time 2018-12-22-19:41:19.970.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.02285e-011
+Taking step       52 at clock time 2018-12-22-19:41:19.988.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.08043e-011
+Taking step       53 at clock time 2018-12-22-19:41:20.007.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.06522e-011
+Taking step       54 at clock time 2018-12-22-19:41:20.025.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.02287e-011
+Taking step       55 at clock time 2018-12-22-19:41:20.042.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.13822e-011
+Taking step       56 at clock time 2018-12-22-19:41:20.061.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.13983e-011
+Taking step       57 at clock time 2018-12-22-19:41:20.080.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.14571e-011
+Taking step       58 at clock time 2018-12-22-19:41:20.101.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.0972e-011
+Taking step       59 at clock time 2018-12-22-19:41:20.121.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.12898e-011
+Taking step       60 at clock time 2018-12-22-19:41:20.140.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.16028e-011
+Taking step       61 at clock time 2018-12-22-19:41:20.159.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.07719e-011
+Taking step       62 at clock time 2018-12-22-19:41:20.179.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.11668e-011
+Taking step       63 at clock time 2018-12-22-19:41:20.199.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.22684e-011
+Taking step       64 at clock time 2018-12-22-19:41:20.218.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.19108e-011
+Taking step       65 at clock time 2018-12-22-19:41:20.238.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.07524e-011
+Taking step       66 at clock time 2018-12-22-19:41:20.259.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.15465e-011
+Taking step       67 at clock time 2018-12-22-19:41:20.280.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.12318e-011
+Taking step       68 at clock time 2018-12-22-19:41:20.301.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.14672e-011
+Taking step       69 at clock time 2018-12-22-19:41:20.321.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.18601e-011
+Taking step       70 at clock time 2018-12-22-19:41:20.342.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.1438e-011
+Taking step       71 at clock time 2018-12-22-19:41:20.375.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.10762e-011
+Taking step       72 at clock time 2018-12-22-19:41:20.399.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.1688e-011
+Taking step       73 at clock time 2018-12-22-19:41:20.421.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.15806e-011
+Taking step       74 at clock time 2018-12-22-19:41:20.441.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.23087e-011
+Taking step       75 at clock time 2018-12-22-19:41:20.462.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.07618e-011
+Taking step       76 at clock time 2018-12-22-19:41:20.483.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.12643e-011
+Taking step       77 at clock time 2018-12-22-19:41:20.504.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.18055e-011
+Taking step       78 at clock time 2018-12-22-19:41:20.524.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.12343e-011
+Taking step       79 at clock time 2018-12-22-19:41:20.544.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.15558e-011
+Taking step       80 at clock time 2018-12-22-19:41:20.566.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.08983e-011
+Taking step       81 at clock time 2018-12-22-19:41:20.586.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.17085e-011
+Taking step       82 at clock time 2018-12-22-19:41:20.607.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.1222e-011
+Taking step       83 at clock time 2018-12-22-19:41:20.628.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.15861e-011
+Taking step       84 at clock time 2018-12-22-19:41:20.648.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.09675e-011
+Taking step       85 at clock time 2018-12-22-19:41:20.669.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.09079e-011
+Taking step       86 at clock time 2018-12-22-19:41:20.689.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.18234e-011
+Taking step       87 at clock time 2018-12-22-19:41:20.710.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.16712e-011
+Taking step       88 at clock time 2018-12-22-19:41:20.730.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.13708e-011
+Taking step       89 at clock time 2018-12-22-19:41:20.749.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.15729e-011
+Taking step       90 at clock time 2018-12-22-19:41:20.769.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.08319e-011
+Taking step       91 at clock time 2018-12-22-19:41:20.789.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.0783e-011
+Taking step       92 at clock time 2018-12-22-19:41:20.810.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.16405e-011
+Taking step       93 at clock time 2018-12-22-19:41:20.830.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.07746e-011
+Taking step       94 at clock time 2018-12-22-19:41:20.851.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.13314e-011
+Taking step       95 at clock time 2018-12-22-19:41:20.871.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.12268e-011
+Taking step       96 at clock time 2018-12-22-19:41:20.892.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.17111e-011
+Taking step       97 at clock time 2018-12-22-19:41:20.912.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.12798e-011
+Taking step       98 at clock time 2018-12-22-19:41:20.932.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.04777e-011
+Taking step       99 at clock time 2018-12-22-19:41:20.952.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.05844e-011
+Taking step      100 at clock time 2018-12-22-19:41:20.972.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.08438e-011
+Taking step      101 at clock time 2018-12-22-19:41:20.991.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.12091e-011
+Taking step      102 at clock time 2018-12-22-19:41:21.010.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.16566e-011
+Taking step      103 at clock time 2018-12-22-19:41:21.030.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.06263e-011
+Taking step      104 at clock time 2018-12-22-19:41:21.049.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.09072e-011
+Taking step      105 at clock time 2018-12-22-19:41:21.070.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.11983e-011
+Taking step      106 at clock time 2018-12-22-19:41:21.089.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.08051e-011
+Taking step      107 at clock time 2018-12-22-19:41:21.108.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.07962e-011
+Taking step      108 at clock time 2018-12-22-19:41:21.129.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.03188e-011
+Taking step      109 at clock time 2018-12-22-19:41:21.149.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.08306e-011
+Taking step      110 at clock time 2018-12-22-19:41:21.170.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.13822e-011
+Taking step      111 at clock time 2018-12-22-19:41:21.191.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.09586e-011
+Taking step      112 at clock time 2018-12-22-19:41:21.211.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.06957e-011
+Taking step      113 at clock time 2018-12-22-19:41:21.232.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.0738e-011
+Taking step      114 at clock time 2018-12-22-19:41:21.251.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.12267e-011
+Taking step      115 at clock time 2018-12-22-19:41:21.271.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.12287e-011
+Taking step      116 at clock time 2018-12-22-19:41:21.291.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.0393e-011
+Taking step      117 at clock time 2018-12-22-19:41:21.310.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.10241e-011
+Taking step      118 at clock time 2018-12-22-19:41:21.331.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.11833e-011
+Taking step      119 at clock time 2018-12-22-19:41:21.351.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.1049e-011
+Taking step      120 at clock time 2018-12-22-19:41:21.372.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.09108e-011
+Taking step      121 at clock time 2018-12-22-19:41:21.393.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.13236e-011
+Taking step      122 at clock time 2018-12-22-19:41:21.413.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.11464e-011
+Taking step      123 at clock time 2018-12-22-19:41:21.434.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.07946e-011
+Taking step      124 at clock time 2018-12-22-19:41:21.453.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.06865e-011
+Taking step      125 at clock time 2018-12-22-19:41:21.474.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.95257e-011
+Taking step      126 at clock time 2018-12-22-19:41:21.494.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.0356e-011
+Taking step      127 at clock time 2018-12-22-19:41:21.513.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.0722e-011
+Taking step      128 at clock time 2018-12-22-19:41:21.533.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.11912e-011
+Taking step      129 at clock time 2018-12-22-19:41:21.553.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.03819e-011
+Taking step      130 at clock time 2018-12-22-19:41:21.572.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.07432e-011
+Taking step      131 at clock time 2018-12-22-19:41:21.593.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.04041e-011
+Taking step      132 at clock time 2018-12-22-19:41:21.612.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.06363e-011
+Taking step      133 at clock time 2018-12-22-19:41:21.632.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.97899e-011
+Taking step      134 at clock time 2018-12-22-19:41:21.655.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.06741e-011
+Taking step      135 at clock time 2018-12-22-19:41:21.676.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.07611e-011
+Taking step      136 at clock time 2018-12-22-19:41:21.698.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.00443e-011
+Taking step      137 at clock time 2018-12-22-19:41:21.720.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.06467e-011
+Taking step      138 at clock time 2018-12-22-19:41:21.741.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.07879e-011
+Taking step      139 at clock time 2018-12-22-19:41:21.762.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.13961e-011
+Taking step      140 at clock time 2018-12-22-19:41:21.784.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.02938e-011
+Taking step      141 at clock time 2018-12-22-19:41:21.805.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.03713e-011
+Taking step      142 at clock time 2018-12-22-19:41:21.826.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.07186e-011
+Taking step      143 at clock time 2018-12-22-19:41:21.847.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.01225e-011
+Taking step      144 at clock time 2018-12-22-19:41:21.871.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.98583e-011
+Taking step      145 at clock time 2018-12-22-19:41:21.892.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.08959e-011
+Taking step      146 at clock time 2018-12-22-19:41:21.913.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.03369e-011
+Taking step      147 at clock time 2018-12-22-19:41:21.934.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.06859e-011
+Taking step      148 at clock time 2018-12-22-19:41:21.954.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.9573e-011
+Taking step      149 at clock time 2018-12-22-19:41:21.974.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.00921e-011
+Taking step      150 at clock time 2018-12-22-19:41:21.994.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.0167e-011
+Taking step      151 at clock time 2018-12-22-19:41:22.013.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.06856e-011
+Taking step      152 at clock time 2018-12-22-19:41:22.033.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.99029e-011
+Taking step      153 at clock time 2018-12-22-19:41:22.056.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.04261e-011
+Taking step      154 at clock time 2018-12-22-19:41:22.075.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.07637e-011
+Taking step      155 at clock time 2018-12-22-19:41:22.095.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.07577e-011
+Taking step      156 at clock time 2018-12-22-19:41:22.116.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.07351e-011
+Taking step      157 at clock time 2018-12-22-19:41:22.137.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.04368e-011
+Taking step      158 at clock time 2018-12-22-19:41:22.165.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.0599e-011
+Taking step      159 at clock time 2018-12-22-19:41:22.185.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.00822e-011
+Taking step      160 at clock time 2018-12-22-19:41:22.209.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.05329e-011
+Taking step      161 at clock time 2018-12-22-19:41:22.230.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.96261e-011
+Taking step      162 at clock time 2018-12-22-19:41:22.252.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.08156e-011
+Taking step      163 at clock time 2018-12-22-19:41:22.307.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.00819e-011
+Taking step      164 at clock time 2018-12-22-19:41:22.335.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.03695e-011
+Taking step      165 at clock time 2018-12-22-19:41:22.361.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.98015e-011
+Taking step      166 at clock time 2018-12-22-19:41:22.385.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.05086e-011
+Taking step      167 at clock time 2018-12-22-19:41:22.406.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.0376e-011
+Taking step      168 at clock time 2018-12-22-19:41:22.428.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.95752e-011
+Taking step      169 at clock time 2018-12-22-19:41:22.450.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.04137e-011
+Taking step      170 at clock time 2018-12-22-19:41:22.471.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.09343e-011
+Taking step      171 at clock time 2018-12-22-19:41:22.497.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.01848e-011
+Taking step      172 at clock time 2018-12-22-19:41:22.518.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.95029e-011
+Taking step      173 at clock time 2018-12-22-19:41:22.538.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.01898e-011
+Taking step      174 at clock time 2018-12-22-19:41:22.558.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.01256e-011
+Taking step      175 at clock time 2018-12-22-19:41:22.580.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.93433e-011
+Taking step      176 at clock time 2018-12-22-19:41:22.602.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.00164e-011
+Taking step      177 at clock time 2018-12-22-19:41:22.621.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.95826e-011
+Taking step      178 at clock time 2018-12-22-19:41:22.642.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.03779e-011
+Taking step      179 at clock time 2018-12-22-19:41:22.663.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.95173e-011
+Taking step      180 at clock time 2018-12-22-19:41:22.685.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.01449e-011
+Taking step      181 at clock time 2018-12-22-19:41:22.706.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.01888e-011
+Taking step      182 at clock time 2018-12-22-19:41:22.729.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.96376e-011
+Taking step      183 at clock time 2018-12-22-19:41:22.749.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.00351e-011
+Taking step      184 at clock time 2018-12-22-19:41:22.773.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.97108e-011
+Taking step      185 at clock time 2018-12-22-19:41:22.795.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.05361e-011
+Taking step      186 at clock time 2018-12-22-19:41:22.820.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.96662e-011
+Taking step      187 at clock time 2018-12-22-19:41:22.840.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.98516e-011
+Taking step      188 at clock time 2018-12-22-19:41:22.862.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.92638e-011
+Taking step      189 at clock time 2018-12-22-19:41:22.882.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.98113e-011
+Taking step      190 at clock time 2018-12-22-19:41:22.905.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.97754e-011
+Taking step      191 at clock time 2018-12-22-19:41:22.927.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.01907e-011
+Taking step      192 at clock time 2018-12-22-19:41:22.949.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.99511e-011
+Taking step      193 at clock time 2018-12-22-19:41:22.969.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.941e-011
+Taking step      194 at clock time 2018-12-22-19:41:22.991.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.9539e-011
+Taking step      195 at clock time 2018-12-22-19:41:23.011.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.9938e-011
+Taking step      196 at clock time 2018-12-22-19:41:23.032.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.9529e-011
+Taking step      197 at clock time 2018-12-22-19:41:23.052.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.99644e-011
+Taking step      198 at clock time 2018-12-22-19:41:23.072.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.94597e-011
+Taking step      199 at clock time 2018-12-22-19:41:23.092.
+Amesos_Superludist : vector 0, ||Ax - b|| = 3.02917e-011
+Taking step      200 at clock time 2018-12-22-19:41:23.112.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.93556e-011
+Taking step      201 at clock time 2018-12-22-19:41:23.132.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.88733e-011
+Taking step      202 at clock time 2018-12-22-19:41:23.153.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.94929e-011
+Taking step      203 at clock time 2018-12-22-19:41:23.174.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.90367e-011
+Taking step      204 at clock time 2018-12-22-19:41:23.194.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.9264e-011
+Taking step      205 at clock time 2018-12-22-19:41:23.215.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.95876e-011
+Taking step      206 at clock time 2018-12-22-19:41:23.235.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.90778e-011
+Taking step      207 at clock time 2018-12-22-19:41:23.256.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.97003e-011
+Taking step      208 at clock time 2018-12-22-19:41:23.278.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.96854e-011
+Taking step      209 at clock time 2018-12-22-19:41:23.300.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.91701e-011
+Taking step      210 at clock time 2018-12-22-19:41:23.320.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.9478e-011
+Taking step      211 at clock time 2018-12-22-19:41:23.341.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.96287e-011
+Taking step      212 at clock time 2018-12-22-19:41:23.361.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.91682e-011
+Taking step      213 at clock time 2018-12-22-19:41:23.382.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.87589e-011
+Taking step      214 at clock time 2018-12-22-19:41:23.404.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.96517e-011
+Taking step      215 at clock time 2018-12-22-19:41:23.426.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.92847e-011
+Taking step      216 at clock time 2018-12-22-19:41:23.446.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.88841e-011
+Taking step      217 at clock time 2018-12-22-19:41:23.468.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.91342e-011
+Taking step      218 at clock time 2018-12-22-19:41:23.488.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.94473e-011
+Taking step      219 at clock time 2018-12-22-19:41:23.509.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.87096e-011
+Taking step      220 at clock time 2018-12-22-19:41:23.539.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.82167e-011
+Taking step      221 at clock time 2018-12-22-19:41:23.559.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.92568e-011
+Taking step      222 at clock time 2018-12-22-19:41:23.580.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.93449e-011
+Taking step      223 at clock time 2018-12-22-19:41:23.600.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.82762e-011
+Taking step      224 at clock time 2018-12-22-19:41:23.621.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.83151e-011
+Taking step      225 at clock time 2018-12-22-19:41:23.643.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.85891e-011
+Taking step      226 at clock time 2018-12-22-19:41:23.663.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.96044e-011
+Taking step      227 at clock time 2018-12-22-19:41:23.684.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.91659e-011
+Taking step      228 at clock time 2018-12-22-19:41:23.704.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.85326e-011
+Taking step      229 at clock time 2018-12-22-19:41:23.726.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.92252e-011
+Taking step      230 at clock time 2018-12-22-19:41:23.748.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.90726e-011
+Taking step      231 at clock time 2018-12-22-19:41:23.769.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.908e-011
+Taking step      232 at clock time 2018-12-22-19:41:23.790.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.90452e-011
+Taking step      233 at clock time 2018-12-22-19:41:23.815.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.91025e-011
+Taking step      234 at clock time 2018-12-22-19:41:23.835.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.90532e-011
+Taking step      235 at clock time 2018-12-22-19:41:23.856.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.81288e-011
+Taking step      236 at clock time 2018-12-22-19:41:23.880.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.84896e-011
+Taking step      237 at clock time 2018-12-22-19:41:23.901.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.86103e-011
+Taking step      238 at clock time 2018-12-22-19:41:23.922.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.89679e-011
+Taking step      239 at clock time 2018-12-22-19:41:23.942.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.94714e-011
+Taking step      240 at clock time 2018-12-22-19:41:23.963.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.80442e-011
+Taking step      241 at clock time 2018-12-22-19:41:23.983.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.81296e-011
+Taking step      242 at clock time 2018-12-22-19:41:24.009.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.88996e-011
+Taking step      243 at clock time 2018-12-22-19:41:24.049.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.83831e-011
+Taking step      244 at clock time 2018-12-22-19:41:24.071.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.85052e-011
+Taking step      245 at clock time 2018-12-22-19:41:24.093.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.83045e-011
+Taking step      246 at clock time 2018-12-22-19:41:24.114.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.82682e-011
+Taking step      247 at clock time 2018-12-22-19:41:24.134.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.90641e-011
+Taking step      248 at clock time 2018-12-22-19:41:24.154.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.8181e-011
+Taking step      249 at clock time 2018-12-22-19:41:24.175.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.87785e-011
+Taking step      250 at clock time 2018-12-22-19:41:24.196.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.81931e-011
+Taking step      251 at clock time 2018-12-22-19:41:24.217.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.86281e-011
+Taking step      252 at clock time 2018-12-22-19:41:24.237.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.87684e-011
+Taking step      253 at clock time 2018-12-22-19:41:24.258.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.84603e-011
+Taking step      254 at clock time 2018-12-22-19:41:24.280.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.7862e-011
+Taking step      255 at clock time 2018-12-22-19:41:24.302.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.84559e-011
+Taking step      256 at clock time 2018-12-22-19:41:24.325.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.85509e-011
+Taking step      257 at clock time 2018-12-22-19:41:24.347.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.76177e-011
+Taking step      258 at clock time 2018-12-22-19:41:24.369.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.84602e-011
+Taking step      259 at clock time 2018-12-22-19:41:24.391.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.86065e-011
+Taking step      260 at clock time 2018-12-22-19:41:24.413.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.84142e-011
+Taking step      261 at clock time 2018-12-22-19:41:24.434.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.79985e-011
+Taking step      262 at clock time 2018-12-22-19:41:24.465.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.78308e-011
+Taking step      263 at clock time 2018-12-22-19:41:24.494.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.84505e-011
+Taking step      264 at clock time 2018-12-22-19:41:24.516.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.80345e-011
+Taking step      265 at clock time 2018-12-22-19:41:24.537.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.77908e-011
+Taking step      266 at clock time 2018-12-22-19:41:24.559.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.7782e-011
+Taking step      267 at clock time 2018-12-22-19:41:24.581.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.81359e-011
+Taking step      268 at clock time 2018-12-22-19:41:24.602.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.82948e-011
+Taking step      269 at clock time 2018-12-22-19:41:24.623.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.89877e-011
+Taking step      270 at clock time 2018-12-22-19:41:24.645.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.79576e-011
+Taking step      271 at clock time 2018-12-22-19:41:24.679.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.8562e-011
+Taking step      272 at clock time 2018-12-22-19:41:24.706.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.78161e-011
+Taking step      273 at clock time 2018-12-22-19:41:24.727.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.81907e-011
+Taking step      274 at clock time 2018-12-22-19:41:24.751.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.76429e-011
+Taking step      275 at clock time 2018-12-22-19:41:24.773.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.76171e-011
+Taking step      276 at clock time 2018-12-22-19:41:24.796.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.80639e-011
+Taking step      277 at clock time 2018-12-22-19:41:24.817.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.6867e-011
+Taking step      278 at clock time 2018-12-22-19:41:24.839.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.76574e-011
+Taking step      279 at clock time 2018-12-22-19:41:24.862.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.76948e-011
+Taking step      280 at clock time 2018-12-22-19:41:24.885.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.75023e-011
+Taking step      281 at clock time 2018-12-22-19:41:24.907.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.75131e-011
+Taking step      282 at clock time 2018-12-22-19:41:24.928.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.76876e-011
+Taking step      283 at clock time 2018-12-22-19:41:24.950.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.80132e-011
+Taking step      284 at clock time 2018-12-22-19:41:24.971.
+Amesos_Superludist : vector 0, ||Ax - b|| = 2.78244e-011
+Taking step      285 at clock time 2018-12-22-19:41:24.993.
+--------------------- END ENGINE OUTPUT ----------------
+ 
+Warnings:
+
+WARNING: Detected overlapping sinks in PtclSinkArray.  Change verbosity to VP_DEBUG to see more information.
+
+WARNING: Detected overlapping sinks in PtclSinkArray.  Change verbosity to VP_DEBUG to see more information.
+
+
+Engine completed with error: Process was stopped at user request.

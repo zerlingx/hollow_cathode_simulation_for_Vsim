@@ -1,0 +1,522 @@
+Working directory: D:\001_zerlingx\literature\HC\006_models\01_test
+Running input file: vsim_test_ptc.pre
+Command is "C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\mpiexec.exe" -np 4 -env PYTHONPATH "C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\share\scripts;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\lib\site-packages;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\lib;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin\lib\site-packages;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin\lib\python\lib;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin\lib\python\DLLs;C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\bin;." "C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\\vorpal.exe" -dt 1e-12 -sd -d 1 -n 1 -i "vsim_test_ptc.pre"  -o "vsim_test_ptc" 
+ 
+--------------------- START ENGINE OUTPUT ----------------
+Licensing Scheme file not found.
+Using Tech-X Licensing Scheme.
+LICENSE MANAGER: Using license file 'C:\ProgramData\Tech-X\VSim9\license.txt'
+LICENSE MANAGER: License valid for package(s)/module(s): VSimBase VSimEM VSimMD VSimPA VSimPD VSimSD 
+LICENSE MANAGER: License valid for macro(s): DrudeDebyeLorentzDielectric absorbingBox antennas antennasGPU deymittra dielectric dielectricGPU esGridBoundary farFields farFieldsGPU geometry geometryGPU gpuPml mal malGPU mirror originRadiatorPort perfectDispersion pml port scatteringBox scatteringBoxGPU secondOrderDiel specularBox statics yee yeeGPU 
+EULA not found. Skipping user agreement.
+No expand symbols file.  Will not limit expansion.
+Processing import: vsim_test_ptc from 'D:\001_zerlingx\literature\HC\006_models\01_test'.
+Processing import: verbosity from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: mathphys from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: VSim from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: listUtilities from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: logicals from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: units from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: utilities from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: vputilities from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: VSimEs from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: esmatrix from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: solvers from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: matrices from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: grids from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: timing from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: shapes from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: multifields from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: histories from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: stfuncs from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: emfilters from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: particles from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: beamemitters from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: secondemits from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: fluids from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Processing import: collisions from 'C:/Users/Think/Desktop/Vsim/VSim-9.0.1/Contents/engine/bin/../share/macros'.
+Start-dumps enabled (if dumps active).
+
+TxsDevices::TxsDevices(): MPI found.
+Thread support is funneled.
+  commWorldSize = 4
+  commWorldRank = 0
+1 threads requested.
+
+SSE2 not found.
+AVX not found.
+AVX2 not found.
+16 hardware threads found.
+TxsDevices::TxsDevices(): 16 openmp processes and 16 openmp threads.
+
+TxsDevices::TxsDevices(): compiled with cuda toolkit.
+TxsDevices::TxsDevices(): opened cuda driver.
+getFuncPtr(): resolved cuLaunchKernel.
+getFuncPtr(): resolved cuModuleLoadData.
+getFuncPtr(): resolved cuModuleUnload.
+getFuncPtr(): resolved cuModuleGetFunction.
+TxsDevices::TxsDevices(): found all function pointers.
+TxsDevices::TxsDevices(): 1 CUDA devices detected.
+TxsDevices::deviceProperties for device 0 are:
+  name = NVIDIA GeForce RTX 3060 Laptop GPU
+  compute capability = 8.6
+  clockRate = 1425000
+  memoryClockRate = 7001000
+  multiProcessorCount = 30
+  maxThreadsPerMultiProcessor = 1536
+  warpSize = 32
+  totalGlobalMem = 5.99951 GB
+  sharedMemPerBlock = 49152
+  maxThreadsPerBlock = 1024
+  maxThreadsDim = 1024 1024 64
+  maxGridSize = 2147483647 65535 65535
+  unifiedAddressing = 1
+  concurrentKernels = 1
+  asyncEngineCount = 5
+TxsDevices::setDeviceNum(): setting device number to 0.
+
+VORPAL version 9.0.1 started at 2018-12-09-14:10:14.662.
+VORPAL Subversion revision = 32654
+CMake Subversion revision = 1392
+Built on host type = CYGWIN_NT-6.1-x86_64
+Built on host name = qawin7
+Built with compiler = C:/Program Files (x86)/Microsoft Visual Studio 12.0/VC/BIN/amd64/cl.exe  /DWIN32 /D_WINDOWS /W3 /GR /EHsc, version = 18.00.40629
+Run with command line = C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\\vorpal.exe -dt 1e-12 -sd -d 1 -n 1 -i vsim_test_ptc.pre -o vsim_test_ptc
+Using MPI
+
+Domain of kind, Domain2D, created at clock time 2018-12-09-14:10:17.483
+
+Domain: verbosity = 127.
+Domain: Dump mode is combo.
+Domain: Particle sorting is on.
+Time step is 1e-012.
+Grid(s): globalGrid.
+Decomp(s): decomp.
+No STRgn(s) present.
+GridBoundary(s): vsim_test_ptcPecShapes Anode Cathode GrateArray-GrateGeomSolid.
+No GridCurve(s) present.
+MultiField(s): esMultiField.
+No EmField(s) present.
+No ComboEmField(s) present.
+ScalarDepositor(s): ChargeDensityDep.
+No VectorDepositor(s) present.
+Species(s): electrons0.
+No Fluid(s) present.
+No Collision(s) present.
+No UpdateStep(s) present.
+No MonteCarloInteractions(s) present.
+No Ionizer(s) present.
+No ImpactCollider(s) present.
+No Semiconductor(s) present.
+Domain: No SumRhoJ present.
+
+RNGs will be seeded using randomSeed = 1 in a way that depends deterministially on randomSeed and the RNG name and mpi rank.
+decomp: Periodic directions: none.
+Grid kind = uniCartGrid
+Domain: VpGridInfo name = globalGrid with kind = uniCartGrid.
+Global simulation grid size: [400 480]
+Decomposition:
+ decomp0 = [200 400]
+ decomp1 = [240 480 240 480]
+
+Grid is globalGrid.
+Global grid:
+   start      length      dx         dxi     numCells
+-0.002500   0.005000 1.250e-005 8.000e+004      400
+-0.0005000   0.006000 1.250e-005 8.000e+004      480
+Local grid for rank 0:
+   start      length      dx         dxi     numCells
+-0.002500   0.002500 1.250e-005 8.000e+004      200
+-0.0005000   0.003000 1.250e-005 8.000e+004      240
+
+Domain: begin setup of fld/ptcl messaging... in the domain
+Domain: messaging set up... in the domain
+Domain: Creating grid boundaries at clock time 2018-12-09-14:10:17.495.
+Domain: Setting up grid boundary, vsim_test_ptcPecShapes, at clock time 2018-12-09-14:10:17.495.
+Domain: grid boundary, vsim_test_ptcPecShapes, data built at clock time 2018-12-09-14:10:17.497.
+Domain: Setting up grid boundary, Anode, at clock time 2018-12-09-14:10:17.497.
+Domain: grid boundary, Anode, data built at clock time 2018-12-09-14:10:17.499.
+Domain: Setting up grid boundary, Cathode, at clock time 2018-12-09-14:10:17.499.
+Domain: grid boundary, Cathode, data built at clock time 2018-12-09-14:10:17.500.
+Domain: Setting up grid boundary, GrateArray-GrateGeomSolid, at clock time 2018-12-09-14:10:17.501.
+Domain: grid boundary, GrateArray-GrateGeomSolid, data built at clock time 2018-12-09-14:10:17.502.
+Calculating in/out function for grid boundary, vsim_test_ptcPecShapes.
+vsim_test_ptcPecShapes: Collecting stair-step data.
+vsim_test_ptcPecShapes: Collecting cut-cell face data.
+vsim_test_ptcPecShapes: Collecting cut-cell volume data.
+VpGridBndry::calculateTriangleData(): calculating triangle data for vsim_test_ptcPecShapes
+Grid boundary, vsim_test_ptcPecShapes, initialized in 0 seconds.
+Calculating in/out function for grid boundary, Anode.
+Anode: Collecting stair-step data.
+Anode: Collecting cut-cell face data.
+Anode: Collecting cut-cell volume data.
+Grid boundary, Anode, initialized in 0 seconds.
+Calculating in/out function for grid boundary, Cathode.
+Cathode: Collecting stair-step data.
+Cathode: Collecting cut-cell face data.
+Cathode: Collecting cut-cell volume data.
+VpGridBndry::calculateTriangleData(): calculating triangle data for Cathode
+Grid boundary, Cathode, initialized in 0 seconds.
+Calculating in/out function for grid boundary, GrateArray-GrateGeomSolid.
+GrateArray-GrateGeomSolid: Collecting stair-step data.
+GrateArray-GrateGeomSolid: Collecting cut-cell face data.
+GrateArray-GrateGeomSolid: Collecting cut-cell volume data.
+VpGridBndry::calculateTriangleData(): calculating triangle data for GrateArray-GrateGeomSolid
+Grid boundary, GrateArray-GrateGeomSolid, initialized in 0 seconds.
+Domain: Grid boundaries created at clock time 2018-12-09-14:10:17.656.
+Domain: txsim reaction process holder built.
+Domain: txsim reaction physics holder built.
+Domain: History holder built.
+Domain: Multifields created.
+Domain: Multifields built.
+Domain: Non-combo EMfields built.
+Domain: Combo EMfields built.
+Setting custom mass of 9.10938e-031 kg for species electrons0
+Setting custom charge of -1.60218e-019 C for species electrons0
+No ionizationEnergy specified for species electrons0 though it is species=custom, so setting ionizationEnergy to 0eV. If this species will be used in ionization or recombination reactions, you will want to specify the ionization energy in the species block.
+Domain:  attributes set.
+Domain: Species named electrons0 added.
+Species electrons0 has velocity limits = [1.25e+007, 1.25e+007].
+Sinks are: lower0Absorber upper0Absorber lower1Absorber upper1Absorber GrateAbs
+Sources are:
+ myemit
+
+ Position generator named posGen set.
+ Velocity generator named velGen set.
+NOTICE: NOTE: For position generator, posGen, ptclsPerCell not specified.  Taking from owning species.
+NOTICE: No gridBndryMask or STFunc mask specified, emitting from entire grid boundary specified in position generator 
+currentDensityFunc not found in xvLoaderEmitter myemit, assuming a constant value of currentDensity =1.00136e+006
+relMacroDenFunc not found in xvLoaderEmitter myemit, assuming constant value of 1.
+relMacroFluxFunc found and set in xvLoaderEmitter myemit
+------------------------------------------------------------------------------
+Using `power-method' for eigen-computations
+*** 
+*** ML_Epetra::MultiLevelPreconditioner
+***
+Matrix has 192881 rows and 828119 nonzeros, distributed over 4 process(es)
+The linear system matrix is an Epetra_CrsMatrix
+** Leaving column map of Main linear system matrix unchanged
+Default values for `DD'
+Maximum number of levels = 10
+Using increasing levels. Finest level  = 0, coarsest level = 9
+Number of applications of the ML cycle = 1
+Number of PDE equations = 1
+Aggregation threshold = 0
+Max coarse size = 128
+R and P smoothing : P = (I-\omega A) P_t, R = P^T
+R and P smoothing : \omega = 1.333/lambda_max
+Null space type      = default (constants)
+Null space dimension = 1
+-----------------------------------------------------------------------
+ML_Gen_MultiLevelHierarchy (level 0) : Gen Restriction and Prolongator
+-----------------------------------------------------------------------
+ML_Aggregate_Coarsen (level 0) begins
+ML_Aggregate_CoarsenUncoupled : current level = 0
+ML_Aggregate_CoarsenUncoupled : current eps = 0.000000e+000
+Aggregation(UVB) : Total nonzeros = 828119 (Nrows=192881)
+Aggregation(UC) : Phase 0 - no. of bdry pts  = 33350 
+Aggregation(UC) : Phase 1 - nodes aggregated = 133463 (192881)
+Aggregation(UC) : Phase 1 - total aggregates = 27198 
+Aggregation(UC_Phase2_3) : Phase 1 - nodes aggregated = 133463 
+Aggregation(UC_Phase2_3) : Phase 1 - total aggregates = 27198
+Aggregation(UC_Phase2_3) : Phase 2a- additional aggregates = 0
+Aggregation(UC_Phase2_3) : Phase 2 - total aggregates = 27362
+Aggregation(UC_Phase2_3) : Phase 2 - boundary nodes   = 33350
+Aggregation(UC_Phase2_3) : Phase 3 - leftovers = 164 and singletons = 0
+Aggregation(UC) : QR factorization - too small aggregates = 0
+Calculating eigenvalue estimate using power method
+Gen_Prolongator (level 0) : Max eigenvalue = 1.9517e+000
+
+Prolongator/Restriction smoother (level 0) : damping factor #1 = 6.8300e-001
+Prolongator/Restriction smoother (level 0) : ( = 1.3330e+000 / 1.9517e+000)
+
+-----------------------------------------------------------------------
+ML_Gen_MultiLevelHierarchy (level 1) : Gen Restriction and Prolongator
+-----------------------------------------------------------------------
+ML_Aggregate_Coarsen (level 1) begins
+ML_Aggregate_CoarsenUncoupled : current level = 1
+ML_Aggregate_CoarsenUncoupled : current eps = 0.000000e+000
+Aggregation(UVB) : Total nonzeros = 248714 (Nrows=27362)
+Aggregation(UC) : Phase 0 - no. of bdry pts  = 160 
+Aggregation(UC) : Phase 1 - nodes aggregated = 26173 (27362)
+Aggregation(UC) : Phase 1 - total aggregates = 2952 
+Aggregation(UC_Phase2_3) : Phase 1 - nodes aggregated = 26173 
+Aggregation(UC_Phase2_3) : Phase 1 - total aggregates = 2952
+Aggregation(UC_Phase2_3) : Phase 2a- additional aggregates = 0
+Aggregation(UC_Phase2_3) : Phase 2 - total aggregates = 2952
+Aggregation(UC_Phase2_3) : Phase 2 - boundary nodes   = 160
+Aggregation(UC_Phase2_3) : Phase 3 - leftovers = 0 and singletons = 0
+Aggregation(UC) : QR factorization - too small aggregates = 0
+Calculating eigenvalue estimate using power method
+Gen_Prolongator (level 1) : Max eigenvalue = 1.8780e+000
+
+Prolongator/Restriction smoother (level 1) : damping factor #1 = 7.0980e-001
+Prolongator/Restriction smoother (level 1) : ( = 1.3330e+000 / 1.8780e+000)
+
+-----------------------------------------------------------------------
+ML_Gen_MultiLevelHierarchy (level 2) : Gen Restriction and Prolongator
+-----------------------------------------------------------------------
+ML_Aggregate_Coarsen (level 2) begins
+ML_Aggregate_CoarsenUncoupled : current level = 2
+ML_Aggregate_CoarsenUncoupled : current eps = 0.000000e+000
+Aggregation(UVB) : Total nonzeros = 33132 (Nrows=2952)
+Aggregation(UC) : Phase 0 - no. of bdry pts  = 0 
+Aggregation(UC) : Phase 1 - nodes aggregated = 2542 (2952)
+Aggregation(UC) : Phase 1 - total aggregates = 269 
+Aggregation(UC_Phase2_3) : Phase 1 - nodes aggregated = 2542 
+Aggregation(UC_Phase2_3) : Phase 1 - total aggregates = 269
+Aggregation(UC_Phase2_3) : Phase 2a- additional aggregates = 0
+Aggregation(UC_Phase2_3) : Phase 2 - total aggregates = 269
+Aggregation(UC_Phase2_3) : Phase 2 - boundary nodes   = 0
+Aggregation(UC_Phase2_3) : Phase 3 - leftovers = 0 and singletons = 0
+Aggregation(UC) : QR factorization - too small aggregates = 0
+Calculating eigenvalue estimate using power method
+Gen_Prolongator (level 2) : Max eigenvalue = 1.5038e+000
+
+Prolongator/Restriction smoother (level 2) : damping factor #1 = 8.8644e-001
+Prolongator/Restriction smoother (level 2) : ( = 1.3330e+000 / 1.5038e+000)
+
+-----------------------------------------------------------------------
+ML_Gen_MultiLevelHierarchy (level 3) : Gen Restriction and Prolongator
+-----------------------------------------------------------------------
+ML_Aggregate_Coarsen (level 3) begins
+ML_Aggregate_CoarsenUncoupled : current level = 3
+ML_Aggregate_CoarsenUncoupled : current eps = 0.000000e+000
+Aggregation(UVB) : Total nonzeros = 4119 (Nrows=269)
+Aggregation(UC) : Phase 0 - no. of bdry pts  = 0 
+Aggregation(UC) : Phase 1 - nodes aggregated = 219 (269)
+Aggregation(UC) : Phase 1 - total aggregates = 22 
+Aggregation(UC_Phase2_3) : Phase 1 - nodes aggregated = 219 
+Aggregation(UC_Phase2_3) : Phase 1 - total aggregates = 22
+Aggregation(UC_Phase2_3) : Phase 2a- additional aggregates = 0
+Aggregation(UC_Phase2_3) : Phase 2 - total aggregates = 22
+Aggregation(UC_Phase2_3) : Phase 2 - boundary nodes   = 0
+Aggregation(UC_Phase2_3) : Phase 3 - leftovers = 0 and singletons = 0
+Aggregation(UC) : QR factorization - too small aggregates = 0
+Calculating eigenvalue estimate using power method
+Gen_Prolongator (level 3) : Max eigenvalue = 1.4514e+000
+
+Prolongator/Restriction smoother (level 3) : damping factor #1 = 9.1842e-001
+Prolongator/Restriction smoother (level 3) : ( = 1.3330e+000 / 1.4514e+000)
+
+Smoothed Aggregation : operator complexity = 1.345669e+000.
+Time to build the hierarchy = 0.0553973 (s)
+Number of actual levels : 5
+
+Smoother (level 0) : # global rows = 192881, # estim. global nnz = 828119, # nnz per row = 4.29
+Smoother (level 0) : Gauss-Seidel (sweeps=3,omega=1,both)
+Smoother (level 0) : Epetra_CrsMatrix detected, using Ifpack implementation
+Smoother (level 0) : Setup time : 0.001053 (s)
+
+Smoother (level 1) : # global rows = 27362, # estim. global nnz = 248714, # nnz per row = 9.09
+Smoother (level 1) : ML Gauss-Seidel (sweeps=3,omega=1,both)
+Smoother (level 1) : Setup time : 0.000149 (s)
+
+Smoother (level 2) : # global rows = 2952, # estim. global nnz = 33132, # nnz per row = 11.22
+Smoother (level 2) : ML Gauss-Seidel (sweeps=3,omega=1,both)
+Smoother (level 2) : Setup time : 0.0001498 (s)
+
+Smoother (level 3) : # global rows = 269, # estim. global nnz = 4119, # nnz per row = 15.31
+Smoother (level 3) : ML Gauss-Seidel (sweeps=3,omega=1,both)
+Smoother (level 3) : Setup time : 6.24e-005 (s)
+
+Coarse solve (level 4) : Jacobi (sweeps=1,omega=1,post)
+
+------------------------------------------------------------------------------
+MultiFields built.
+Building species electrons0 with NDIM = 2.
+Added sink, lower0Absorber, to global region:
+[-1, 0) x [-1, 481)Region for sink, upper0Absorber, is empty on rank 0
+Added sink, lower1Absorber, to global region:
+[0, 400) x [-1, 0)Region for sink, upper1Absorber, is empty on rank 0
+Added sink, GrateAbs, to grid boundary GrateArray-GrateGeomSolid.
+Sources (for buildSolvers) are:
+ myemit
+
+Source named myemit added to Species electrons0.
+Source, myemit, loaded 0 particles on this processor (rank 0)
+Domain: electrons0 initialized.
+Domain: All species initialized.
+Domain: All emfluids initialized.
+Domain: All collisions initialized.
+Domain: All ionization processes initialized.
+Domain: All impactCollision processes initialized.
+All semiconductor materials initialized.
+All monteCarloHandlers initialized.
+Initializing 'E' with 0 setters.
+Initializing 'nodalE' with 0 setters.
+Initializing 'nodalB' with 0 setters.
+Initializing 'Phi' with 0 setters.
+Initializing 'ChargeDensity' with 0 setters.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 1.255145e-003
+                iter:    2           residual = 1.506664e-004
+                iter:    3           residual = 4.894760e-005
+                iter:    4           residual = 3.030037e-005
+                iter:    5           residual = 1.397168e-005
+                iter:    6           residual = 6.218081e-006
+                iter:    7           residual = 3.250062e-006
+                iter:    8           residual = 1.884735e-006
+                iter:    9           residual = 1.018430e-006
+                iter:   10           residual = 3.463591e-007
+                iter:   11           residual = 1.329516e-007
+                iter:   12           residual = 6.533412e-008
+                iter:   13           residual = 3.188212e-008
+                iter:   14           residual = 1.429097e-008
+                iter:   15           residual = 6.309951e-009
+
+
+		Solution time: 0.118151 (sec.)
+		total iterations: 15
+Domain: All MultiFields initialized at clock tim 2018-12-09-14:10:18.086.
+Domain: All emfields initialized at clock time 2018-12-09-14:10:18.087.
+Domain: Histories initialized at clock time 2018-12-09-14:10:18.087.
+Domain: Initialization complete at clock time 2018-12-09-14:10:18.087.
+
+Domain: Dumping all at clock time 2018-12-09-14:10:18.087.
+Globals dumped at 2018-12-09-14:10:18.089.
+Dumping grid boundaries at 2018-12-09-14:10:18.089.
+Dumping vsim_test_ptcPecShapes at clock time 2018-12-09-14:10:18.089.
+vsim_test_ptcPecShapes dumped  at clock time 2018-12-09-14:10:18.100.
+Dumping Anode at clock time 2018-12-09-14:10:18.100.
+Anode dumped  at clock time 2018-12-09-14:10:18.106.
+Dumping Cathode at clock time 2018-12-09-14:10:18.106.
+Cathode dumped  at clock time 2018-12-09-14:10:18.112.
+Dumping GrateArray-GrateGeomSolid at clock time 2018-12-09-14:10:18.112.
+GrateArray-GrateGeomSolid dumped  at clock time 2018-12-09-14:10:18.118.
+Dumped grid boundaries at 2018-12-09-14:10:18.118.
+Domain: Sorting electrons0.
+Domain: electrons0 sorted.
+Dumping species data electrons0.
+No fluids to dump.
+Domain: Dumping histories at 2018-12-09-14:10:18.157.
+Domain: Histories dumped at 2018-12-09-14:10:18.157.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-09-14:10:18.157.
+Dumping E at 2018-12-09-14:10:18.157.
+Dumped E at 2018-12-09-14:10:18.163.
+Dumping nodalE at 2018-12-09-14:10:18.163.
+Dumped nodalE at 2018-12-09-14:10:18.169.
+Dumping nodalB at 2018-12-09-14:10:18.169.
+Dumped nodalB at 2018-12-09-14:10:18.174.
+Dumping Phi at 2018-12-09-14:10:18.174.
+Dumped Phi at 2018-12-09-14:10:18.176.
+Dumping ChargeDensity at 2018-12-09-14:10:18.176.
+Dumped ChargeDensity at 2018-12-09-14:10:18.179.
+All multiFields dumped at 2018-12-09-14:10:18.181.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-09-14:10:18.181.
+
+Main loop started    at clock time 2018-12-09-14:10:18.181.
+Taking step        1 at clock time 2018-12-09-14:10:18.181.
+Rank 0 processed a total of 0 electrons0 at an average of 0 seconds per particle push.
+Rank 0 just processed 0 electrons0 at an average of 0 seconds per particle push.
+Sorting particles
+Sorting time: 0 per particle, 0 total
+Rank 0 processed a total of 0 electrons0 at an average of 0 seconds per particle push.
+Rank 0 just processed 0 electrons0 at an average of 0 seconds per particle push.
+
+		*******************************************************
+		***** Problem: Epetra::CrsMatrix
+		***** Preconditioned GMRES solution
+		***** ML (L=5, IFPACK_pre0/IFPACK_post0, ~/Jac_post4)
+		***** No scaling
+		*******************************************************
+
+                iter:    0           residual = 1.000000e+000
+                iter:    1           residual = 3.537061e-003
+                iter:    2           residual = 4.077597e-004
+                iter:    3           residual = 1.511690e-004
+                iter:    4           residual = 8.175286e-005
+                iter:    5           residual = 3.614270e-005
+                iter:    6           residual = 1.901991e-005
+                iter:    7           residual = 1.036145e-005
+                iter:    8           residual = 4.812280e-006
+                iter:    9           residual = 1.898891e-006
+                iter:   10           residual = 7.059742e-007
+                iter:   11           residual = 3.027830e-007
+                iter:   12           residual = 1.468270e-007
+                iter:   13           residual = 5.836626e-008
+                iter:   14           residual = 2.283994e-008
+                iter:   15           residual = 1.030454e-008
+                iter:   16           residual = 5.150215e-009
+
+
+		Solution time: 0.130438 (sec.)
+		total iterations: 16
+
+Domain: Dumping all at clock time 2018-12-09-14:10:18.358.
+Globals dumped at 2018-12-09-14:10:18.361.
+Dumping grid boundaries at 2018-12-09-14:10:18.361.
+Dumped grid boundaries at 2018-12-09-14:10:18.361.
+Domain: Sorting electrons0.
+Domain: electrons0 sorted.
+Dumping species data electrons0.
+No fluids to dump.
+Domain: Dumping histories at 2018-12-09-14:10:18.398.
+Domain: Histories dumped at 2018-12-09-14:10:18.418.
+No SumRhoJ to dump.
+Dumping all multiFields at 2018-12-09-14:10:18.418.
+Dumping E at 2018-12-09-14:10:18.418.
+Dumped E at 2018-12-09-14:10:18.423.
+Dumping nodalE at 2018-12-09-14:10:18.423.
+Dumped nodalE at 2018-12-09-14:10:18.429.
+Dumping nodalB at 2018-12-09-14:10:18.429.
+Dumped nodalB at 2018-12-09-14:10:18.434.
+Dumping Phi at 2018-12-09-14:10:18.434.
+Dumped Phi at 2018-12-09-14:10:18.437.
+Dumping ChargeDensity at 2018-12-09-14:10:18.437.
+Dumped ChargeDensity at 2018-12-09-14:10:18.439.
+All multiFields dumped at 2018-12-09-14:10:18.441.
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-09-14:10:18.442.
+
+Main loop ended at clock time 2018-12-09-14:10:18.442
+Rank 0 processed a total of 0 electrons0 at an average of 0 seconds per particle push.
+Rank 0 just processed 0 electrons0 at an average of 0 seconds per particle push.
+Deleting domain
+
+Deleting domain.
+OUTPUT SUMMARY:
+  There were 2 Notices encountered in this run.
+  There were 0 Warnings encountered in this run.
+  See above for more information.
+------------------------------------------------------------------------------
+   ML time information (seconds)          total          avg
+
+   1- Construction                  =  0.0572555   0.0572555
+   2- Preconditioner apply          =   0.178891
+     a- first application(s) only   =  0.0055046   0.0055046
+     b- remaining applications      =   0.173386  0.00525413
+
+   3- Total time required by ML so far is 0.236146 seconds
+      (constr + all applications)
+------------------------------------------------------------------------------
+VORPAL completed at clock time    2018-12-09-14:10:18.462.
+NOTE: A VSimMD license was needed to run this simulation.
+Settings in the Z axis will be ignored
+Lines from 'vsim_test_ptc.pre' processed.
+Finished with 'vsim_test_ptc.pre'.
+--------------------- END ENGINE OUTPUT ----------------
+ 
+Notices:
+
+NOTICE: NOTE: For position generator, posGen, ptclsPerCell not specified.  Taking from owning species.
+
+NOTICE: No gridBndryMask or STFunc mask specified, emitting from entire grid boundary specified in position generator 
+
+
+Engine completed successfully.
+To see results, click on the "Visualize" icon in the icon panel.

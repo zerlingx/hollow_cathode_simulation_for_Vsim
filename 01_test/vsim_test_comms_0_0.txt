@@ -1,0 +1,156 @@
+VORPAL: Output from rank 0
+
+VORPAL version 9.0.1 started at 2018-12-08-21:27:10.770.
+VORPAL Subversion revision = 32654
+CMake Subversion revision = 1392
+Built on host type = CYGWIN_NT-6.1-x86_64
+Built on host name = qawin7
+Built with compiler = C:/Program Files (x86)/Microsoft Visual Studio 12.0/VC/BIN/amd64/cl.exe  /DWIN32 /D_WINDOWS /W3 /GR /EHsc, version = 18.00.40629
+Run with command line = C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\\vorpal.exe -dt 1e-12 -sd -d 1 -n 1 -i vsim_test.pre -o vsim_test
+Using MPI
+
+Domain of kind, Domain2D, created at clock time 2018-12-08-21:27:11.176
+
+Domain: verbosity = 127.
+Domain: Dump mode is combo.
+Domain: Particle sorting is on.
+Time step is 1e-012.
+Grid(s): globalGrid.
+Decomp(s): decomp.
+No STRgn(s) present.
+GridBoundary(s): Anode Cathode vsim_testPecShapes GrateArray-GrateGeomSolid.
+No GridCurve(s) present.
+No MultiField(s) present.
+No EmField(s) present.
+No ComboEmField(s) present.
+No ScalarDepositor(s) present.
+No VectorDepositor(s) present.
+No Species(s) present.
+No Fluid(s) present.
+No Collision(s) present.
+No UpdateStep(s) present.
+No MonteCarloInteractions(s) present.
+No Ionizer(s) present.
+No ImpactCollider(s) present.
+No Semiconductor(s) present.
+Domain: No SumRhoJ present.
+
+RNGs will be seeded using randomSeed = 1 in a way that depends deterministially on randomSeed and the RNG name and mpi rank.
+decomp: Periodic directions: none.
+Grid kind = uniCartGrid
+Domain: VpGridInfo name = globalGrid with kind = uniCartGrid.
+Global simulation grid size: [400 480]
+Decomposition:
+ decomp0 = [200 400]
+ decomp1 = [240 480 240 480]
+
+Grid is globalGrid.
+Global grid:
+   start      length      dx         dxi     numCells
+-0.002500   0.005000 1.250e-005 8.000e+004      400
+-0.0005000   0.006000 1.250e-005 8.000e+004      480
+Local grid for rank 0:
+   start      length      dx         dxi     numCells
+-0.002500   0.002500 1.250e-005 8.000e+004      200
+-0.0005000   0.003000 1.250e-005 8.000e+004      240
+
+Domain: begin setup of fld/ptcl messaging... in the domain
+Domain: messaging set up... in the domain
+Domain: Creating grid boundaries at clock time 2018-12-08-21:27:11.202.
+Domain: Setting up grid boundary, Anode, at clock time 2018-12-08-21:27:11.202.
+Domain: grid boundary, Anode, data built at clock time 2018-12-08-21:27:11.204.
+Domain: Setting up grid boundary, Cathode, at clock time 2018-12-08-21:27:11.204.
+Domain: grid boundary, Cathode, data built at clock time 2018-12-08-21:27:11.206.
+Domain: Setting up grid boundary, vsim_testPecShapes, at clock time 2018-12-08-21:27:11.206.
+Domain: grid boundary, vsim_testPecShapes, data built at clock time 2018-12-08-21:27:11.208.
+Domain: Setting up grid boundary, GrateArray-GrateGeomSolid, at clock time 2018-12-08-21:27:11.208.
+Domain: grid boundary, GrateArray-GrateGeomSolid, data built at clock time 2018-12-08-21:27:11.210.
+Calculating in/out function for grid boundary, Anode.
+Anode: Collecting stair-step data.
+Anode: Collecting cut-cell face data.
+Anode: Collecting cut-cell volume data.
+Grid boundary, Anode, initialized in 0 seconds.
+Calculating in/out function for grid boundary, Cathode.
+Cathode: Collecting stair-step data.
+Cathode: Collecting cut-cell face data.
+Cathode: Collecting cut-cell volume data.
+VpGridBndry::calculateTriangleData(): calculating triangle data for Cathode
+Grid boundary, Cathode, initialized in 0 seconds.
+Calculating in/out function for grid boundary, vsim_testPecShapes.
+vsim_testPecShapes: Collecting stair-step data.
+vsim_testPecShapes: Collecting cut-cell face data.
+vsim_testPecShapes: Collecting cut-cell volume data.
+VpGridBndry::calculateTriangleData(): calculating triangle data for vsim_testPecShapes
+Grid boundary, vsim_testPecShapes, initialized in 0 seconds.
+Calculating in/out function for grid boundary, GrateArray-GrateGeomSolid.
+GrateArray-GrateGeomSolid: Collecting stair-step data.
+GrateArray-GrateGeomSolid: Collecting cut-cell face data.
+GrateArray-GrateGeomSolid: Collecting cut-cell volume data.
+VpGridBndry::calculateTriangleData(): calculating triangle data for GrateArray-GrateGeomSolid
+Grid boundary, GrateArray-GrateGeomSolid, initialized in 0 seconds.
+Domain: Grid boundaries created at clock time 2018-12-08-21:27:11.355.
+Domain: txsim reaction process holder built.
+Domain: txsim reaction physics holder built.
+Domain: History holder built.
+Domain: Multifields created.
+Domain: Multifields built.
+Domain: Non-combo EMfields built.
+Domain: Combo EMfields built.
+MultiFields built.
+Domain: All species initialized.
+Domain: All emfluids initialized.
+Domain: All collisions initialized.
+Domain: All ionization processes initialized.
+Domain: All impactCollision processes initialized.
+All semiconductor materials initialized.
+All monteCarloHandlers initialized.
+Domain: All MultiFields initialized at clock tim 2018-12-08-21:27:11.361.
+Domain: All emfields initialized at clock time 2018-12-08-21:27:11.361.
+Domain: Histories initialized at clock time 2018-12-08-21:27:11.361.
+Domain: Initialization complete at clock time 2018-12-08-21:27:11.361.
+
+Domain: Dumping all at clock time 2018-12-08-21:27:11.361.
+Globals dumped at 2018-12-08-21:27:11.387.
+Dumping grid boundaries at 2018-12-08-21:27:11.387.
+Dumping Anode at clock time 2018-12-08-21:27:11.387.
+Anode dumped  at clock time 2018-12-08-21:27:11.403.
+Dumping Cathode at clock time 2018-12-08-21:27:11.403.
+Cathode dumped  at clock time 2018-12-08-21:27:11.409.
+Dumping vsim_testPecShapes at clock time 2018-12-08-21:27:11.409.
+vsim_testPecShapes dumped  at clock time 2018-12-08-21:27:11.415.
+Dumping GrateArray-GrateGeomSolid at clock time 2018-12-08-21:27:11.415.
+GrateArray-GrateGeomSolid dumped  at clock time 2018-12-08-21:27:11.421.
+Dumped grid boundaries at 2018-12-08-21:27:11.421.
+No particles to dump.
+No fluids to dump.
+No SumRhoJ to dump.
+No multiFields to dump.
+
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-08-21:27:11.421.
+
+Main loop started    at clock time 2018-12-08-21:27:11.421.
+Taking step        1 at clock time 2018-12-08-21:27:11.422.
+
+Domain: Dumping all at clock time 2018-12-08-21:27:11.422.
+Globals dumped at 2018-12-08-21:27:11.423.
+Dumping grid boundaries at 2018-12-08-21:27:11.423.
+Dumped grid boundaries at 2018-12-08-21:27:11.423.
+No particles to dump.
+No fluids to dump.
+No SumRhoJ to dump.
+No multiFields to dump.
+
+No electromagnetic fields to dump.
+No collisions to dump.
+No ionization processes to dump.
+Domain: Dumped all at clock time  2018-12-08-21:27:11.424.
+
+Main loop ended at clock time 2018-12-08-21:27:11.424
+Deleting domain
+
+OUTPUT SUMMARY:
+  There were 0 Notices encountered in this run.
+  There were 0 Warnings encountered in this run.

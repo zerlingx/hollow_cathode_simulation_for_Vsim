@@ -1,0 +1,63 @@
+VORPAL: Output from rank 0
+
+VORPAL version 9.0.1 started at 2018-12-22-20:59:04.750.
+VORPAL Subversion revision = 32654
+CMake Subversion revision = 1392
+Built on host type = CYGWIN_NT-6.1-x86_64
+Built on host name = qawin7
+Built with compiler = C:/Program Files (x86)/Microsoft Visual Studio 12.0/VC/BIN/amd64/cl.exe  /DWIN32 /D_WINDOWS /W3 /GR /EHsc, version = 18.00.40629
+Run with command line = C:\Users\Think\Desktop\Vsim\VSim-9.0.1\Contents\engine\bin\\vorpal.exe -dt 1e-11 -sd -d 1 -n 1 -i hc_cylindrical.pre -o hc_cylindrical
+Using MPI
+
+Domain of kind, Domain2D, created at clock time 2018-12-22-20:59:06.070
+
+Domain: verbosity = 127.
+Domain: Dump mode is combo.
+Domain: Particle sorting is on.
+Time step is 1e-011.
+Grid(s): globalGrid.
+Decomp(s): decomp.
+No STRgn(s) present.
+GridBoundary(s): hc_cylindricalPecShapes emitter orifice anode.
+No GridCurve(s) present.
+MultiField(s): esMultiField.
+No EmField(s) present.
+No ComboEmField(s) present.
+No ScalarDepositor(s) present.
+No VectorDepositor(s) present.
+No Species(s) present.
+No Fluid(s) present.
+No Collision(s) present.
+No UpdateStep(s) present.
+No MonteCarloInteractions(s) present.
+No Ionizer(s) present.
+No ImpactCollider(s) present.
+No Semiconductor(s) present.
+Domain: No SumRhoJ present.
+
+RNGs will be seeded using randomSeed = 1 in a way that depends deterministially on randomSeed and the RNG name and mpi rank.
+decomp: Periodic directions: none.
+Grid kind = varCylGrid
+Domain: VpGridInfo name = globalGrid with kind = coordProdGrid.
+Global simulation grid size: [155 30]
+Decomposition:
+ decomp0 = [39 78 116 155]
+ decomp1 = [30 30 30 30]
+
+Variable grid breaks/spacing info
+  idim = 0 -- txsBreaks = 0  0.0155  
+  idim = 0 -- txsSpacings = 0.0001  0.0001  
+  idim = 1 -- txsBreaks = 0  0.003  
+  idim = 1 -- txsSpacings = 0.0001  0.0001  
+
+Grid is globalGrid.
+Global grid:
+  start     length   dx.front    dx.back    numPhys
+      0     0.0155     0.0001     0.0001      155
+      0      0.003     0.0001     0.0001       30
+Local grid for rank 0:
+  start     length   dx.front    dx.back    numPhys
+      0     0.0039     0.0001     0.0001       39
+      0      0.003     0.0001     0.0001       30
+
+Variable grids deleted

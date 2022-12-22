@@ -1,0 +1,224 @@
+#######################################################
+#
+# This PRE file,
+#   03_hc_test1/hc_ptc.pre,
+# was generated from the simulation definition file,
+#   hc_ptc.sdf,
+# by the sdf2vpre translator.
+# Any changes to this file will be lost if the
+# translator is rerun.
+#
+#######################################################
+
+#######################################################
+# User defined constants and parameters
+#######################################################
+
+$ import verbosity
+$ import mathphys
+
+$ CATHODE_VOL = (0.0)
+$ ANODE_VOL = (100.0)
+
+#######################################################
+# Simulation definition from the basic settings
+#######################################################
+
+$ VPMW_COORDINATE_SYSTEM = "cartesian"
+# cylindrical not found.
+$ VPMW_GRID_SPACING = "uniform"
+$ VPMW_NDIM = "2"
+$ VPMW_PRECISION = "double"
+$ VPMW_USE_GPU = "False"
+# electromagnetic not found.
+$ VPMW_SIMULATION_TYPE = "electrostatic"
+# magnetostatic not found.
+# no field solver not found.
+# prescribed fields not found.
+# electromagnetic.background permittivity not found.
+# electromagnetic.dielectric solver not found.
+$ VPMW_INCLUDE_PARTICLES = "True"
+$ VPMW_MAX_ELECTRON_DENSITY = "1.e18"
+$ VPMW_MAX_ELECTRON_TEMP_EV = "1.0"
+$ VPMW_DUMP_NODAL_FIELDS = "True"
+# reduced not found.
+# monte carlo not found.
+# reactions not found.
+# reactions.collision order not found.
+$ VPMW_RESTORE_GRID_BNDRY = "True"
+$ VPMW_DECOMP = "default"
+$ VPMW_TOP_LEVEL_VERBOSITY = VPM_INFO
+$ VPMW_GRID_TYPE = UniformCartesian
+
+#######################################################
+# Import needed system macros
+#######################################################
+
+$ import VSim
+
+#######################################################
+# User defined functions
+#######################################################
+
+
+#######################################################
+# User defined space-time functions
+#######################################################
+
+
+#######################################################
+#
+# Ordered blocks
+#
+#######################################################
+
+#######################################################
+# Translation of the grid
+#######################################################
+
+$ VPMW_NUM_GUARD_CELLS = 1
+$ VPMW_NUM_GUARD_CELLSP1 = 2
+$ VPMW_BGN0 = 0.00000000000000e+00
+$ VPMW_BGN1 = -3.50000000000000e-03
+
+$ VPMW_L0 = 1.55000000000000e-02
+$ VPMW_L1 = 7.00000000000000e-03
+
+$ VPMW_N0 = int(155)
+$ VPMW_N1 = int(70)
+
+# Derived grid variables.  Here for partial processing
+$ VPMW_UB0P1 = VPMW_N0 + 1
+$ VPMW_UB1P1 = VPMW_N1 + 1
+$ VPMW_UB2P1 = VPMW_N2 + 1
+$ VPMW_END0 = VPMW_BGN0 + VPMW_L0
+$ VPMW_END1 = VPMW_BGN1 + VPMW_L1
+$ VPMW_END2 = VPMW_BGN2 + VPMW_L2
+# Average cell sizes
+$ VPMW_DL0 = VPMW_L0/VPMW_N0
+$ VPMW_DL1 = VPMW_L1/VPMW_N1
+$ VPMW_DL2 = VPMW_L2/VPMW_N2
+$ VPMW_DLI0 = 1./VPMW_DL0
+$ VPMW_DLI1 = 1./VPMW_DL1
+$ VPMW_DLI2 = 1./VPMW_DL2
+$ VPMW_DLISQ = VPMW_DLI0**2 + (VPMW_NDIM>1)*VPMW_DLI1**2 + (VPMW_NDIM>2)*VPMW_DLI2**2
+$ VPMW_DLI = math.sqrt(VPMW_DLISQ)
+
+$ VPMW_PERIODIC_DIRS = []
+
+# Requires VPMW_N0[1,2], VPMW_L0[1,2], VPMW_BGN0[1,2]
+#
+# For UniformCartesian, defines:
+#     VPM_NX, VPM_NY, VPM_NZ, VPM_LX, VPM_LY, VPM_LZ,
+#     VPM_BGNX, VPM_BGNY, VPM_BGNZ,
+#     VPM_ENDX, VPM_ENDY, VPM_ENDZ,
+#     VPM_NXP1, VPM_NYP1, VPM_NZP1,
+#     VPM_NXM1, VPM_NYM1, VPM_NZM1,
+#     VPM_DX, VPM_DY, VPM_DZ,
+#     VPM_DXI, VPM_DYI, VPM_DZI,
+#     VPM_DL, VPM_DLI
+# For Cylindrical, defines:
+#     VPM_NZ, VPM_NR, VPM_NPHI, VPM_LZ, VPM_LR, VPM_LPHI,
+#     VPM_BGNR, VPM_BGNR, VPM_BGNPHI,
+#     VPM_ENDZ, VPM_ENDR, VPM_ENDPHI,
+#     VPM_NZP1, VPM_NRP1, VPM_NPHIP1,
+#     VPM_NZM1, VPM_NRM1, VPM_NPHIM1,
+#     VPM_DZ, VPM_DR, VPM_DPHI,
+#     VPM_DZI, VPM_DRI, VPM_DPHII,
+#     VPM_DL, VPM_DLI
+setGridData()
+
+
+#######################################################
+# Translation of the time group
+#######################################################
+
+$ VPMW_DMFRAC = "0.4"
+$ VPMW_CFL_NUMBER = "0.95"
+$ VPMW_DT = "1e-11"
+$ VPMW_NSTEPS = 4000
+$ VPMW_DUMP_PERIOD = 100
+$ VPMW_DUMP_GROUP_SIZE = "1"
+
+# Requires VPMW_SIMULATION_TYPE
+# For Electromagnetic:
+#   if VPMW_DT not defined
+#     Requires LIGHTSPEED, DLI
+#     Will calculate VPMW_DT based on CFL
+# For Electrostatic:
+#   Requires VPMW_MAX_ELECTRON_DENSITY, VPMW_MAX_ELECTRON_TEMP_EV
+setTimingData()
+
+#######################################################
+#
+# Unordered blocks
+#
+#######################################################
+
+#######################################################
+# Translation of Materials
+#######################################################
+
+addConductor(PEC, 0.00000000000000e+00)
+
+#######################################################
+# Translation of Shapes
+#######################################################
+
+addShape(hc_ptcPecShapes, hc_ptcPecShapes.stl, PEC)
+addShape(cathode_shell, cathode_shell.stl, PEC)
+$ cathode_shell_VPM_PERMITTIVITY = PEC_VPM_PERMITTIVITY
+addShape(cathode_orifice, cathode_orifice.stl, PEC)
+$ cathode_orifice_VPM_PERMITTIVITY = PEC_VPM_PERMITTIVITY
+addShape(anode, anode.stl, PEC)
+$ anode_VPM_PERMITTIVITY = PEC_VPM_PERMITTIVITY
+addShape(emitter, emitter.stl, PEC)
+$ emitter_VPM_PERMITTIVITY = PEC_VPM_PERMITTIVITY
+
+#######################################################
+# Translation of Boundary Conditions
+#######################################################
+
+addEsDirichletBC(cathode_shell_bnd, CATHODE_VOL, cathode_shell)
+addEsDirichletBC(cathode_orifice_bnd, CATHODE_VOL, cathode_orifice)
+addEsDirichletBC(anode_bnd, ANODE_VOL, anode)
+addEsDirichletBC(emitter_bnd, CATHODE_VOL, emitter)
+
+#######################################################
+# Translation of Solver
+#######################################################
+
+addBaseSolver(gmres, 30, classic)
+addPreconditioner(multigrid, DD, 10, GaussSeidel, 3, both, Jacobi, 1.33300000000000e+00, 0.00000000000000e+00, increasing)
+# This writes preconditioner, so it must be last.
+addPoissonSolver(1.0, 1000, 1.00000000000000e-08, r0)
+
+#######################################################
+# Translation of Particles
+#######################################################
+
+addBeamEmitter(emit_elec_emitter, emit_elec, 0.0, 1.0, RichardsonDushmanEmission, 1.0, 15.0, 0.1, 1.0, 1400.0, emitter, 0.1, 100.0, 1.0)
+addParticleSpeciesSink(emit_elec_abso_anode, emit_elec, absSavTriCutCell, anode)
+addParticleSpeciesSink(emit_elec_abso_orifice, emit_elec, absSavTriCutCell, cathode_orifice)
+addParticleSpecies(emit_elec, relBoris, 1e12, variableWeights, computedWeights, 1.0)
+
+addParticleSpeciesSink(Xe_plus_abs_emitter, Xe_plus, absSavTriCutCell, emitter)
+addParticleSpeciesSink(Xe_plus_abs_cathode_shell, Xe_plus, absSavTriCutCell, cathode_shell)
+addParticleSpeciesSink(Xe_plus_abs_cathode_orifice, Xe_plus, absSavTriCutCell, cathode_orifice)
+addParticleSpecies(Xe_plus, relBoris, 1.0, 131.293, 1.0, 1e12, variableWeights, computedWeights, 1.0)
+
+#######################################################
+# Translation of Histories
+#######################################################
+
+addMacroParticleCountHistory(num_elec, emit_elec)
+addMacroParticleCountHistory(num_Xe_plus, Xe_plus)
+
+#######################################################
+#
+# Finalize
+#
+#######################################################
+
+finalize()
+
